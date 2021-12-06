@@ -1,3 +1,3 @@
-# OpenSearch
+# Log Analytics via. AWS OpenSearch
 
 Under construction ...
