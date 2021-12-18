@@ -1,0 +1,57 @@
+RelativeURLs=true
+CanonifyURLs=true
+languageCode = "en-US"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disableLanguages = ["de"]
+
+title = "Open Search Log Analytics Workshop"
+theme = "learn"
+metaDataFormat = "yaml"
+
+uglyurls = true
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+
+[params]
+  editURL = "https://github.com/ev2900/OpenSearch_Log_Analytics/"
+  description = "Open Search Log Analytics Workshop"
+  author = "Chris Sharkey"
+  disableBreadcrumb = false
+  disableNextPrev = false
+  themeVariant = "aws"
+  disableSearch = false
+  disableAssetsBusting = true
+  disableLanguageSwitchingButton = false
+  disableShortcutsTitle = true
+  disableInlineCopyToClipBoard = false
+
+[outputs]
+  home = [ "HTML", "RSS", "JSON" ]
+
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[Languages]
+[Languages.en]
+  title = "Open Search Log Analytics Workshop"
+  weight = 1
+  languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub Project"
+  url = "https://github.com/ev2900/OpenSearch_Log_Analytics/"
+  weight = 30
+
+[[Languages.en.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Have questions?"
+  url = "mailto:sharkech@amazon.com"
+  weight = 40
