@@ -43,8 +43,7 @@ It will take approximately 5 - 10 minutes for your OpenSearch domain to be creat
 ![create_delivery_stream](/images/open-search-log-analytics/kfh_1.PNG)
 
 3. Under the choose source and destination section for the source, select ```Direct PUT``` for the desintation select ```Amazon OpenSearch Service```
-4. Under the delivery stream name section name the stream ```
-workshop-firehose```
+4. Under the delivery stream name section name the stream ```workshop-firehose```
 
 ![select_source_destination](/images/open-search-log-analytics/kfh_2.PNG)
 
@@ -97,7 +96,7 @@ However before we can start to send sample log data to OpenSearch (via Kinesis D
 
 7. Click on **Save changes** at the bottom of the page
 
-#### Map IAM Role with OpenSeach Role
+##### Map IAM Role with OpenSeach Role
 
 1. Go to the [OpenSearch Console](https://console.aws.amazon.com/esv3/home)
 2. Click on the **workshop-domain** OpenSearch domain you created earlier

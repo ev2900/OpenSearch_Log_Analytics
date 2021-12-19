@@ -23,7 +23,7 @@ for log_type in log_types:
     			}
 			)
 
-			time.sleep(1)
+			# time.sleep(1)
 
 			print(log_type + " log # " + str(counter) + " / " + '2000' + " sent")
 
