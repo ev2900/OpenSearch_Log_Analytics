@@ -102,10 +102,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     box-shadow: inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(0,169,218,.7)
 }
 #header-wrapper {
-    background: #8451a1;
+    background: #322a38;
     color: #fff;
     text-align: center;
-    border-bottom: 4px solid #9c6fb6;
+    border-bottom: 4px solid #322a38;
     padding: 1rem;
 }
 #header a {
@@ -121,8 +121,8 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 .searchbox {
     margin-top: 1rem;
     position: relative;
-    border: 1px solid #915eae;
-    background: #764890;
+    border: 1px solid #FFFFFF;
+    background: #322a38;
     border-radius: 4px;
 }
 .searchbox label {
@@ -1128,10 +1128,10 @@ pre .copy-to-clipboard:hover {
 }
 
 #homelinks {
-  background-color: #9c6fb6;
+  background-color: #251f29;
   color: #fff;
   padding: 7px 0;
-  border-bottom: 4px solid #9c6fb6;
+  border-bottom: 4px solid #251f29;
 }
 
 #searchResults {

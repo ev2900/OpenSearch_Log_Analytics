@@ -113,4 +113,49 @@ You should now see a window that looks like this
 
 ![select_domain](/images/open-search-log-analytics/os_1.PNG)
 
-7. 
+7. Click on and expand the hamburger menu on the side bar of the OpenSearch home page
+8. Under the OpenSearch Plugins section click on **Securit3**
+
+![select_security](/images/open-search-log-analytics/os_2.PNG)
+
+9. On the security page click on **Roles** from the left hand menu
+
+![select_roles](/images/open-search-log-analytics/os_3.PNG)
+
+10. On the roles page search for and click on ```all_access``` 
+
+![search_all_access](/images/open-search-log-analytics/os_4.PNG)
+
+11. On the all_access role page click on **Mapped users**
+12. Under the mapped users page click on **Manage mapping**
+
+![mapped_users](/images/open-search-log-analytics/os_5.PNG)
+
+On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the premissions it need to create, update ... indexes. 
+
+For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. **In a production enviorment it is recomended to scope down the premisions Kinesis Firehose has within OpenSearch**
+
+We need to find the ARN of the IAM role Kinesis Firehose is using 
+
+13. Go to the [Kinesis Firehose Console](https://console.aws.amazon.com/firehose/home)
+14. Click on the **workshop-firehose** listed. This is the Kinesis Data Fire hose we created earlier
+15. Click on the **Configuration** section
+
+![IAM_role](/images/open-search-log-analytics/os_6.PNG)
+
+16. On the configuration page scroll down to the premissions section
+17. Click on the IAM role
+
+![IAM_role](/images/open-search-log-analytics/os_7.PNG)
+
+18. This will open a new window in your web browser. Copy down the ARN of the IAM role
+
+![IAM_role](/images/open-search-log-analytics/os_8.PNG)
+
+19. Navigate back to the OpenSearch, security, roles, all_access, map user page
+20. Enter the ARN we copied in step 18 and past it in the backend roles section of OpenSearch console page
+21. Click on **Map**
+
+![IAM_role](/images/open-search-log-analytics/os_9.PNG)
+
+Our AWS enviorment set up is now complete! When you are ready lets begin the next step [Send Log Data to Kinesis Fire Hose]({{<relref "../3_Send_Log_Data_to_Kinesis_Fire_Hose/">}})
