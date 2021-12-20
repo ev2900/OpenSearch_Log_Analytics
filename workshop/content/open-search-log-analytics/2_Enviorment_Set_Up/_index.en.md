@@ -34,6 +34,7 @@ Follow the instructions below for each step
 It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon sucssful creation you will see your OpenSearch domain status is active
 
 ![cloud_shell_button](/images/open-search-log-analytics/set_up_2.PNG)
+Do not proceed to the next step until you confirm that your domain status is active
 
 #### Create a Kinesis Firehose
 
@@ -90,7 +91,7 @@ However before we can start to send sample log data to OpenSearch (via Kinesis D
 ![security_configuration](/images/open-search-log-analytics/IAM_2.PNG)
 
 5. Naviage to the access policy section of the edit security configuration window
-6. Adjust the JSON access policy switch the deny to an ```Allow```
+6. Adjust the JSON access policy to switch the Deny to an ```Allow```
 
 ![access_policy](/images/open-search-log-analytics/IAM_3.PNG)
 
@@ -113,7 +114,7 @@ You should now see a window that looks like this
 ![select_domain](/images/open-search-log-analytics/os_1.PNG)
 
 7. Click on and expand the hamburger menu on the side bar of the OpenSearch home page
-8. Under the OpenSearch Plugins section click on **Securit3**
+8. Under the OpenSearch Plugins section click on **Security**
 
 ![select_security](/images/open-search-log-analytics/os_2.PNG)
 
@@ -130,11 +131,11 @@ You should now see a window that looks like this
 
 ![mapped_users](/images/open-search-log-analytics/os_5.PNG)
 
-On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the premissions it need to create, update ... indexes. 
+On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the premissions it need to create and update indexes. 
 
-For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. **In a production enviorment it is recomended to scope down the premisions Kinesis Firehose has within OpenSearch**
+For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. **In a production environment it is recomended to scope down the premisions Kinesis Firehose has within OpenSearch**
 
-We need to find the ARN of the IAM role Kinesis Firehose is using 
+We need to find the ARN of the IAM role Kinesis Firehose is using. Keeping the **Manage mapping** page open, navigate to a new tab and: 
 
 13. Go to the [Kinesis Firehose Console](https://console.aws.amazon.com/firehose/home)
 14. Click on the **workshop-firehose** listed. This is the Kinesis Data Fire hose we created earlier
@@ -151,10 +152,10 @@ We need to find the ARN of the IAM role Kinesis Firehose is using
 
 ![IAM_role](/images/open-search-log-analytics/os_8.PNG)
 
-19. Navigate back to the OpenSearch, security, roles, all_access, map user page
-20. Enter the ARN we copied in step 18 and past it in the backend roles section of OpenSearch console page
+19. Navigate back to the OpenSearch map user tab
+20. Enter the ARN we copied in step 18 and paste it in the backend roles section of OpenSearch console page
 21. Click on **Map**
 
 ![IAM_role](/images/open-search-log-analytics/os_9.PNG)
 
-Our AWS enviorment set up is now complete! When you are ready lets begin the next step [Send Log Data to Kinesis Fire Hose]({{<relref "../3_Send_Log_Data_to_Kinesis_Fire_Hose/">}})
+Our AWS environment set up is now complete! When you are ready lets begin the next step [Send Log Data to Kinesis Fire Hose]({{<relref "../3_Send_Log_Data_to_Kinesis_Fire_Hose/">}})

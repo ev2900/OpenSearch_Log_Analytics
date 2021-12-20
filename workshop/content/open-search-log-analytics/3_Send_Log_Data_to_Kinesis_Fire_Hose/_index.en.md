@@ -10,17 +10,17 @@ We need to send sample log data to Kinesis Data Firehose which in turn will send
 
 We will run a python application that will send a few different types of log data to OpenSearch. We will run the sample Python application in a Cloud9 
 
-**Create a Cloud9 Enviorment**
+**Create a Cloud9 environment**
 1. Go to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home)
-2. Click on **Create enviorment**
+2. Click on **Create environment**
 
 ![cloud9_create](/images/open-search-log-analytics/cloud9_1.PNG)
 
-3. Under the name enviorment section enter ```log_producer``` for the name
+3. Under the name environment section enter ```log_producer``` for the name
 4. Click on **Next step**
 5. Leave all of the settings at the default selections
 6. Click on **Next step**
-7. Click on **Create enviorment**
+7. Click on **Create environment**
 
 After the Cloud9 envriorment is created your broswer will automaticlly be redirected to the Cloud9 console
 
@@ -28,7 +28,7 @@ After the Cloud9 envriorment is created your broswer will automaticlly be redire
 
 **Run a Python Application from Cloud9**
 
-With in the Cloud9 console running the following commands in the console section of the Cloud9 enviorment
+With in the Cloud9 console running the following commands in the console section of the Cloud9 environment
 
 1. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/Log_Producer_Desktop.py```
 
@@ -54,4 +54,4 @@ Upon running the last command you should be messages appearing in the Cloud9 con
 
 Leave this broswer window open. This way the python application continues to run and send data.
 
-When you are ready move on to the next step [Send Log Data to Kinesis Fire Hose]({{<relref "../4_Visualize_Analyze_in_Kibana/">}})
+When you are ready move on to the next step [Visualize and Analyze in Kibana]({{<relref "../4_Visualize_Analyze_in_Kibana/">}})

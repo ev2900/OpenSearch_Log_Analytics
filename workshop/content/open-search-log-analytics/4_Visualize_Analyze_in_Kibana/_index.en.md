@@ -56,7 +56,7 @@ In order to work with all of the logs (ie. multiple hours) we will create an ind
 
 ![create_index_pattern_3](/images/open-search-log-analytics/va_5.PNG)
 
-We have not created an index pattern! We can use the index pattern to analyze our logs
+We have now created an index pattern! We can use the index pattern to analyze our logs
 
 ### Search the Logs
 
@@ -110,15 +110,19 @@ This will produce a gauge chart visualizing the number of hadoop error logs.
 
 Dashboards allow you to combine multiple visualizations in a single place. Lets build a simple dashboard
 
-1. In the OpenSearch Dashboard expand the side menu and click on **Visualize** under the OpenSearch Dashboards section
+1. In the OpenSearch Dashboard expand the side menu and click on **Dashboards** under the OpenSearch Dashboards section
 
 ![visualize_1](/images/open-search-log-analytics/dashboard_1.PNG)
 
-2. On the dashboard page click on **Add an existing** 
+2. On the dashboard page click on **Create new dashboard**
+
+![visualize_4](/images/open-search-log-analytics/dashboard_4.PNG)
+
+3. On the dashboard page click on **Add an existing** 
 
 ![visualize_1](/images/open-search-log-analytics/dashboard_2.PNG)
 
-3. Select the visualization you just created. 
+4. Select the visualization you just created. 
 
 ![visualize_1](/images/open-search-log-analytics/dashboard_3.PNG)
 

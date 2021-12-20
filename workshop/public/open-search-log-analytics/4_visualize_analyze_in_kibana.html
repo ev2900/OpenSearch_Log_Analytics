@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="Open Search Log Analytics Workshop">
+<meta name="author" content="Chris Sharkey">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+
+    <title>4. Visualize and Analyze in Kibana :: Open Search Log Analytics Workshop</title>
+
+    
+    <link href="../css/nucleus.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="../css/hybrid.css" rel="stylesheet">
+    <link href="../css/featherlight.min.css" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../css/auto-complete.css" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/hugo-theme.css" rel="stylesheet">
+    
+    <link href="../css/theme-aws.css" rel="stylesheet">
+    
+    
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../open-search-log-analytics/4_visualize_analyze_in_kibana.html">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div id="logo">
+  <img stlye="vertical-align:middle" src="https://sharkech-public.s3.amazonaws.com/misc-public/aws_logo.png" height="70px">
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='../index.html'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/" title="OpenSearch Log Analytics" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="../open-search-log-analytics/index.html">
+          OpenSearch Log Analytics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/1_getting_started.html" title="1. Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/1_getting_started.html">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../open-search-log-analytics/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../open-search-log-analytics/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/2_enviorment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/2_enviorment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">
+          Send Log Data to Kinesis Fire Hose
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/4_visualize_analyze_in_kibana.html" title="4. Visualize and Analyze in Kibana" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="../open-search-log-analytics/4_visualize_analyze_in_kibana.html">
+          Visualize and Analyze in Kibana
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/ev2900/OpenSearch_Log_Analytics/"><i class='fab fa-github'></i> GitHub Project</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="mailto:sharkech@amazon.com"><i class='fas fa-envelope'></i> Have questions?</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link"></div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../open-search-log-analytics/'>OpenSearch Log Analytics</a> > 4. Visualize and Analyze in Kibana
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#open-the-opensearch-dashboard">Open the OpenSearch Dashboard</a></li>
+        <li><a href="#create-an-index-pattern">Create an Index Pattern</a></li>
+        <li><a href="#search-the-logs">Search the Logs</a></li>
+        <li><a href="#create-a-visualization">Create a Visualization</a></li>
+        <li><a href="#create-a-dashboard">Create a Dashboard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              4. Visualize and Analyze in Kibana
+            </h1>
+          
+
+        
+
+
+
+	<p>OpenSearch provides us the ability to analyze out logs. Lets begin by naviaging to the OpenSearch Dashboard</p>
+<h3 id="open-the-opensearch-dashboard">Open the OpenSearch Dashboard</h3>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
+<li>Click on the <strong>workshop-domain</strong> OpenSearch domain you created earlier</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/IAM_1.PNG" alt="select_domain"></p>
+<ol start="3">
+<li>Click on the OpenSearch Dashboard URL. This should open the URL in a web browser window</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
+<ol start="4">
+<li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
+<li>If an additonal pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additonal pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+</ol>
+<p>You should now see a window that looks like this</p>
+<p><img src="../images/open-search-log-analytics/os_1.PNG" alt="select_domain"></p>
+<h3 id="create-an-index-pattern">Create an Index Pattern</h3>
+<p>When we deployed Kinesis Data Firehose we configured it to create a new index in OpenSearch every 1 hr. We also configured it to name each index starting with <em>workshop-log</em></p>
+<p>This means that open search will have 1 index for each hour it is sent logs and that these indexies&rsquo;s name will start with <em>workshop-log</em></p>
+<p>In order to work with all of the logs (ie. multiple hours) we will create an index pattern in OpenSearch. The index pattern will be a representation of all of the <em>workshop-log</em> indexes for all of the hours</p>
+<ol>
+<li>In the OpenSeach Dashboard, expand the side menu and click on <strong>Stack Management</strong> under managment section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_1.PNG" alt="stack_managment"></p>
+<ol start="2">
+<li>On the stack managment page click on <strong>Index Patterns</strong> on the left hand menu</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_2.PNG" alt="index_pattern"></p>
+<ol start="3">
+<li>On the index patterns page click on <strong>Create index pattern</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_3.PNG" alt="create_index_pattern_1"></p>
+<ol start="4">
+<li>Enter <code>workshop-log-*</code> under the index pattern name section</li>
+<li>Click on <strong>Next step</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_4.PNG" alt="create_index_pattern_2"></p>
+<ol start="6">
+<li>Click on <strong>Create index pattern</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_5.PNG" alt="create_index_pattern_3"></p>
+<p>We have now created an index pattern! We can use the index pattern to analyze our logs</p>
+<h3 id="search-the-logs">Search the Logs</h3>
+<p>OpenSearch provides the ability to easily search log data. Lets run a few simple searches on our logs</p>
+<ol>
+<li>In the OpenSearch Dashboard expand the side menu and click on <strong>Discover</strong> under the OpenSearch Dashboards section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
+<p>This will bring you to the discovery page. On this page we can see the log data we sent via. the Cloud9 Python application</p>
+<p><img src="../images/open-search-log-analytics/search_2.PNG" alt="search_2"></p>
+<p>We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remeber that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper</p>
+<ol start="2">
+<li>Run the search <code>&quot;Hadoop&quot; AND &quot;Error&quot;</code></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/search_3.PNG" alt="search_3"></p>
+<p>OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searchs. A few search suggestions are below. However feel free to come up with you own</p>
+<p>Suggested searches</p>
+<ol>
+<li><code>&quot;spark&quot; AND &quot;broadcast&quot;</code></li>
+<li><code>&quot;hdfs&quot;</code></li>
+<li><code>&quot;zoo_keeper&quot; AND &quot;WARN&quot; AND &quot;waiting for message&quot;</code></li>
+</ol>
+<p>After you have run a few searches. We can look at creating a visualization and dashboard</p>
+<h3 id="create-a-visualization">Create a Visualization</h3>
+<ol>
+<li>In the OpenSearch Dashboard expand the side menu and click on <strong>Visualize</strong> under the OpenSearch Dashboards section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/visualize_1.PNG" alt="visualize_1"></p>
+<ol start="2">
+<li>Click on <strong>Create new visualization</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/visualize_3.PNG" alt="visualize_3"></p>
+<ol start="3">
+<li>Click on <strong>Gauge</strong> from the list of visualizations</li>
+<li>Click <strong>workshop-log-</strong> from the list of index patterns</li>
+<li>On the create page enter <code>&quot;Hadoop&quot; AND &quot;ERROR&quot;</code> in the search bar</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/visualize_4.PNG" alt="visualize_3"></p>
+<p>This will produce a gauge chart visualizing the number of hadoop error logs.</p>
+<ol start="6">
+<li>Click on the <strong>Save</strong> button. Name the visual anything you would like</li>
+</ol>
+<h3 id="create-a-dashboard">Create a Dashboard</h3>
+<p>Dashboards allow you to combine multiple visualizations in a single place. Lets build a simple dashboard</p>
+<ol>
+<li>In the OpenSearch Dashboard expand the side menu and click on <strong>Dashboards</strong> under the OpenSearch Dashboards section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/dashboard_1.PNG" alt="visualize_1"></p>
+<ol start="2">
+<li>On the dashboard page click on <strong>Create new dashboard</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/dashboard_4.PNG" alt="visualize_4"></p>
+<ol start="3">
+<li>On the dashboard page click on <strong>Add an existing</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/dashboard_2.PNG" alt="visualize_1"></p>
+<ol start="4">
+<li>Select the visualization you just created.</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/dashboard_3.PNG" alt="visualize_1"></p>
+<p>Use the create new button or repeat the earlier process to create a second visual and add it to your dashboard. Have at least 2 visuals on your dashboard.</p>
+<p>Also take note of the ability to save and share this dashboard with other. These options are listed on the top bar</p>
+<p>When you are ready proceed to the next step <a href="../open-search-log-analytics/5_clean_up.html">Clean Up</a> if you want to delete the resources we used for this workshop</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../open-search-log-analytics/5_clean_up.html" title="5. Clean Up" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+    
+        
+            <script src="../mermaid/mermaid.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>

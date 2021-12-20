@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/1_getting_started.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/2_enviorment_set_up.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/4_visualize_analyze_in_kibana.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/5_clean_up.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/1_getting_started/aws_event.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/index.html</loc>
+  </url><url>
+    <loc>/open-search-log-analytics/1_getting_started/self_paced.html</loc>
+  </url><url>
+    <loc>/categories.html</loc>
+  </url><url>
+    <loc>/tags.html</loc>
+  </url>
+</urlset>

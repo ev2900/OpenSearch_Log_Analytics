@@ -1,0 +1,36 @@
+[
+	{	"pageTitle": "Index",
+		"relativePagePath": "/en/"
+	},
+	{
+		"pageTitle": "OpenSearch Log Analytics",
+		"relativePagePath": "/open-search-log-analytics/index.html"
+	},
+	{
+		"pageTitle": "1. Getting started",
+		"relativePagePath": "/open-search-log-analytics/1_getting_started.html"
+	},
+	{
+		"pageTitle": "AWS Event",
+		"relativePagePath": "/open-search-log-analytics/1_getting_started/aws_event.html"
+	},
+	{
+		"pageTitle": "Self Paced",
+		"relativePagePath": "/open-search-log-analytics/1_getting_started/self_paced.html"
+	},
+	{
+		"pageTitle": "2. Environment Set Up",
+		"relativePagePath": "/open-search-log-analytics/2_enviorment_set_up.html"
+	},
+	{
+		"pageTitle": "3. Send Log Data to Kinesis Fire Hose",
+		"relativePagePath": "/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html"
+	},
+	{
+		"pageTitle": "4. Visualize and Analyze in Kibana",
+		"relativePagePath": "/open-search-log-analytics/4_visualize_analyze_in_kibana.html"
+	},
+	{
+		"pageTitle": "5. Clean Up",
+		"relativePagePath": "/open-search-log-analytics/5_clean_up.html"
+	}]
