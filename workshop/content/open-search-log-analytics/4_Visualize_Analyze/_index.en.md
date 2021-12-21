@@ -1,8 +1,8 @@
 ---
-title: "4. Visualize and Analyze in Kibana"
+title: "4. Visualize and Analyze"
 chapter: false
 disableToc: false
-menuTitle: "Visualize and Analyze in Kibana"
+menuTitle: "Visualize and Analyze"
 weight: 10
 ---
 

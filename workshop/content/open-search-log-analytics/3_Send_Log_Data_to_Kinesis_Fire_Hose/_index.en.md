@@ -54,4 +54,4 @@ Upon running the last command you should be messages appearing in the Cloud9 con
 
 Leave this broswer window open. This way the python application continues to run and send data.
 
-When you are ready move on to the next step [Visualize and Analyze in Kibana]({{<relref "../4_Visualize_Analyze_in_Kibana/">}})
+When you are ready move on to the next step [Visualize and Analyze]({{<relref "../4_Visualize_Analyze/">}})
