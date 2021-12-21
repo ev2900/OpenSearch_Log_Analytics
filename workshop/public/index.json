@@ -1,36 +1,120 @@
 [
-	{	"pageTitle": "Index",
-		"relativePagePath": "/en/"
-	},
-	{
-		"pageTitle": "OpenSearch Log Analytics",
-		"relativePagePath": "/open-search-log-analytics/index.html"
-	},
-	{
-		"pageTitle": "1. Getting started",
-		"relativePagePath": "/open-search-log-analytics/1_getting_started.html"
-	},
-	{
-		"pageTitle": "AWS Event",
-		"relativePagePath": "/open-search-log-analytics/1_getting_started/aws_event.html"
-	},
-	{
-		"pageTitle": "Self Paced",
-		"relativePagePath": "/open-search-log-analytics/1_getting_started/self_paced.html"
-	},
-	{
-		"pageTitle": "2. Environment Set Up",
-		"relativePagePath": "/open-search-log-analytics/2_enviorment_set_up.html"
-	},
-	{
-		"pageTitle": "3. Send Log Data to Kinesis Fire Hose",
-		"relativePagePath": "/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html"
-	},
-	{
-		"pageTitle": "4. Visualize and Analyze in Kibana",
-		"relativePagePath": "/open-search-log-analytics/4_visualize_analyze_in_kibana.html"
-	},
-	{
-		"pageTitle": "5. Clean Up",
-		"relativePagePath": "/open-search-log-analytics/5_clean_up.html"
-	}]
+{
+	"uri": "/",
+	"title": "OpenSearch Log Analytics Workshop",
+	"tags": [],
+	"description": "",
+	"content": "OpenSearch Log Analytics Workshop This is a workshops and resources for using AWS OpenSearch for Log Analytics.\nIn the workshop OpenSearch Log Analytics you will learn how to perform log analytics via. AWS OpenSearch. You will explore the basics of ingesting, analyzing and visualizing data in OpenSearch.\n"
+},
+{
+	"uri": "/collect-log-cloud-watch/1_getting_started.html",
+	"title": "1. Getting started",
+	"tags": [],
+	"description": "",
+	"content": "An AWS account and access to the AWS web console is required to complete this workshop.\nIf you are are attending an AWS hosted event (re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee) follow the instructions provided at AWS Event\nIf you are running this workshop on your own follow the instructions provided at Self Paced\n"
+},
+{
+	"uri": "/open-search-log-analytics/1_getting_started.html",
+	"title": "1. Getting started",
+	"tags": [],
+	"description": "",
+	"content": "An AWS account and access to the AWS web console is required to complete this workshop.\nIf you are are attending an AWS hosted event (re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee) follow the instructions provided at AWS Event\nIf you are running this workshop on your own follow the instructions provided at Self Paced\n"
+},
+{
+	"uri": "/open-search-log-analytics/",
+	"title": "1_OpenSearch Log Analytics",
+	"tags": [],
+	"description": "",
+	"content": "OpenSearch Log Analytics Workshop This workshop is an introduction to log analytics with AWS OpenSearch. OpenSearch allows for full text search on logs indexed by the service. In this workshop we use sample Spark, Hadoop, HDFS and ZooKeeper logs to learn about log analytics with AWS OpenSearch\nIn this workshop we will implement the following architecture\nThe architecture uses a Python application run from a Cloud9 development enviorment to simulate a log producer. The application will send 8,000 logs that we will later analyze. The Python application will send the logs to Kinesis Data Firehose. Kinesis Data Firehose will ingest the log into OpenSearch. Once the logs are ingested we will use OpenSearch Dashboard to analyze our logs\nWhen you are ready to being the lab navigate to Getting started\n"
+},
+{
+	"uri": "/collect-log-cloud-watch/2_enviorment_set_up.html",
+	"title": "2. Environment Set Up",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/open-search-log-analytics/2_enviorment_set_up.html",
+	"title": "2. Environment Set Up",
+	"tags": [],
+	"description": "",
+	"content": "We will need to deploy a few services and configure our AWS environment before we can get started with log analytics.\nWe will need to compelete the following set up steps\n Create an OpenSearch Domain Create a Kinesis Firehose Configure Identity Access Management Premisions  Follow the instructions below for each step\nCreate an OpenSearch Domain  Go to the OpenSearch Console Click on Create domain  Enter the name workshop-domain for the OpenSearch Domain Under the deployment type section, select Development and testing Under the network section, select Public access Under the fine-grained access control section select Create master user Enter and username and password. Copy down the user name and password. We will need these later in the workshop Leave all other settings at the default selections Click on Create  It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon sucssful creation you will see your OpenSearch domain status is active\nDo not proceed to the next step until you confirm that your domain status is active\nCreate a Kinesis Firehose  Go to the Kinesis Firehose Console Click on Create delivery stream  Under the choose source and destination section for the source, select Direct PUT for the desintation select Amazon OpenSearch Service Under the delivery stream name section name the stream workshop-firehose  Under the destination settings for the OpenSearch service domain, click on Browse and select the OpenSearch domain workshop-domain this is the OpenSearch domain we created in the previous step Name the index workshop-log Select Every hour for the Index rotation. This will produce a next index every hour  Expand the Buffer hints section Adjust the buffer interval to 60 seconds. This will write data from Kinesis Firehose to OpenSearch every 60 seconds  Under the backup settings under the S3 backup bucket click on Create. This will (in a new browser window) open the create S3 bucket web page  On the create bucket page provide a bucket name. You may name the bucket any valid name Click on Create bucket at the bottom of the page. Leaving all of the S3 settings the the default selections Return the browser window that we were using to configure our Kinesis Firehose and under the backup setting section for the S3 backup bucket, click on Browse Select the bucket you just created. If you do not see the bucket listed click on the small refresh button in the top right corner of the window that pops us when you click on the browse button  At the bottom of the page click on Create delivery stream leave all other settings at the default selections  Configure Identity Access Management (IAM) Premisions In the first step we created an OpenSearch domain. We can send logs to the OpenSearch domin via. the Kinesis Data Firehose we just created\nHowever before we can start to send sample log data to OpenSearch (via Kinesis Data Firehose) we need to configure premissions in IAM and in OpenSearch\nAdjust OpenSearch Access Policy  Go to the OpenSearch Console Click on the workshop-domain OpenSearch domain you created earlier  Click on Security configuration Under the security configuration window click on Edit  Naviage to the access policy section of the edit security configuration window Adjust the JSON access policy to switch the Deny to an Allow  Click on Save changes at the bottom of the page  Map IAM Role with OpenSeach Role  Go to the OpenSearch Console Click on the workshop-domain OpenSearch domain you created earlier Click on the OpenSearch Dashboard URL. This should open the URL in a web browser window  You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in If an additonal pop up window is present after login asking about data upload click on Explore on my own If an additonal pop up windows is present asking you to select your tenant select Global and click on Confirm  You should now see a window that looks like this\nClick on and expand the hamburger menu on the side bar of the OpenSearch home page Under the OpenSearch Plugins section click on Security  On the security page click on Roles from the left hand menu  On the roles page search for and click on all_access  On the all_access role page click on Mapped users Under the mapped users page click on Manage mapping  On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the premissions it need to create and update indexes.\nFor the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. In a production environment it is recomended to scope down the premisions Kinesis Firehose has within OpenSearch\nWe need to find the ARN of the IAM role Kinesis Firehose is using. Keeping the Manage mapping page open, navigate to a new tab and:\nGo to the Kinesis Firehose Console Click on the workshop-firehose listed. This is the Kinesis Data Fire hose we created earlier Click on the Configuration section  On the configuration page scroll down to the premissions section Click on the IAM role  This will open a new window in your web browser. Copy down the ARN of the IAM role  Navigate back to the OpenSearch map user tab Enter the ARN we copied in step 18 and paste it in the backend roles section of OpenSearch console page Click on Map  Our AWS environment set up is now complete! When you are ready lets begin the next step Send Log Data to Kinesis Fire Hose\n"
+},
+{
+	"uri": "/collect-log-cloud-watch/",
+	"title": "2_CloudWatch Log Collection",
+	"tags": [],
+	"description": "",
+	"content": "Collect AWS CloudWarch Logs for OpenSearch "
+},
+{
+	"uri": "/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html",
+	"title": "3. Send Log Data to Kinesis Fire Hose",
+	"tags": [],
+	"description": "",
+	"content": "We need to send sample log data to Kinesis Data Firehose which in turn will send the data to OpenSearch.\nWe will run a python application that will send a few different types of log data to OpenSearch. We will run the sample Python application in a Cloud9\nCreate a Cloud9 environment\n Go to the Cloud9 Console Click on Create environment  Under the name environment section enter log_producer for the name Click on Next step Leave all of the settings at the default selections Click on Next step Click on Create environment  After the Cloud9 envriorment is created your broswer will automaticlly be redirected to the Cloud9 console\nRun a Python Application from Cloud9\nWith in the Cloud9 console running the following commands in the console section of the Cloud9 environment\n wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/Log_Producer_Desktop.py  The image below highlights were to run the commands. Run all of the commands in order\nmkdir sample_logs cd sample_logs wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/hadoop.txt wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/hdfs.txt wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/spark.txt wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/zoo_keeper.txt cd .. pip install boto3 python Log_Producer_Desktop.py  These commands download the sample log data. They also download and configure the python script that will send the sample log data to Kinesis Data Firehose.\nUpon running the last command you should be messages appearing in the Cloud9 console indicating the logs are being sent.\nLeave this broswer window open. This way the python application continues to run and send data.\nWhen you are ready move on to the next step Visualize and Analyze in Kibana\n"
+},
+{
+	"uri": "/open-search-log-analytics/4_visualize_analyze_in_kibana.html",
+	"title": "4. Visualize and Analyze in Kibana",
+	"tags": [],
+	"description": "",
+	"content": "OpenSearch provides us the ability to analyze out logs. Lets begin by naviaging to the OpenSearch Dashboard\nOpen the OpenSearch Dashboard  Go to the OpenSearch Console Click on the workshop-domain OpenSearch domain you created earlier  Click on the OpenSearch Dashboard URL. This should open the URL in a web browser window  You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in If an additonal pop up window is present after login asking about data upload click on Explore on my own If an additonal pop up windows is present asking you to select your tenant select Global and click on Confirm  You should now see a window that looks like this\nCreate an Index Pattern When we deployed Kinesis Data Firehose we configured it to create a new index in OpenSearch every 1 hr. We also configured it to name each index starting with workshop-log\nThis means that open search will have 1 index for each hour it is sent logs and that these indexies\u0026rsquo;s name will start with workshop-log\nIn order to work with all of the logs (ie. multiple hours) we will create an index pattern in OpenSearch. The index pattern will be a representation of all of the workshop-log indexes for all of the hours\n In the OpenSeach Dashboard, expand the side menu and click on Stack Management under managment section  On the stack managment page click on Index Patterns on the left hand menu  On the index patterns page click on Create index pattern  Enter workshop-log-* under the index pattern name section Click on Next step  Click on Create index pattern  We have now created an index pattern! We can use the index pattern to analyze our logs\nSearch the Logs OpenSearch provides the ability to easily search log data. Lets run a few simple searches on our logs\n In the OpenSearch Dashboard expand the side menu and click on Discover under the OpenSearch Dashboards section  This will bring you to the discovery page. On this page we can see the log data we sent via. the Cloud9 Python application\nWe can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remeber that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper\nRun the search \u0026quot;Hadoop\u0026quot; AND \u0026quot;Error\u0026quot;  OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searchs. A few search suggestions are below. However feel free to come up with you own\nSuggested searches\n \u0026quot;spark\u0026quot; AND \u0026quot;broadcast\u0026quot; \u0026quot;hdfs\u0026quot; \u0026quot;zoo_keeper\u0026quot; AND \u0026quot;WARN\u0026quot; AND \u0026quot;waiting for message\u0026quot;  After you have run a few searches. We can look at creating a visualization and dashboard\nCreate a Visualization  In the OpenSearch Dashboard expand the side menu and click on Visualize under the OpenSearch Dashboards section  Click on Create new visualization  Click on Gauge from the list of visualizations Click workshop-log- from the list of index patterns On the create page enter \u0026quot;Hadoop\u0026quot; AND \u0026quot;ERROR\u0026quot; in the search bar  This will produce a gauge chart visualizing the number of hadoop error logs.\nClick on the Save button. Name the visual anything you would like  Create a Dashboard Dashboards allow you to combine multiple visualizations in a single place. Lets build a simple dashboard\n In the OpenSearch Dashboard expand the side menu and click on Dashboards under the OpenSearch Dashboards section  On the dashboard page click on Create new dashboard  On the dashboard page click on Add an existing  Select the visualization you just created.  Use the create new button or repeat the earlier process to create a second visual and add it to your dashboard. Have at least 2 visuals on your dashboard.\nAlso take note of the ability to save and share this dashboard with other. These options are listed on the top bar\nWhen you are ready proceed to the next step Clean Up if you want to delete the resources we used for this workshop\n"
+},
+{
+	"uri": "/collect-log-cloud-watch/5_clean_up.html",
+	"title": "5. Clean Up",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/open-search-log-analytics/5_clean_up.html",
+	"title": "5. Clean Up",
+	"tags": [],
+	"description": "",
+	"content": "Delete Cloud 9  Go to the Cloud9 Console  Select your Cloud9 enviorment Click on Delete Follow the instructions in the prompt to complete the delete  Delete Kinesis Data Firehose  Go to the Kinesis Firehose Console Click on the selector next to the Kinesis Data Firehose we created earlier  Click on Delete Follow the instructions in the prompt to complete the delete  Delete OpenSearch  Go to the OpenSearch Console Click on the workshop-domain OpenSearch domain you created earlier  Click on Delete  Follow the instructions in the prompt to complete the delete  You have completed deleting the resources used in this workshop\n"
+},
+{
+	"uri": "/collect-log-cloud-watch/1_getting_started/aws_event.html",
+	"title": "AWS Event",
+	"tags": [],
+	"description": "",
+	"content": "\rOnly complete this section if you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee). If you are running the workshop on your own, go to Self Paced.\n\rLog into AWS Console via. AWS Workshop Portal Your instructor has already created an AWS account for you. Your instructor should provide you a participant hash.\nOnce you have your participant hash go to https://dashboard.eventengine.run/\nEnter your participant has and select Accept Terms \u0026amp; Login\nSelect how you want to log in. Selecting Email One-Time Password (OTP) is recommended. However you can also use your Amazon.com retail account to login.\nFollow the prompts to complete the login process. Once you have sucssfully loged in. You will see the following screen. Select AWS Console\nA window will open. From the window select Open AWS Console\nThis will open the AWS Console in a new window on your web browser. If you can see the home page for the AWS Console as depicted below you have sucssfully logged into your AWS account.\nNow that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step Environment Set Up\n"
+},
+{
+	"uri": "/open-search-log-analytics/1_getting_started/aws_event.html",
+	"title": "AWS Event",
+	"tags": [],
+	"description": "",
+	"content": "\rOnly complete this section if you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee). If you are running the workshop on your own, go to Self Paced.\n\rLog into AWS Console via. AWS Workshop Portal Your instructor has already created an AWS account for you. Your instructor should provide you a participant hash.\nOnce you have your participant hash go to https://dashboard.eventengine.run/\nEnter your participant has and select Accept Terms \u0026amp; Login\nSelect how you want to log in. Selecting Email One-Time Password (OTP) is recommended. However you can also use your Amazon.com retail account to login.\nFollow the prompts to complete the login process. Once you have sucssfully loged in. You will see the following screen. Select AWS Console\nA window will open. From the window select Open AWS Console\nThis will open the AWS Console in a new window on your web browser. If you can see the home page for the AWS Console as depicted below you have sucssfully logged into your AWS account.\nNow that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step Environment Set Up\n"
+},
+{
+	"uri": "/collect-log-cloud-watch/1_getting_started/self_paced.html",
+	"title": "Self Paced",
+	"tags": [],
+	"description": "",
+	"content": "\rOnly complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee), continue with AWS Event.\n\rRunning the Workshop on Your Own You will need an AWS Account with web console access to complete the workshop.\nIf you do not have an AWS account Create an AWS Account\nAs pictured below you should be able to access the AWS Console\nOnce you have can access the AWS Console, lets begin the next step Enviorment Set Up\n"
+},
+{
+	"uri": "/open-search-log-analytics/1_getting_started/self_paced.html",
+	"title": "Self Paced",
+	"tags": [],
+	"description": "",
+	"content": "\rOnly complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee), continue with AWS Event.\n\rRunning the Workshop on Your Own You will need an AWS Account with web console access to complete the workshop.\nIf you do not have an AWS account Create an AWS Account\nAs pictured below you should be able to access the AWS Console\nOnce you have can access the AWS Console, lets begin the next step Enviorment Set Up\n"
+},
+{
+	"uri": "/categories.html",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags.html",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

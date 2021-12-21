@@ -4,19 +4,31 @@
   <url>
     <loc>/</loc>
   </url><url>
+    <loc>/collect-log-cloud-watch/1_getting_started.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/1_getting_started.html</loc>
   </url><url>
+    <loc>/open-search-log-analytics/</loc>
+  </url><url>
+    <loc>/collect-log-cloud-watch/2_enviorment_set_up.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/2_enviorment_set_up.html</loc>
+  </url><url>
+    <loc>/collect-log-cloud-watch/</loc>
   </url><url>
     <loc>/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/4_visualize_analyze_in_kibana.html</loc>
   </url><url>
+    <loc>/collect-log-cloud-watch/5_clean_up.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/5_clean_up.html</loc>
+  </url><url>
+    <loc>/collect-log-cloud-watch/1_getting_started/aws_event.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/1_getting_started/aws_event.html</loc>
   </url><url>
-    <loc>/open-search-log-analytics/index.html</loc>
+    <loc>/collect-log-cloud-watch/1_getting_started/self_paced.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/1_getting_started/self_paced.html</loc>
   </url><url>

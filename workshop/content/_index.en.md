@@ -8,4 +8,6 @@ weight: 1
 
 This is a workshops and resources for using AWS OpenSearch for Log Analytics.
 
-In the workshop [OpenSearch Log Analytics]({{< relref "open-search-log-analytics/" >}}) you will learn how to perform log analytics via. AWS OpenSearch. You will explore the basics of ingesting, analyzing and visualizing data in OpenSearch.
+In the workshop [OpenSearch Log Analytics]({{<relref "open-search-log-analytics/">}}) you will learn how to perform log analytics via. AWS OpenSearch. You will explore the basics of ingesting, analyzing and visualizing data in OpenSearch.
+
+In the workshop [CloudWatch Log Collection]({{<relref "collect-log-cloud-watch/">}}) you will learn how to send logs - in realtime - from AWS CloudWatch service to AWS OpenSearch. Once in OpenSearch you can analyize your CloudWatch logs and help identify error and issues.
