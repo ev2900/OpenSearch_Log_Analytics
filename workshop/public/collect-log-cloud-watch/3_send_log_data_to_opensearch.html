@@ -88,12 +88,12 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/" title="1_OpenSearch Log Analytics" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -311,7 +311,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -465,13 +465,13 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" class="dd-item
         
         
         
         ">
-      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
-          Visualize and Analyze
+      <a href="../collect-log-cloud-watch/4_search_logs.html">
+          Search Logs
           
       </a>
       
@@ -540,7 +540,9 @@
     
     <section id="footer">
       <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
+<div style="height:25px">
+  
+</div>
     </section>
   </div>
 </nav>
@@ -585,7 +587,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2. CloudWatch Log Collection</a> > 3. Send Log Data to OpenSearch
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/index.html'>CloudWatch Log Collection</a> > Send Log Data to OpenSearch
           
         
           
@@ -630,12 +632,12 @@
 
 
 
-	<p>We have now create an OpenSearch domain, configured the required IAM and OpenSearch premissions and we created two Glue jobs that we can run. One Glue job that completes sucssfully and another which creates an error.</p>
-<p>All of the log information for the Glue jobs is collected in CloudWatch. Lets send the data - in realtime - from CloudWatch to OpenSearch</p>
+	<p>We have now created an OpenSearch domain, configured the required IAM and OpenSearch permissions and we created two Glue jobs that we can run to produce logs.</p>
+<p>All of the log information for the Glue jobs is collected in CloudWatch. Lets set up Lambda functions that will – in real time – send the CloudWatch log data to OpenSearch</p>
 <p>We can complete this in the following steps</p>
 <ol>
 <li>Set up CloudWatch to OpenSearch Lambda Function(s)</li>
-<li>Re-run the Glue Jobs to Create additonal CloudWatch Logs</li>
+<li>Re-run the Glue Jobs to Create additional CloudWatch Logs</li>
 </ol>
 <h4 id="set-up-cloudwatch-to-opensearch-lambda-functions">Set up CloudWatch to OpenSearch Lambda Function(s)</h4>
 <ol>
@@ -671,9 +673,9 @@
 <li>Click on Start streaming</li>
 </ol>
 <p><img src="../images/collect-log-cloud-watch/CW_7.PNG" alt="CW_7"></p>
-<p>The steps you just completed created a lambda function that will send CloudWatch logs to OpenSearch in realtime.</p>
-<p>Now that we have compelted this process for the <code>	/aws-glue/jobs/error</code> log group Navigate back to the <a href="https://console.aws.amazon.com/cloudwatch/">CloudWatch Console</a> and repeat steps 1 - 13 for log groups <code>	/aws-glue/jobs/logs-v2</code> and <code>/aws-glue/jobs/output</code></p>
-<h4 id="re-run-the-glue-jobs-to-create-additonal-cloudwatch-logs">Re-run the Glue Jobs to Create additonal CloudWatch Logs</h4>
+<p>The steps you just completed created a lambda function that will send CloudWatch logs to OpenSearch in real time.</p>
+<p>Now that we have completed this process for the <code>	/aws-glue/jobs/error</code> log group Navigate back to the <a href="https://console.aws.amazon.com/cloudwatch/">CloudWatch Console</a> and repeat steps 1 - 13 for log groups <code>	/aws-glue/jobs/logs-v2</code> and <code>/aws-glue/jobs/output</code></p>
+<h4 id="re-run-the-glue-jobs-to-create-additional-cloudwatch-logs">Re-run the Glue Jobs to Create additional CloudWatch Logs</h4>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/glue/home">Glue Console</a></li>
 <li>On the left hand menu click on <strong>Jobs</strong></li>
@@ -689,7 +691,7 @@
 <p>You can view the job run history for a job by click on the check box next to job name and viewing the history tab</p>
 <p><img src="../images/collect-log-cloud-watch/GLUE_9.PNG" alt="GLUE_9"></p>
 <p>Ensure that you have at least 3 runs completed for each job. The job status for the <code>glue_job_success</code> should be Succeeded and the job status for the <code>glue_job_error</code> should be Failed</p>
-<p>When you have at least 3 completed job runs for each job begin the next step <a href="../collect-log-cloud-watch/4_visualize_analyze.html">Visualize and Analyze</a></p>
+<p>When you have at least 3 completed job runs for each job begin the next step <a href="../collect-log-cloud-watch/4_search_logs.html">Search Logs</a></p>
 
 
 
@@ -1008,7 +1010,7 @@
 			<a class="nav nav-prev" href="../collect-log-cloud-watch/2_enviorment_set_up.html" title="2. Environment Set Up"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="../collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

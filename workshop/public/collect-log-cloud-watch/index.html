@@ -88,12 +88,12 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/" title="1_OpenSearch Log Analytics" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -311,7 +311,7 @@
         active
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -465,13 +465,13 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" class="dd-item
         
         
         
         ">
-      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
-          Visualize and Analyze
+      <a href="../collect-log-cloud-watch/4_search_logs.html">
+          Search Logs
           
       </a>
       
@@ -540,7 +540,9 @@
     
     <section id="footer">
       <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
+<div style="height:25px">
+  
+</div>
     </section>
   </div>
 </nav>
@@ -579,7 +581,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > 2. CloudWatch Log Collection
+            <a href='../index.html'>OpenSearch Log Analytics Workshop</a> > CloudWatch Log Collection
           
         
           
@@ -605,6 +607,11 @@
 
 
 	<h1 id="collect-aws-cloudwarch-logs-for-opensearch">Collect AWS CloudWarch Logs for OpenSearch</h1>
+<p>This workshop covers how to send logs from CloudWatch to OpenSearch. CloudWatch can be a rich source of log for various AWS services. Integrating logs from CloudWatch into OpenSearch can improves your ability to use OpenSearch for various log analytics use cases.</p>
+<p>In this workshop we will implement the following architecture</p>
+<p><img src="../images/collect-log-cloud-watch/architecture.PNG" alt="create_index_pattern_2"></p>
+<p>The architecture uses: two Glue Jobs to generate CloudWatch logs, Lambda functions to send log data from CloudWatch to OpenSearch. Once the CloudWatch log data is in OpenSearch we will search for log messages produced by the Glue Jobs.</p>
+<p>When you are ready to being the lab navigate to <a href="../collect-log-cloud-watch/1_getting_started.html">Getting started</a></p>
 
 
 

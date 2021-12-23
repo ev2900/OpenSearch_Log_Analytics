@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4. Search Logs on Open Search Log Analytics Workshop</title>
+    <link>/collect-log-cloud-watch/4_search_logs.html</link>
+    <description>Recent content in 4. Search Logs on Open Search Log Analytics Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/collect-log-cloud-watch/4_search_logs/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

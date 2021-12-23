@@ -88,12 +88,12 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/" title="1_OpenSearch Log Analytics" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -311,7 +311,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -465,13 +465,13 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" class="dd-item
         
         
         
         ">
-      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
-          Visualize and Analyze
+      <a href="../collect-log-cloud-watch/4_search_logs.html">
+          Search Logs
           
       </a>
       
@@ -540,7 +540,9 @@
     
     <section id="footer">
       <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
+<div style="height:25px">
+  
+</div>
     </section>
   </div>
 </nav>
@@ -585,7 +587,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2. CloudWatch Log Collection</a> > 5. Clean Up
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/index.html'>CloudWatch Log Collection</a> > Clean Up
           
         
           
@@ -647,8 +649,48 @@
 <li>Follow the instructions in the prompt to complete the delete</li>
 </ol>
 <h3 id="delete-glue-jobs">Delete Glue Jobs</h3>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/glue/home">Glue Console</a></li>
+<li>On the left hand menu click on <strong>Jobs</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_1.PNG" alt="GLUE_1"></p>
+<ol start="3">
+<li>Click on the box next to a Glue Job</li>
+<li>Click on the <strong>Actions</strong> drop down</li>
+<li>From the drop down click on <strong>Delete</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CLEAN_1.PNG" alt="CLEAN_1"></p>
+<ol start="6">
+<li>In the pop up window click on the <strong>Delete</strong> button</li>
+<li>Repeat this process until you have deleted both of the Glue Jobs (<code>glue_job_success</code> and <code>glue_job_error</code>) the we created earlier</li>
+</ol>
 <h3 id="delete-cloud-watch-log-groups">Delete Cloud Watch Log Groups</h3>
+<ol>
+<li>Navigate to the <a href="https://console.aws.amazon.com/cloudwatch/">CloudWatch Console</a></li>
+<li>On the left hand menu click on <strong>Log groups</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_1.PNG" alt="GLUE_1"></p>
+<ol start="3">
+<li>On the log groups page click on the <strong>check box to select all of the log groups</strong></li>
+<li>Click on the <strong>Actions</strong>drop down</li>
+<li>Click on <strong>Delete log group(s)</strong></li>
+</ol>
 <h3 id="delete-lambda-functions">Delete Lambda Functions</h3>
+<ol>
+<li>Navigate to the <a href="https://console.aws.amazon.com/lambda/home?region=us-east-1#/discover">Lambda Function Console</a></li>
+<li>Click on <strong>Functions</strong> on the left hand menu</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CLEAN_2.PNG" alt="CLEAN_2"></p>
+<ol start="3">
+<li>Click on the <strong>check box next to the function</strong></li>
+<li>Click on the <strong>actions drop down</strong></li>
+<li>Select <strong>delete</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CLEAN_3.PNG" alt="CLEAN_3"></p>
+<ol start="6">
+<li>Click on the <strong>delete</strong> button in the pop up window</li>
+<li>Repeat the process until you have deleted the Lambda Functions that you want to delete</li>
+</ol>
 <p>You have completed deleting the resources used in this workshop</p>
 
 
@@ -962,7 +1004,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="../collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="../collect-log-cloud-watch/1_getting_started.html" title="1. Getting started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>

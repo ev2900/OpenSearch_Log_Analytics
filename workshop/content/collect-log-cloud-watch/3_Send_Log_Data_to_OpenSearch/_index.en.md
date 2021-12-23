@@ -6,14 +6,14 @@ menuTitle: "Send Log Data to OpenSearch"
 weight: 10
 ---
 
-We have now create an OpenSearch domain, configured the required IAM and OpenSearch premissions and we created two Glue jobs that we can run. One Glue job that completes sucssfully and another which creates an error. 
+We have now created an OpenSearch domain, configured the required IAM and OpenSearch permissions and we created two Glue jobs that we can run to produce logs.
 
-All of the log information for the Glue jobs is collected in CloudWatch. Lets send the data - in realtime - from CloudWatch to OpenSearch
+All of the log information for the Glue jobs is collected in CloudWatch. Lets set up Lambda functions that will – in real time – send the CloudWatch log data to OpenSearch
 
 We can complete this in the following steps
 
-1. Set up CloudWatch to OpenSearch Lambda Function(s)
-2. Re-run the Glue Jobs to Create additonal CloudWatch Logs
+1.	Set up CloudWatch to OpenSearch Lambda Function(s)
+2.	Re-run the Glue Jobs to Create additional CloudWatch Logs
 
 #### Set up CloudWatch to OpenSearch Lambda Function(s)
 
@@ -52,11 +52,11 @@ On the log groups page of CloudWatch you should see a few log groups which begin
 
 ![CW_7](/images/collect-log-cloud-watch/CW_7.PNG)
 
-The steps you just completed created a lambda function that will send CloudWatch logs to OpenSearch in realtime. 
+The steps you just completed created a lambda function that will send CloudWatch logs to OpenSearch in real time. 
 
-Now that we have compelted this process for the ```	/aws-glue/jobs/error``` log group Navigate back to the [CloudWatch Console](https://console.aws.amazon.com/cloudwatch/) and repeat steps 1 - 13 for log groups ```	/aws-glue/jobs/logs-v2``` and ```/aws-glue/jobs/output```
+Now that we have completed this process for the ```	/aws-glue/jobs/error``` log group Navigate back to the [CloudWatch Console](https://console.aws.amazon.com/cloudwatch/) and repeat steps 1 - 13 for log groups ```	/aws-glue/jobs/logs-v2``` and ```/aws-glue/jobs/output```
 
-#### Re-run the Glue Jobs to Create additonal CloudWatch Logs
+#### Re-run the Glue Jobs to Create additional CloudWatch Logs
 
 1. Go to the [Glue Console](https://console.aws.amazon.com/glue/home)
 2. On the left hand menu click on **Jobs**

@@ -1,5 +1,5 @@
 ---
-title: "1_OpenSearch Log Analytics"
+title: "1. OpenSearch Log Analytics"
 menuTitle: "OpenSearch Log Analytics"
 chapter: true
 weight: 10

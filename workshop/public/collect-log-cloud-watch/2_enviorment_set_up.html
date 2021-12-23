@@ -88,12 +88,12 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/" title="1_OpenSearch Log Analytics" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -311,7 +311,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -465,13 +465,13 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" class="dd-item
         
         
         
         ">
-      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
-          Visualize and Analyze
+      <a href="../collect-log-cloud-watch/4_search_logs.html">
+          Search Logs
           
       </a>
       
@@ -540,7 +540,9 @@
     
     <section id="footer">
       <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
+<div style="height:25px">
+  
+</div>
     </section>
   </div>
 </nav>
@@ -585,7 +587,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2. CloudWatch Log Collection</a> > 2. Environment Set Up
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/index.html'>CloudWatch Log Collection</a> > Environment Set Up
           
         
           
@@ -630,7 +632,7 @@
 
 
 
-	<p>We need to deploy a few services and configure our AWS enviorment before we can get started.</p>
+	<p>We need to deploy a few services and configure our AWS environment before we can get started.</p>
 <p>We will need to complete the following set up steps</p>
 <ol>
 <li>Create an OpenSearch Domain</li>
@@ -654,13 +656,13 @@
 <li>Leave all other settings at the default selections</li>
 <li>Click on <strong>Create</strong></li>
 </ol>
-<p>It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon sucssful creation you will see your OpenSearch domain status is active</p>
-<p><img src="../images/open-search-log-analytics/set_up_2.PNG" alt="cloud_shell_button">
-Do not proceed to the next step until you confirm that your domain status is active</p>
+<p>It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon successful creation you will see your OpenSearch domain status is active</p>
+<p><img src="../images/open-search-log-analytics/set_up_2.PNG" alt="cloud_shell_button"></p>
+<p>Do not proceed to the next step until you confirm that your domain status is active</p>
 <h4 id="create-an-iam-role">Create an IAM Role</h4>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/iamv2/home">IAM Console</a></li>
-<li>Clik on <strong>Roles</strong></li>
+<li>Click on <strong>Roles</strong></li>
 </ol>
 <p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_1.PNG" alt="ONFIG_IAM_1"></p>
 <ol start="3">
@@ -674,7 +676,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 <ol start="5">
 <li>Search for <code>AdministratorAccess</code> and click on the box next to the AdministratorAccess policies</li>
 </ol>
-<p><strong>Note</strong> for the purposes of this workshop we will give the IAM role AdministratorAccess. In a production enviorment you should scope down the premissions give to the IAM role</p>
+<p><strong>Note</strong> for the purposes of this workshop we will give the IAM role AdministratorAccess. In a production environment you should scope down the permissions given to the IAM role</p>
 <p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_4.PNG" alt="CONFIG_IAM_4"></p>
 <ol start="6">
 <li>Click on <strong>Next: Tags</strong></li>
@@ -717,8 +719,8 @@ Do not proceed to the next step until you confirm that your domain status is act
 <p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
 <ol start="4">
 <li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
-<li>If an additonal pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
-<li>If an additonal pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+<li>If an additional pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
 </ol>
 <p>You should now see a window that looks like this</p>
 <p><img src="../images/open-search-log-analytics/os_1.PNG" alt="select_domain"></p>
@@ -746,7 +748,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 </ol>
 <p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_8.PNG" alt="CONFIG_IAM_8"></p>
 <h4 id="deploy-glue-jobs-to-generate-cloudwatch-logs">Deploy Glue Jobs to Generate CloudWatch Logs</h4>
-<p>CloudWatch provides log collection for AWS services. In order to generate logs that we can use in this workshop we will create two simple AWS Glue Jobs. We can run this jobs to produce logs. Subseqently we can analyze these logs in OpenSearch</p>
+<p>CloudWatch provides log collection for AWS services. In order to generate logs that we can use in this workshop we will create two simple AWS Glue Jobs. We can run these jobs to produce logs. Subsequently we can analyze these logs in OpenSearch</p>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/glue/home">Glue Console</a></li>
 <li>On the left hand menu click on <strong>Jobs</strong></li>
@@ -780,18 +782,34 @@ Do not proceed to the next step until you confirm that your domain status is act
 </ol>
 <p><img src="../images/collect-log-cloud-watch/GLUE_5.PNG" alt="GLUE_4"></p>
 <ol start="11">
-<li>In the edit job window copy and past the following code into the editing window</li>
+<li>In the edit job window copy and paste the following code into the editing window</li>
 </ol>
-<pre tabindex="0"><code>print(&quot;Run this job to generate Glue logs in CloudWatch. We will later analyze these with OpenSearch&quot;)
+<pre tabindex="0"><code>from awsglue.context import GlueContext
+from pyspark.context import SparkContext
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+
+logger = glueContext.get_logger()
+
+logger.error(&quot;Success!!&quot;)
 </code></pre><p><img src="../images/collect-log-cloud-watch/GLUE_6.PNG" alt="GLUE_4"></p>
 <ol start="12">
 <li>Click on <strong>Save</strong></li>
 <li>Click on <strong>Run</strong></li>
 <li>Repeat steps 1 - 13 again. However this time name the Glue job <code>glue_job_error</code> and use the following code in the job</li>
 </ol>
-<pre tabindex="0"><code>print(&quot;Run this will create an error. We will later analyze this error with OpenSearch
-</code></pre><p>This code has incorrect syntax unpurpose. When you run this job it will create an error in CloudWatch that we can look at later with OpenSearch</p>
-<p>You have complted the set up for your AWS enviorment! When you are ready lets begin the next step <a href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">Send Log Data to OpenSearch</a></p>
+<pre tabindex="0"><code>from awsglue.context import GlueContext
+from pyspark.context import SparkContext
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+
+logger = glueContext.get_logger()
+
+logger.error(&quot;Error!!&quot;)
+</code></pre><p>The jobs will use the logger in AWS Glue to produce custom error log message <em>Success!!</em> and <em>Error!!</em>. Later in this workshop we will search for the log message in OpenSearch.</p>
+<p>You have completed the set up for your AWS environment! When you are ready lets begin the next step <a href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">Send Log Data to OpenSearch</a></p>
 
 
 

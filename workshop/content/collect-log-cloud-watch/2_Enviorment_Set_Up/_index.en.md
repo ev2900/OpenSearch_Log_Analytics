@@ -6,7 +6,7 @@ menuTitle: "Environment Set Up"
 weight: 10
 ---
 
-We need to deploy a few services and configure our AWS enviorment before we can get started.
+We need to deploy a few services and configure our AWS environment before we can get started.
 
 We will need to complete the following set up steps
 
@@ -32,15 +32,16 @@ Follow the instructions below for each step
 8. Leave all other settings at the default selections
 9. Click on **Create**
 
-It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon sucssful creation you will see your OpenSearch domain status is active
+It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon successful creation you will see your OpenSearch domain status is active
 
 ![cloud_shell_button](/images/open-search-log-analytics/set_up_2.PNG)
+
 Do not proceed to the next step until you confirm that your domain status is active
 
 #### Create an IAM Role
 
 1. Go to the [IAM Console](https://console.aws.amazon.com/iamv2/home)
-2. Clik on **Roles** 
+2. Click on **Roles** 
 
 ![ONFIG_IAM_1](/images/collect-log-cloud-watch/CONFIG_IAM_1.PNG)
 
@@ -54,7 +55,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 
 5. Search for ```AdministratorAccess``` and click on the box next to the AdministratorAccess policies 
 
-**Note** for the purposes of this workshop we will give the IAM role AdministratorAccess. In a production enviorment you should scope down the premissions give to the IAM role
+**Note** for the purposes of this workshop we will give the IAM role AdministratorAccess. In a production environment you should scope down the permissions given to the IAM role
 
 ![CONFIG_IAM_4](/images/collect-log-cloud-watch/CONFIG_IAM_4.PNG)
 
@@ -102,8 +103,8 @@ Your trust relationship policy document should look like the following
 ![open_search_dashboard](/images/open-search-log-analytics/IAM_4.PNG)
 
 4. You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in 
-5. If an additonal pop up window is present after login asking about data upload click on **Explore on my own**
-6. If an additonal pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
+5. If an additional pop up window is present after login asking about data upload click on **Explore on my own**
+6. If an additional pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
 
 You should now see a window that looks like this
 
@@ -134,7 +135,7 @@ You should now see a window that looks like this
 
 #### Deploy Glue Jobs to Generate CloudWatch Logs
 
-CloudWatch provides log collection for AWS services. In order to generate logs that we can use in this workshop we will create two simple AWS Glue Jobs. We can run this jobs to produce logs. Subseqently we can analyze these logs in OpenSearch
+CloudWatch provides log collection for AWS services. In order to generate logs that we can use in this workshop we will create two simple AWS Glue Jobs. We can run these jobs to produce logs. Subsequently we can analyze these logs in OpenSearch
 
 1. Go to the [Glue Console](https://console.aws.amazon.com/glue/home)
 2. On the left hand menu click on **Jobs**
@@ -165,10 +166,18 @@ CloudWatch provides log collection for AWS services. In order to generate logs t
 
 ![GLUE_4](/images/collect-log-cloud-watch/GLUE_5.PNG)
 
-11. In the edit job window copy and past the following code into the editing window
+11. In the edit job window copy and paste the following code into the editing window
 
 ```
-print("Run this job to generate Glue logs in CloudWatch. We will later analyze these with OpenSearch")
+from awsglue.context import GlueContext
+from pyspark.context import SparkContext
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+
+logger = glueContext.get_logger()
+
+logger.error("Success!!")
 ```
 ![GLUE_4](/images/collect-log-cloud-watch/GLUE_6.PNG)
 
@@ -177,9 +186,17 @@ print("Run this job to generate Glue logs in CloudWatch. We will later analyze t
 14. Repeat steps 1 - 13 again. However this time name the Glue job ```glue_job_error``` and use the following code in the job 
 
 ```
-print("Run this will create an error. We will later analyze this error with OpenSearch
+from awsglue.context import GlueContext
+from pyspark.context import SparkContext
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+
+logger = glueContext.get_logger()
+
+logger.error("Error!!")
 ```
 
-This code has incorrect syntax unpurpose. When you run this job it will create an error in CloudWatch that we can look at later with OpenSearch
+The jobs will use the logger in AWS Glue to produce custom error log message *Success!!* and *Error!!*. Later in this workshop we will search for the log message in OpenSearch.
 
-You have complted the set up for your AWS enviorment! When you are ready lets begin the next step [Send Log Data to OpenSearch]({{<relref "../3_Send_Log_Data_to_OpenSearch/">}})
+You have completed the set up for your AWS environment! When you are ready lets begin the next step [Send Log Data to OpenSearch]({{<relref "../3_Send_Log_Data_to_OpenSearch/">}})

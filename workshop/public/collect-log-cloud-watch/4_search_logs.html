@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../images/favicon.png" type="image/png">
 
-    <title>4. Visualize and Analyze :: Open Search Log Analytics Workshop</title>
+    <title>4. Search Logs :: Open Search Log Analytics Workshop</title>
 
     
     <link href="../css/nucleus.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="../collect-log-cloud-watch/4_visualize_analyze.html">
+  <body class="" data-url="../collect-log-cloud-watch/4_search_logs.html">
     <nav id="sidebar" class="">
 
 
@@ -88,12 +88,12 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/" title="1_OpenSearch Log Analytics" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -311,7 +311,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -465,13 +465,13 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" class="dd-item
         parent
         active
         
         ">
-      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
-          Visualize and Analyze
+      <a href="../collect-log-cloud-watch/4_search_logs.html">
+          Search Logs
           
       </a>
       
@@ -540,7 +540,9 @@
     
     <section id="footer">
       <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
+<div style="height:25px">
+  
+</div>
     </section>
   </div>
 </nav>
@@ -585,7 +587,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2. CloudWatch Log Collection</a> > 4. Visualize and Analyze
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/index.html'>CloudWatch Log Collection</a> > Search Logs
           
         
           
@@ -624,7 +626,7 @@
           
             <h1>
               
-              4. Visualize and Analyze
+              4. Search Logs
             </h1>
           
 
@@ -632,7 +634,9 @@
 
 
 
-	<p>OpenSearch provides us the ability to analyze out logs. Lets begin by naviaging to the OpenSearch Dashboard</p>
+	<p>Now that we are sending logs from CloudWatch to OpenSearch lets create an index patterns and run a simple search to validate that our logs are actually being sent to OpenSearch.</p>
+<p>OpenSearch is capable of more than search it can also build visualizations and more. In this section we will perform a simple search to ensure that our logs are actually being delivered.</p>
+<p>Check out the Visualize and Analyze section of the OpenSearch Log Analytics workshop for a more thorough lab on searching and visualizing logs.</p>
 <h3 id="open-the-opensearch-dashboard">Open the OpenSearch Dashboard</h3>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
@@ -645,8 +649,8 @@
 <p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
 <ol start="4">
 <li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
-<li>If an additonal pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
-<li>If an additonal pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+<li>If an additional pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
 </ol>
 <p>You should now see a window that looks like this</p>
 <p><img src="../images/open-search-log-analytics/os_1.PNG" alt="select_domain"></p>
@@ -654,11 +658,11 @@
 <p>The Lambda functions the send the messages from CloudWatch to OpenSearch will create a new OpenSearch index each day. Each index name will start with <strong>cwl</strong> and will be followed by the date.</p>
 <p>To search all of the CloudWatch logs (ie. multiple days) we will create an index pattern in OpenSearch. The index pattern will be a representation of all of the <strong>cwl</strong> log indexes for all of the days.</p>
 <ol>
-<li>In the OpenSeach Dashboard, expand the side menu and click on <strong>Stack Management</strong> under managment section</li>
+<li>In the OpenSearch Dashboard, expand the side menu and click on <strong>Stack Management</strong> under management section</li>
 </ol>
 <p><img src="../images/open-search-log-analytics/va_1.PNG" alt="stack_managment"></p>
 <ol start="2">
-<li>On the stack managment page click on <strong>Index Patterns</strong> on the left hand menu</li>
+<li>On the stack management page click on <strong>Index Patterns</strong> on the left hand menu</li>
 </ol>
 <p><img src="../images/open-search-log-analytics/va_2.PNG" alt="index_pattern"></p>
 <ol start="3">
@@ -666,22 +670,35 @@
 </ol>
 <p><img src="../images/open-search-log-analytics/va_3.PNG" alt="create_index_pattern_1"></p>
 <ol start="4">
-<li>Enter <code>workshop-log-*</code> under the index pattern name section</li>
+<li>Enter <code>cwl-*</code> under the index pattern name section</li>
 <li>Click on <strong>Next step</strong></li>
 </ol>
 <p><img src="../images/collect-log-cloud-watch/OS_1.PNG" alt="create_index_pattern_2"></p>
 <ol start="6">
-<li>Select <code>@timestamp</code> as the primary time feild</li>
+<li>Select <code>@timestamp</code> as the primary time field</li>
 <li>Click on <strong>Create index pattern</strong></li>
 </ol>
 <p><img src="../images/collect-log-cloud-watch/OS_2.PNG" alt="create_index_pattern_2"></p>
 <p>We have now created an index pattern! We can use the index pattern to analyze our logs</p>
 <h3 id="search-the-logs">Search the Logs</h3>
-<p>OpenSearch provides the ability to easily search log data. Lets run a few simple searches on our logs</p>
+<p>OpenSearch provides the ability to easily search log data. Lets run a simple search on our logs to validate that they have been successfully sent from CloudWatch to OpenSearch.</p>
+<p>The Glue Jobs that you ran earlier logged custom message of <em>Success!!</em> and <em>Error!!</em></p>
+<p>We can search for the <em>Success!!</em> logs</p>
 <ol>
 <li>In the OpenSearch Dashboard expand the side menu and click on <strong>Discover</strong> under the OpenSearch Dashboards section</li>
 </ol>
 <p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
+<p>This will bring you to the discovery page. On this page we can see the log data sent from CloudWatch</p>
+<ol start="2">
+<li>Ensure that you adjust the time range in the top right hand corner to include a large enough range that all of the logs we collected are included. Click <strong>Update</strong> or <strong>Refresh</strong> once you update the time range</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/OS_3.PNG" alt="create_index_pattern_2"></p>
+<ol start="3">
+<li>We can now search our CloudWatch logs. Try searching for <code>Success!!</code> you will see the log message that the Glue job created during its execution</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/OS_4.PNG" alt="create_index_pattern_2"></p>
+<p>You will see a few logs that contain the customer log message from the Glue Job. Feel free to spend a few minutes trying other OpenSearch searches. See if you can search for the other <em>Error!!</em> logs</p>
+<p>When you are ready proceed to the next step <a href="../collect-log-cloud-watch/5_clean_up.html">Clean Up</a> if you want to delete the resources we used for this workshop</p>
 
 
 
