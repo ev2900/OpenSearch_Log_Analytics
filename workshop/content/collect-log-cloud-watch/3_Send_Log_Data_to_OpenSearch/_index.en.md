@@ -77,4 +77,4 @@ You can view the job run history for a job by click on the check box next to job
 
 Ensure that you have at least 3 runs completed for each job. The job status for the ```glue_job_success``` should be Succeeded and the job status for the ```glue_job_error``` should be Failed
 
-When you have at least 3 completed job runs for each job begin the next step [Visualize and Analyze]({{<relref "../4_Visualize_Analyze/">}})
+When you have at least 3 completed job runs for each job begin the next step [Search Logs]({{<relref "../4_Search_Logs/">}})

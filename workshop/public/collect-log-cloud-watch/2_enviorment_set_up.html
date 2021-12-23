@@ -247,13 +247,13 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/4_visualize_analyze_in_kibana.html" title="4. Visualize and Analyze in Kibana" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/4_visualize_analyze_in_kibana.html">
-          Visualize and Analyze in Kibana
+      <a href="../open-search-log-analytics/4_visualize_analyze.html">
+          Visualize and Analyze
           
       </a>
       
@@ -306,7 +306,7 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/" title="2_CloudWatch Log Collection" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/" title="2. CloudWatch Log Collection" class="dd-item
         parent
         
         
@@ -439,6 +439,58 @@
  
   
     
+    <li data-nav-id="/collect-log-cloud-watch/3_send_log_data_to_opensearch.html" title="3. Send Log Data to OpenSearch" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">
+          Send Log Data to OpenSearch
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
+          Visualize and Analyze
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
     <li data-nav-id="/collect-log-cloud-watch/5_clean_up.html" title="5. Clean Up" class="dd-item
         
         
@@ -533,7 +585,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2_CloudWatch Log Collection</a> > 2. Environment Set Up
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2. CloudWatch Log Collection</a> > 2. Environment Set Up
           
         
           
@@ -546,7 +598,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -570,7 +630,169 @@
 
 
 
-	
+	<p>We need to deploy a few services and configure our AWS enviorment before we can get started.</p>
+<p>We will need to complete the following set up steps</p>
+<ol>
+<li>Create an OpenSearch Domain</li>
+<li>Create an IAM Role</li>
+<li>Map IAM Role to OpenSearch Role</li>
+<li>Deploy Glue Jobs to Generate CloudWatch Logs</li>
+</ol>
+<p>Follow the instructions below for each step</p>
+<h4 id="create-an-opensearch-domain">Create an OpenSearch Domain</h4>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
+<li>Click on <strong>Create domain</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/set_up_1.PNG" alt="cloud_shell_button"></p>
+<ol start="3">
+<li>Enter the name <code>workshop-domain</code> for the OpenSearch Domain</li>
+<li>Under the deployment type section, select <code>Development and testing</code></li>
+<li>Under the network section, select <code>Public access</code></li>
+<li>Under the fine-grained access control section select <code>Create master user</code></li>
+<li>Enter and username and password. Copy down the user name and password. We will need these later in the workshop</li>
+<li>Leave all other settings at the default selections</li>
+<li>Click on <strong>Create</strong></li>
+</ol>
+<p>It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon sucssful creation you will see your OpenSearch domain status is active</p>
+<p><img src="../images/open-search-log-analytics/set_up_2.PNG" alt="cloud_shell_button">
+Do not proceed to the next step until you confirm that your domain status is active</p>
+<h4 id="create-an-iam-role">Create an IAM Role</h4>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/iamv2/home">IAM Console</a></li>
+<li>Clik on <strong>Roles</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_1.PNG" alt="ONFIG_IAM_1"></p>
+<ol start="3">
+<li>Click on <strong>Create role</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_2.PNG" alt="CONFIG_IAM_2"></p>
+<ol start="4">
+<li>Under the choose a use case click on <strong>Lambda</strong> and then click on <strong>Next:Permissions</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_3.PNG" alt="CONFIG_IAM_3"></p>
+<ol start="5">
+<li>Search for <code>AdministratorAccess</code> and click on the box next to the AdministratorAccess policies</li>
+</ol>
+<p><strong>Note</strong> for the purposes of this workshop we will give the IAM role AdministratorAccess. In a production enviorment you should scope down the premissions give to the IAM role</p>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_4.PNG" alt="CONFIG_IAM_4"></p>
+<ol start="6">
+<li>Click on <strong>Next: Tags</strong></li>
+<li>Click on <strong>Next: Review</strong> . There is no need to change anything on the Add tags page</li>
+<li>Name the role <code>workshop-role</code></li>
+<li>Click on <strong>Create role</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_5.PNG" alt="CONFIG_IAM_5"></p>
+<ol start="10">
+<li>Back on the <a href="https://console.aws.amazon.com/iamv2/home#/roles">IAM Roles page</a> search for and select the <code>workshop-role</code> you just created</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_6.PNG" alt="CONFIG_IAM_6"></p>
+<ol start="11">
+<li>On the summary page copy down the Role ARN. We will need this later in the workshop</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_7.PNG" alt="CONFIG_IAM_7"></p>
+<ol start="12">
+<li>Click on the <strong>Trust relationships</strong> tab</li>
+<li>Click on the <strong>Edit trust relationship</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_9.PNG" alt="CONFIG_IAM_9"></p>
+<ol start="14">
+<li>Replace the service section of the JSON with the following</li>
+</ol>
+<pre tabindex="0"><code>&quot;Service&quot;: [
+	&quot;lambda.amazonaws.com&quot;,
+	&quot;glue.amazonaws.com&quot;
+]
+</code></pre><p>Your trust relationship policy document should look like the following</p>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_10.PNG" alt="CONFIG_IAM_10"></p>
+<ol start="15">
+<li>Click on <strong>Update Trust Policy</strong></li>
+</ol>
+<h4 id="map-iam-role-to-opensearch-role">Map IAM Role to OpenSearch Role</h4>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
+<li>Click on the <strong>workshop-domain</strong> OpenSearch domain you created earlier</li>
+<li>Click on the OpenSearch Dashboard URL. This should open the URL in a web browser window</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
+<ol start="4">
+<li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
+<li>If an additonal pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additonal pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+</ol>
+<p>You should now see a window that looks like this</p>
+<p><img src="../images/open-search-log-analytics/os_1.PNG" alt="select_domain"></p>
+<ol start="7">
+<li>Click on and expand the hamburger menu on the side bar of the OpenSearch home page</li>
+<li>Under the OpenSearch Plugins section click on <strong>Security</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/os_2.PNG" alt="select_security"></p>
+<ol start="9">
+<li>On the security page click on <strong>Roles</strong> from the left hand menu</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/os_3.PNG" alt="select_roles"></p>
+<ol start="10">
+<li>On the roles page search for and click on <code>all_access</code></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/os_4.PNG" alt="search_all_access"></p>
+<ol start="11">
+<li>On the all_access role page click on <strong>Mapped users</strong></li>
+<li>Under the mapped users page click on <strong>Manage mapping</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/os_5.PNG" alt="mapped_users"></p>
+<ol start="13">
+<li>Under the backend roles section enter the ARN that you copied down earlier for the IAM workshop-role that you created</li>
+<li>Click on <strong>Map</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CONFIG_IAM_8.PNG" alt="CONFIG_IAM_8"></p>
+<h4 id="deploy-glue-jobs-to-generate-cloudwatch-logs">Deploy Glue Jobs to Generate CloudWatch Logs</h4>
+<p>CloudWatch provides log collection for AWS services. In order to generate logs that we can use in this workshop we will create two simple AWS Glue Jobs. We can run this jobs to produce logs. Subseqently we can analyze these logs in OpenSearch</p>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/glue/home">Glue Console</a></li>
+<li>On the left hand menu click on <strong>Jobs</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_1.PNG" alt="GLUE_1"></p>
+<ol start="3">
+<li>On the jobs page click on <strong>Add job</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_2.PNG" alt="GLUE_2"></p>
+<ol start="4">
+<li>Enter <code>glue_job_success</code> for the name of the job</li>
+<li>For the IAM tole select <strong>workshop-role</strong></li>
+<li>Under the this job run section select <strong>A new script to be authored by you</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_3.PNG" alt="GLUE_3"></p>
+<ol start="7">
+<li>Under the monitoring options click on <strong>Job metrics</strong> and <strong>Continuous logging</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_4.PNG" alt="GLUE_4"></p>
+<ol start="8">
+<li>Under the security configuration, script libraries, and job parameters (optional) set the max concurrency to <code>10</code></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_7.PNG" alt="GLUE_7"></p>
+<ol start="9">
+<li>
+<p>Leave all other settings at the default selections and click on <strong>Next</strong> at the bottom of the page</p>
+</li>
+<li>
+<p>On the connections page leave all of the setting at the defaults and click on <strong>Save job and edit script</strong></p>
+</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_5.PNG" alt="GLUE_4"></p>
+<ol start="11">
+<li>In the edit job window copy and past the following code into the editing window</li>
+</ol>
+<pre tabindex="0"><code>print(&quot;Run this job to generate Glue logs in CloudWatch. We will later analyze these with OpenSearch&quot;)
+</code></pre><p><img src="../images/collect-log-cloud-watch/GLUE_6.PNG" alt="GLUE_4"></p>
+<ol start="12">
+<li>Click on <strong>Save</strong></li>
+<li>Click on <strong>Run</strong></li>
+<li>Repeat steps 1 - 13 again. However this time name the Glue job <code>glue_job_error</code> and use the following code in the job</li>
+</ol>
+<pre tabindex="0"><code>print(&quot;Run this will create an error. We will later analyze this error with OpenSearch
+</code></pre><p>This code has incorrect syntax unpurpose. When you run this job it will create an error in CloudWatch that we can look at later with OpenSearch</p>
+<p>You have complted the set up for your AWS enviorment! When you are ready lets begin the next step <a href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">Send Log Data to OpenSearch</a></p>
+
 
 
 
@@ -841,6 +1063,38 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -856,7 +1110,7 @@
 			<a class="nav nav-prev" href="../collect-log-cloud-watch/1_getting_started/self_paced.html" title="Self Paced"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="../collect-log-cloud-watch/5_clean_up.html" title="5. Clean Up" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html" title="3. Send Log Data to OpenSearch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

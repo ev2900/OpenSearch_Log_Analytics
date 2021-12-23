@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="Open Search Log Analytics Workshop">
+<meta name="author" content="Chris Sharkey">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+
+    <title>3. Send Log Data to OpenSearch :: Open Search Log Analytics Workshop</title>
+
+    
+    <link href="../css/nucleus.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="../css/hybrid.css" rel="stylesheet">
+    <link href="../css/featherlight.min.css" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../css/auto-complete.css" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/hugo-theme.css" rel="stylesheet">
+    
+    <link href="../css/theme-aws.css" rel="stylesheet">
+    
+    
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div id="logo">
+  <img stlye="vertical-align:middle" src="https://sharkech-public.s3.amazonaws.com/misc-public/aws_logo.png" height="70px">
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='../index.html'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/" title="1_OpenSearch Log Analytics" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/">
+          OpenSearch Log Analytics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/1_getting_started.html" title="1. Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/1_getting_started.html">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../open-search-log-analytics/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../open-search-log-analytics/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/2_enviorment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/2_enviorment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">
+          Send Log Data to Kinesis Fire Hose
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/4_visualize_analyze.html">
+          Visualize and Analyze
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/" title="2. CloudWatch Log Collection" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/">
+          CloudWatch Log Collection
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/1_getting_started.html" title="1. Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/1_getting_started.html">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/collect-log-cloud-watch/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../collect-log-cloud-watch/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/collect-log-cloud-watch/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../collect-log-cloud-watch/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/2_enviorment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/2_enviorment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/3_send_log_data_to_opensearch.html" title="3. Send Log Data to OpenSearch" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">
+          Send Log Data to OpenSearch
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/4_visualize_analyze.html">
+          Visualize and Analyze
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/ev2900/OpenSearch_Log_Analytics/"><i class='fab fa-github'></i> GitHub Project</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="mailto:sharkech@amazon.com"><i class='fas fa-envelope'></i> Have questions?</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link"></div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../collect-log-cloud-watch/'>2. CloudWatch Log Collection</a> > 3. Send Log Data to OpenSearch
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              3. Send Log Data to OpenSearch
+            </h1>
+          
+
+        
+
+
+
+	<p>We have now create an OpenSearch domain, configured the required IAM and OpenSearch premissions and we created two Glue jobs that we can run. One Glue job that completes sucssfully and another which creates an error.</p>
+<p>All of the log information for the Glue jobs is collected in CloudWatch. Lets send the data - in realtime - from CloudWatch to OpenSearch</p>
+<p>We can complete this in the following steps</p>
+<ol>
+<li>Set up CloudWatch to OpenSearch Lambda Function(s)</li>
+<li>Re-run the Glue Jobs to Create additonal CloudWatch Logs</li>
+</ol>
+<h4 id="set-up-cloudwatch-to-opensearch-lambda-functions">Set up CloudWatch to OpenSearch Lambda Function(s)</h4>
+<ol>
+<li>Navigate to the <a href="https://console.aws.amazon.com/cloudwatch/">CloudWatch Console</a></li>
+<li>On the left hand menu click on <strong>Log groups</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_1.PNG" alt="GLUE_1"></p>
+<p>On the log groups page of CloudWatch you should see a few log groups which begin with /aws-glue/</p>
+<p><img src="../images/collect-log-cloud-watch/CW_2.PNG" alt="CW_1"></p>
+<ol start="3">
+<li>Click on the log group <strong>aws-glue/jobs/error</strong></li>
+<li>Click on the <strong>Subscription filters</strong> tab</li>
+<li>Click on the <strong>Create</strong> drop down</li>
+<li>Click on the <strong>Create Amazon OpenSearch Service subscription filter</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_3.PNG" alt="CW_3"></p>
+<ol start="7">
+<li>On the Create Amazon OpenSearch Service subscription filter page, under the choose destination click on <strong>This account</strong></li>
+<li>From the drop down select the <strong>workshop-domain</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_4.PNG" alt="CW_4"></p>
+<ol start="9">
+<li>Under the Lambda Function section select the IAM role <code>workshop-role</code> that we created earlier</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_5.PNG" alt="CW_5"></p>
+<ol start="10">
+<li>Under the configure log format and filters select <strong>JSON</strong></li>
+<li>For the subscription filter pattern enter <code>&quot; &quot;</code></li>
+<li>For the subscription filter name <code>all log</code></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_6.PNG" alt="CW_6"></p>
+<ol start="13">
+<li>Click on Start streaming</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/CW_7.PNG" alt="CW_7"></p>
+<p>The steps you just completed created a lambda function that will send CloudWatch logs to OpenSearch in realtime.</p>
+<p>Now that we have compelted this process for the <code>	/aws-glue/jobs/error</code> log group Navigate back to the <a href="https://console.aws.amazon.com/cloudwatch/">CloudWatch Console</a> and repeat steps 1 - 13 for log groups <code>	/aws-glue/jobs/logs-v2</code> and <code>/aws-glue/jobs/output</code></p>
+<h4 id="re-run-the-glue-jobs-to-create-additonal-cloudwatch-logs">Re-run the Glue Jobs to Create additonal CloudWatch Logs</h4>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/glue/home">Glue Console</a></li>
+<li>On the left hand menu click on <strong>Jobs</strong></li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_1.PNG" alt="GLUE_1"></p>
+<ol start="3">
+<li>Click on the check box next to the <code>glue_job_success</code> job</li>
+<li>Click on the <strong>Action</strong> drop down</li>
+<li>Click on the <strong>Run job</strong> button</li>
+</ol>
+<p><img src="../images/collect-log-cloud-watch/GLUE_8.PNG" alt="GLUE_8"></p>
+<p>Repeat step 3 - 4 for of the jobs you created earlier ie. <code>glue_job_success</code> and <code>glue_job_error</code>. Run each job a few times. The goal is to generate some CloudWatch logs that will be sent to OpenSearch.</p>
+<p>You can view the job run history for a job by click on the check box next to job name and viewing the history tab</p>
+<p><img src="../images/collect-log-cloud-watch/GLUE_9.PNG" alt="GLUE_9"></p>
+<p>Ensure that you have at least 3 runs completed for each job. The job status for the <code>glue_job_success</code> should be Succeeded and the job status for the <code>glue_job_error</code> should be Failed</p>
+<p>When you have at least 3 completed job runs for each job begin the next step <a href="../collect-log-cloud-watch/4_visualize_analyze.html">Visualize and Analyze</a></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../collect-log-cloud-watch/2_enviorment_set_up.html" title="2. Environment Set Up"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../collect-log-cloud-watch/4_visualize_analyze.html" title="4. Visualize and Analyze" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+    
+        
+            <script src="../mermaid/mermaid.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
