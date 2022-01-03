@@ -1,6 +1,6 @@
 # Log Analytics via. AWS OpenSearch
 
-Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/open-search-log-analytics/index.html 
+Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html 
 
 In the workshop OpenSearch Log Analytics you will learn how to perform log analytics via. AWS OpenSearch. You will explore the basics of ingesting, analyzing and visualizing data in OpenSearch.
 
