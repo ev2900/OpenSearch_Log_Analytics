@@ -39,7 +39,7 @@ To search all of the CloudWatch logs (ie. multiple days) we will create an index
 
 1. In the OpenSearch Dashboard, expand the side menu and click on **Stack Management** under management section
 
-![stack_managment](/images/open-search-log-analytics/va_1.PNG)
+![stack_management](/images/open-search-log-analytics/va_1.PNG)
 
 2. On the stack management page click on **Index Patterns** on the left hand menu
 

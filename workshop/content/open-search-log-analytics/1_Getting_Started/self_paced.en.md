@@ -18,4 +18,4 @@ As pictured below you should be able to access the [AWS Console](https://console
 
 ![Event_Engine_AWS_Console](/images/open-search-log-analytics/event_engine_5.png)
 
-Once you have can access the [AWS Console](https://console.aws.amazon.com/), lets begin the next step [Enviorment Set Up]({{<relref "../2_Enviorment_Set_Up/">}})
+Once you have can access the [AWS Console](https://console.aws.amazon.com/), lets begin the next step [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}})
