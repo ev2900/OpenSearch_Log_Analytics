@@ -21,7 +21,7 @@ Select how you want to log in. Selecting Email One-Time Password (OTP) is recomm
 
 ![Event_Engine_Login_Email](/images/open-search-log-analytics/event_engine_2.png)
 
-Follow the prompts to complete the login process. Once you have sucssfully loged in. You will see the following screen. Select AWS Console
+Follow the prompts to complete the login process. Once you have successfully logged in. You will see the following screen. Select AWS Console
 
 ![Event_Engine_Access_Console](/images/open-search-log-analytics/event_engine_3.png)
 
@@ -29,8 +29,8 @@ A window will open. From the window select Open AWS Console
 
 ![Event_Engine_Access_Console](/images/open-search-log-analytics/event_engine_4.png)
 
-This will open the AWS Console in a new window on your web browser. If you can see the home page for the AWS Console as depicted below you have sucssfully logged into your AWS account.
+This will open the AWS Console in a new window on your web browser. If you can see the home page for the AWS Console as depicted below you have successfully logged into your AWS account.
 
 ![Event_Engine_AWS_Console](/images/open-search-log-analytics/event_engine_5.png)
 
-Now that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step [Environment Set Up]({{<relref "../2_Enviorment_Set_Up/">}})
+Now that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}})

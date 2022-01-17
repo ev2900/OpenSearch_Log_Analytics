@@ -33,4 +33,4 @@ This will open the AWS Console in a new window on your web browser. If you can s
 
 ![Event_Engine_AWS_Console](/images/open-search-log-analytics/event_engine_5.png)
 
-Now that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step [Environment Set Up]({{<relref "../2_Enviorment_Set_Up/">}})
+Now that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}})

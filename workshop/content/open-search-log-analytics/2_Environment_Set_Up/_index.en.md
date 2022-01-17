@@ -8,11 +8,11 @@ weight: 10
 
 We will need to deploy a few services and configure our AWS environment before we can get started with log analytics.
 
-We will need to compelete the following set up steps
+We will need to complete the following set up steps
 
 1. Create an OpenSearch Domain
 2. Create a Kinesis Firehose
-3. Configure Identity Access Management Premisions
+3. Configure Identity Access Management Permissions
 
 Follow the instructions below for each step
 
@@ -31,7 +31,7 @@ Follow the instructions below for each step
 8. Leave all other settings at the default selections
 9. Click on **Create**
 
-It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon sucssful creation you will see your OpenSearch domain status is active
+It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon successful creation you will see your OpenSearch domain status is active
 
 ![cloud_shell_button](/images/open-search-log-analytics/set_up_2.PNG)
 Do not proceed to the next step until you confirm that your domain status is active
@@ -43,7 +43,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 
 ![create_delivery_stream](/images/open-search-log-analytics/kfh_1.PNG)
 
-3. Under the choose source and destination section for the source, select ```Direct PUT``` for the desintation select ```Amazon OpenSearch Service```
+3. Under the choose source and destination section for the source, select ```Direct PUT``` for the destination select ```Amazon OpenSearch Service```
 4. Under the delivery stream name section name the stream ```workshop-firehose```
 
 ![select_source_destination](/images/open-search-log-analytics/kfh_2.PNG)
@@ -72,11 +72,11 @@ Do not proceed to the next step until you confirm that your domain status is act
 
 15. At the bottom of the page click on **Create delivery stream** leave all other settings at the default selections
 
-#### Configure Identity Access Management (IAM) Premisions
+#### Configure Identity Access Management (IAM) Permissions
 
-In the first step we created an OpenSearch domain. We can send logs to the OpenSearch domin via. the Kinesis Data Firehose we just created
+In the first step we created an OpenSearch domain. We can send logs to the OpenSearch domain via the Kinesis Data Firehose we just created
 
-However before we can start to send sample log data to OpenSearch (via Kinesis Data Firehose) we need to configure premissions in IAM and in OpenSearch
+However before we can start to send sample log data to OpenSearch (via Kinesis Data Firehose) we need to configure permissions in IAM and in OpenSearch
 
 ##### Adjust OpenSearch Access Policy
 
@@ -90,7 +90,7 @@ However before we can start to send sample log data to OpenSearch (via Kinesis D
 
 ![security_configuration](/images/open-search-log-analytics/IAM_2.PNG)
 
-5. Naviage to the access policy section of the edit security configuration window
+5. Navigate to the access policy section of the edit security configuration window
 6. Adjust the JSON access policy to switch the Deny to an ```Allow```
 
 ![access_policy](/images/open-search-log-analytics/IAM_3.PNG)
@@ -106,8 +106,8 @@ However before we can start to send sample log data to OpenSearch (via Kinesis D
 ![open_search_dashboard](/images/open-search-log-analytics/IAM_4.PNG)
 
 4. You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in 
-5. If an additonal pop up window is present after login asking about data upload click on **Explore on my own**
-6. If an additonal pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
+5. If an additional pop up window is present after login asking about data upload click on **Explore on my own**
+6. If an additional pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
 
 You should now see a window that looks like this
 
@@ -131,9 +131,9 @@ You should now see a window that looks like this
 
 ![mapped_users](/images/open-search-log-analytics/os_5.PNG)
 
-On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the premissions it need to create and update indexes. 
+On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the permissions it need to create and update indexes. 
 
-For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. **In a production environment it is recomended to scope down the premisions Kinesis Firehose has within OpenSearch**
+For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. **In a production environment it is recommended to scope down the permissions Kinesis Firehose has within OpenSearch**
 
 We need to find the ARN of the IAM role Kinesis Firehose is using. Keeping the **Manage mapping** page open, navigate to a new tab and: 
 
@@ -143,7 +143,7 @@ We need to find the ARN of the IAM role Kinesis Firehose is using. Keeping the *
 
 ![IAM_role](/images/open-search-log-analytics/os_6.PNG)
 
-16. On the configuration page scroll down to the premissions section
+16. On the configuration page scroll down to the permissions section
 17. Click on the IAM role
 
 ![IAM_role](/images/open-search-log-analytics/os_7.PNG)

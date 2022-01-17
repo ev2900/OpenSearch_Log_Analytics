@@ -22,7 +22,7 @@ We will run a python application that will send a few different types of log dat
 6. Click on **Next step**
 7. Click on **Create environment**
 
-After the Cloud9 envriorment is created your broswer will automaticlly be redirected to the Cloud9 console
+After the Cloud9 environment is created your browser will automatically be redirected to the Cloud9 console
 
 ![cloud9_create](/images/open-search-log-analytics/cloud9_2.PNG)
 
@@ -52,6 +52,6 @@ Upon running the last command you should be messages appearing in the Cloud9 con
 
 ![cloud9_create](/images/open-search-log-analytics/cloud9_3.PNG)
 
-Leave this broswer window open. This way the python application continues to run and send data.
+Leave this browser window open. This way the python application continues to run and send data.
 
 When you are ready move on to the next step [Visualize and Analyze]({{<relref "../4_Visualize_Analyze/">}})

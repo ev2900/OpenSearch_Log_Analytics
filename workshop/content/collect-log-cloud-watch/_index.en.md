@@ -6,11 +6,11 @@ weight: 10
 url: "/collect-log-cloud-watch/"
 ---
 
-# Collect AWS CloudWarch Logs for OpenSearch
+# Collect AWS CloudWatch Logs for OpenSearch
 
 This workshop covers how to send logs from CloudWatch to OpenSearch. CloudWatch can be a rich source of log for various AWS services. Integrating logs from CloudWatch into OpenSearch can improves your ability to use OpenSearch for various log analytics use cases.
 
-In this workshop we will implement the following architecture
+In this workshop we will implement the following architecture:
 
 ![create_index_pattern_2](/images/collect-log-cloud-watch/architecture.PNG)
 

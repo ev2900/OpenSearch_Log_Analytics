@@ -11,7 +11,7 @@ weight: 10
 
 ![delete_1](/images/open-search-log-analytics/delete_1.PNG)
 
-2. Select your Cloud9 enviorment
+2. Select your Cloud9 environment
 3. Click on **Delete**
 4. Follow the instructions in the prompt to complete the delete
 

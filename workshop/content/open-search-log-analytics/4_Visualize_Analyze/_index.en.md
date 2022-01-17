@@ -6,7 +6,7 @@ menuTitle: "Visualize and Analyze"
 weight: 10
 ---
 
-OpenSearch provides us the ability to analyze out logs. Lets begin by naviaging to the OpenSearch Dashboard  
+OpenSearch provides us the ability to analyze out logs. Lets begin by navigating to the OpenSearch Dashboard
 
 ### Open the OpenSearch Dashboard
 
@@ -20,8 +20,8 @@ OpenSearch provides us the ability to analyze out logs. Lets begin by naviaging 
 ![open_search_dashboard](/images/open-search-log-analytics/IAM_4.PNG)
 
 4. You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in 
-5. If an additonal pop up window is present after login asking about data upload click on **Explore on my own**
-6. If an additonal pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
+5. If an additional pop up window is present after login asking about data upload click on **Explore on my own**
+6. If an additional pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
 
 You should now see a window that looks like this
 
@@ -31,15 +31,15 @@ You should now see a window that looks like this
 
 When we deployed Kinesis Data Firehose we configured it to create a new index in OpenSearch every 1 hr. We also configured it to name each index starting with *workshop-log* 
 
-This means that open search will have 1 index for each hour it is sent logs and that these indexies's name will start with *workshop-log*
+This means that open search will have 1 index for each hour it is sent logs, and that these indices' names will start with *workshop-log*
 
 In order to work with all of the logs (ie. multiple hours) we will create an index pattern in OpenSearch. The index pattern will be a representation of all of the *workshop-log* indexes for all of the hours
 
-1. In the OpenSeach Dashboard, expand the side menu and click on **Stack Management** under managment section
+1. In the OpenSearch Dashboard, expand the side menu and click on **Stack Management** under management section
 
-![stack_managment](/images/open-search-log-analytics/va_1.PNG)
+![stack_management](/images/open-search-log-analytics/va_1.PNG)
 
-2. On the stack managment page click on **Index Patterns** on the left hand menu
+2. On the stack management page click on **Index Patterns** on the left hand menu
 
 ![index_pattern](/images/open-search-log-analytics/va_2.PNG)
 
@@ -70,13 +70,13 @@ This will bring you to the discovery page. On this page we can see the log data 
 
 ![search_2](/images/open-search-log-analytics/search_2.PNG)
 
-We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remeber that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper
+We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remember that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper
 
 2. Run the search ```"Hadoop" AND "Error"```
 
 ![search_3](/images/open-search-log-analytics/search_3.PNG)
 
-OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searchs. A few search suggestions are below. However feel free to come up with you own
+OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searches. A few search suggestions are below. However feel free to come up with you own
 
 Suggested searches 
 
