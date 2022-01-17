@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2. Environment Set Up on Open Search Log Analytics Workshop</title>
-    <link>/open-search-log-analytics/2_enviorment_set_up.html</link>
+    <link>/open-search-log-analytics/2_environment_set_up.html</link>
     <description>Recent content in 2. Environment Set Up on Open Search Log Analytics Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="/open-search-log-analytics/2_enviorment_set_up/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="/open-search-log-analytics/2_environment_set_up/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

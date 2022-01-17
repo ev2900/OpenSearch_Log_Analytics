@@ -18,9 +18,31 @@ print("---------------------------------")
 print("Starting - html clean up --------")
 print("---------------------------------")
 
-l1 = ['./public/index.html']
-l2 = ['./public/open-search-log-analytics/index.html', './public/open-search-log-analytics/1_getting_started.html', './public/open-search-log-analytics/2_enviorment_set_up.html', './public/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html', './public/open-search-log-analytics/4_visualize_analyze.html', './public/open-search-log-analytics/5_clean_up.html', './public/collect-log-cloud-watch/index.html','./public/collect-log-cloud-watch/1_getting_started.html', './public/collect-log-cloud-watch/2_enviorment_set_up.html', './public/collect-log-cloud-watch/3_send_log_data_to_opensearch.html', './public/collect-log-cloud-watch/4_search_logs.html', './public/collect-log-cloud-watch/5_clean_up.html']
-l3 = ['./public/open-search-log-analytics/1_getting_started/aws_event.html', './public/open-search-log-analytics/1_getting_started/self_paced.html', './public/collect-log-cloud-watch/1_getting_started/aws_event.html', './public/collect-log-cloud-watch/1_getting_started/self_paced.html']
+l1 = [
+	'./public/index.html'
+]
+
+l2 = [
+	'./public/open-search-log-analytics/index.html',
+	'./public/open-search-log-analytics/1_getting_started.html',
+	'./public/open-search-log-analytics/2_environment_set_up.html',
+	'./public/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html',
+	'./public/open-search-log-analytics/4_visualize_analyze.html',
+	'./public/open-search-log-analytics/5_clean_up.html',
+	'./public/collect-log-cloud-watch/index.html',
+	'./public/collect-log-cloud-watch/1_getting_started.html',
+	'./public/collect-log-cloud-watch/2_environment_set_up.html',
+	'./public/collect-log-cloud-watch/3_send_log_data_to_opensearch.html',
+	'./public/collect-log-cloud-watch/4_search_logs.html',
+	'./public/collect-log-cloud-watch/5_clean_up.html'
+]
+
+l3 = [
+	'./public/open-search-log-analytics/1_getting_started/aws_event.html',
+	'./public/open-search-log-analytics/1_getting_started/self_paced.html',
+	'./public/collect-log-cloud-watch/1_getting_started/aws_event.html',
+	'./public/collect-log-cloud-watch/1_getting_started/self_paced.html'
+]
 
 for html_file in l1:
 

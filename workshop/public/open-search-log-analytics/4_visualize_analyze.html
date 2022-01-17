@@ -195,12 +195,12 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/2_enviorment_set_up.html" title="2. Environment Set Up" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
         
         
         
         ">
-      <a href="../open-search-log-analytics/2_enviorment_set_up.html">
+      <a href="../open-search-log-analytics/2_environment_set_up.html">
           Environment Set Up
           
       </a>
@@ -413,12 +413,12 @@
  
   
     
-    <li data-nav-id="/collect-log-cloud-watch/2_enviorment_set_up.html" title="2. Environment Set Up" class="dd-item
+    <li data-nav-id="/collect-log-cloud-watch/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
         
         
         
         ">
-      <a href="../collect-log-cloud-watch/2_enviorment_set_up.html">
+      <a href="../collect-log-cloud-watch/2_environment_set_up.html">
           Environment Set Up
           
       </a>
@@ -636,7 +636,7 @@
 
 
 
-	<p>OpenSearch provides us the ability to analyze out logs. Lets begin by naviaging to the OpenSearch Dashboard</p>
+	<p>OpenSearch provides us the ability to analyze out logs. Lets begin by navigating to the OpenSearch Dashboard</p>
 <h3 id="open-the-opensearch-dashboard">Open the OpenSearch Dashboard</h3>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
@@ -649,21 +649,21 @@
 <p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
 <ol start="4">
 <li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
-<li>If an additonal pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
-<li>If an additonal pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+<li>If an additional pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
 </ol>
 <p>You should now see a window that looks like this</p>
 <p><img src="../images/open-search-log-analytics/os_1.PNG" alt="select_domain"></p>
 <h3 id="create-an-index-pattern">Create an Index Pattern</h3>
 <p>When we deployed Kinesis Data Firehose we configured it to create a new index in OpenSearch every 1 hr. We also configured it to name each index starting with <em>workshop-log</em></p>
-<p>This means that open search will have 1 index for each hour it is sent logs and that these indexies&rsquo;s name will start with <em>workshop-log</em></p>
+<p>This means that open search will have 1 index for each hour it is sent logs, and that these indices' names will start with <em>workshop-log</em></p>
 <p>In order to work with all of the logs (ie. multiple hours) we will create an index pattern in OpenSearch. The index pattern will be a representation of all of the <em>workshop-log</em> indexes for all of the hours</p>
 <ol>
-<li>In the OpenSeach Dashboard, expand the side menu and click on <strong>Stack Management</strong> under managment section</li>
+<li>In the OpenSearch Dashboard, expand the side menu and click on <strong>Stack Management</strong> under management section</li>
 </ol>
-<p><img src="../images/open-search-log-analytics/va_1.PNG" alt="stack_managment"></p>
+<p><img src="../images/open-search-log-analytics/va_1.PNG" alt="stack_management"></p>
 <ol start="2">
-<li>On the stack managment page click on <strong>Index Patterns</strong> on the left hand menu</li>
+<li>On the stack management page click on <strong>Index Patterns</strong> on the left hand menu</li>
 </ol>
 <p><img src="../images/open-search-log-analytics/va_2.PNG" alt="index_pattern"></p>
 <ol start="3">
@@ -688,12 +688,12 @@
 <p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
 <p>This will bring you to the discovery page. On this page we can see the log data we sent via. the Cloud9 Python application</p>
 <p><img src="../images/open-search-log-analytics/search_2.PNG" alt="search_2"></p>
-<p>We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remeber that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper</p>
+<p>We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remember that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper</p>
 <ol start="2">
 <li>Run the search <code>&quot;Hadoop&quot; AND &quot;Error&quot;</code></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/search_3.PNG" alt="search_3"></p>
-<p>OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searchs. A few search suggestions are below. However feel free to come up with you own</p>
+<p>OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searches. A few search suggestions are below. However feel free to come up with you own</p>
 <p>Suggested searches</p>
 <ol>
 <li><code>&quot;spark&quot; AND &quot;broadcast&quot;</code></li>
