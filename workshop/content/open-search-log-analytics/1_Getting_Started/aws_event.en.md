@@ -17,7 +17,7 @@ Enter your participant has and select Accept Terms & Login
 
 ![Event_Engine_Login_Hash](/images/open-search-log-analytics/event_engine_1.png)
 
-Select how you want to log in. Selecting Email One-Time Password (OTP) is recommended. However you can also use your Amazon.com retail account to login.
+Select how you want to log in. Selecting Email One-Time Password (OTP) is recommended. However, you can also use your Amazon.com retail account to login.
 
 ![Event_Engine_Login_Email](/images/open-search-log-analytics/event_engine_2.png)
 
@@ -33,4 +33,4 @@ This will open the AWS Console in a new window on your web browser. If you can s
 
 ![Event_Engine_AWS_Console](/images/open-search-log-analytics/event_engine_5.png)
 
-Now that you have successfully logged into your AWS account and are able to access the AWS Console, lets begin the next step [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}})
+Now that you have successfully logged into your AWS account and are able to access the AWS Console, let's begin the next step [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}})

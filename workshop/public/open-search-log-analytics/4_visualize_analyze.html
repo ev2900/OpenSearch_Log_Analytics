@@ -221,13 +221,13 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Firehose" class="dd-item
         
         
         
         ">
       <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">
-          Send Log Data to Kinesis Fire Hose
+          Send Log Data to Kinesis Firehose
           
       </a>
       
@@ -636,7 +636,7 @@
 
 
 
-	<p>OpenSearch provides us the ability to analyze out logs. Lets begin by navigating to the OpenSearch Dashboard</p>
+	<p>OpenSearch provides us the ability to analyze out logs. Let&rsquo;s begin by navigating to the OpenSearch Dashboard</p>
 <h3 id="open-the-opensearch-dashboard">Open the OpenSearch Dashboard</h3>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
@@ -648,9 +648,9 @@
 </ol>
 <p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
 <ol start="4">
-<li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
-<li>If an additional pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
-<li>If an additional pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+<li>You will be prompted to log in. For the user name enter <code>OSMasterUser</code> for the password enter <code>AwS#OpenSearch1</code></li>
+<li>If an additional popup window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional popup windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
 </ol>
 <p>You should now see a window that looks like this</p>
 <p><img src="../images/open-search-log-analytics/os_1.PNG" alt="select_domain"></p>
@@ -671,34 +671,42 @@
 </ol>
 <p><img src="../images/open-search-log-analytics/va_3.PNG" alt="create_index_pattern_1"></p>
 <ol start="4">
-<li>Enter <code>workshop-log-*</code> under the index pattern name section</li>
+<li>Enter <code>workshop-*</code> under the index pattern name section</li>
 <li>Click on <strong>Next step</strong></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/va_4.PNG" alt="create_index_pattern_2"></p>
 <ol start="6">
+<li>Select <strong>date</strong> as the time field</li>
 <li>Click on <strong>Create index pattern</strong></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/va_5.PNG" alt="create_index_pattern_3"></p>
 <p>We have now created an index pattern! We can use the index pattern to analyze our logs</p>
 <h3 id="search-the-logs">Search the Logs</h3>
-<p>OpenSearch provides the ability to easily search log data. Lets run a few simple searches on our logs</p>
+<p>OpenSearch provides the ability to easily search log data. Let&rsquo;s run a few simple searches on our logs</p>
 <ol>
 <li>In the OpenSearch Dashboard expand the side menu and click on <strong>Discover</strong> under the OpenSearch Dashboards section</li>
 </ol>
 <p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
-<p>This will bring you to the discovery page. On this page we can see the log data we sent via. the Cloud9 Python application</p>
-<p><img src="../images/open-search-log-analytics/search_2.PNG" alt="search_2"></p>
-<p>We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remember that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper</p>
+<p>This will bring you to the discovery page. By default this view of the log data views the last 15 minutes. Let&rsquo;s adjust it to display the last two years of data.</p>
 <ol start="2">
-<li>Run the search <code>&quot;Hadoop&quot; AND &quot;Error&quot;</code></li>
+<li>Click on date/time filter next to the search bar</li>
+<li>Configure the relative date range for 2 years</li>
+<li>Click on the <strong>Update</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/search_4.PNG" alt="search_4"></p>
+<p>We can now see the log data we sent via. the Cloud9 Python application</p>
+<p><img src="../images/open-search-log-analytics/search_2.PNG" alt="search_2"></p>
+<p>We can now run a few different searched against our index pattern. To get started lets look for any log messages that related to spark broadcast operations.</p>
+<ol start="5">
+<li>Run the search <code>&quot;spark&quot; AND &quot;broadcast&quot;</code></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/search_3.PNG" alt="search_3"></p>
-<p>OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searches. A few search suggestions are below. However feel free to come up with you own</p>
+<p>OpenSearch displays the 74 logs of the total 2000 logs. Now that you have run a search. Try running at least 3 other searches. A few search suggestions are below. However feel free to come up with you own</p>
 <p>Suggested searches</p>
 <ol>
-<li><code>&quot;spark&quot; AND &quot;broadcast&quot;</code></li>
-<li><code>&quot;hdfs&quot;</code></li>
-<li><code>&quot;zoo_keeper&quot; AND &quot;WARN&quot; AND &quot;waiting for message&quot;</code></li>
+<li><code>date:2021-01-01</code></li>
+<li><code>date:2021-01-01 AND message:Memory</code></li>
+<li><code>date&lt;2021-01-01</code></li>
 </ol>
 <p>After you have run a few searches. We can look at creating a visualization and dashboard</p>
 <h3 id="create-a-visualization">Create a Visualization</h3>
@@ -712,16 +720,22 @@
 <p><img src="../images/open-search-log-analytics/visualize_3.PNG" alt="visualize_3"></p>
 <ol start="3">
 <li>Click on <strong>Gauge</strong> from the list of visualizations</li>
-<li>Click <strong>workshop-log-</strong> from the list of index patterns</li>
-<li>On the create page enter <code>&quot;Hadoop&quot; AND &quot;ERROR&quot;</code> in the search bar</li>
+<li>Click <strong>workshop-</strong> from the list of index patterns</li>
+<li>Click on date/time filter next to the search bar</li>
+<li>Configure the relative date range for 2 years</li>
+<li>Click on the Update</li>
 </ol>
-<p><img src="../images/open-search-log-analytics/visualize_4.PNG" alt="visualize_3"></p>
-<p>This will produce a gauge chart visualizing the number of hadoop error logs.</p>
+<p><img src="../images/open-search-log-analytics/visualize_5.png" alt="visualize_5"></p>
+<ol start="8">
+<li>On the create page enter <code>&quot;spark&quot; AND &quot;broadcast&quot;</code> in the search bar</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/visualize_4.PNG" alt="visualize_4"></p>
+<p>This will produce a gauge chart visual.</p>
 <ol start="6">
 <li>Click on the <strong>Save</strong> button. Name the visual anything you would like</li>
 </ol>
 <h3 id="create-a-dashboard">Create a Dashboard</h3>
-<p>Dashboards allow you to combine multiple visualizations in a single place. Lets build a simple dashboard</p>
+<p>Dashboards allow you to combine multiple visualizations in a single place. Let&rsquo;s build a simple dashboard</p>
 <ol>
 <li>In the OpenSearch Dashboard expand the side menu and click on <strong>Dashboards</strong> under the OpenSearch Dashboards section</li>
 </ol>
@@ -1053,7 +1067,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Firehose"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="../open-search-log-analytics/5_clean_up.html" title="5. Clean Up" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
