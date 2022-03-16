@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../images/favicon.png" type="image/png">
 
-    <title>3. Send Log Data to Kinesis Fire Hose :: Open Search Log Analytics Workshop</title>
+    <title>3. Send Log Data to Kinesis Firehose :: Open Search Log Analytics Workshop</title>
 
     
     <link href="../css/nucleus.css" rel="stylesheet">
@@ -221,13 +221,13 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Firehose" class="dd-item
         parent
         active
         
         ">
       <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">
-          Send Log Data to Kinesis Fire Hose
+          Send Log Data to Kinesis Firehose
           
       </a>
       
@@ -587,7 +587,7 @@
             
           
           
-            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../open-search-log-analytics/index.html'>OpenSearch Log Analytics</a> > Send Log Data to Kinesis Fire Hose
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../open-search-log-analytics/index.html'>OpenSearch Log Analytics</a> > 3. Send Log Data to Kinesis Firehose
           
         
           
@@ -600,7 +600,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -616,7 +624,7 @@
           
             <h1>
               
-              3. Send Log Data to Kinesis Fire Hose
+              3. Send Log Data to Kinesis Firehose
             </h1>
           
 
@@ -625,15 +633,17 @@
 
 
 	<p>We need to send sample log data to Kinesis Data Firehose which in turn will send the data to OpenSearch.</p>
-<p>We will run a python application that will send a few different types of log data to OpenSearch. We will run the sample Python application in a Cloud9</p>
-<p><strong>Create a Cloud9 environment</strong></p>
+<p>We will run a python application that will send sample Spark log data to OpenSearch. We will run the sample Python application in a Cloud9 environment.</p>
+<p>If in the previous section <a href="../open-search-log-analytics/2_environment_set_up.html">Environment Set Up</a> you used the CloudFormation template to deploy OpenSearch and Kinesis Firehose your Cloud9 environment is already created. You can  go to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a> directly and click on <strong>Open IDE</strong> under the workshop-cloud9 environment. Skip the <em>Create a Cloud9 environment</em> section below start on the <em>Run a Python Application from Cloud</em> section below</p>
+<p>If you did not use the CloudFormation template in the <a href="../open-search-log-analytics/2_environment_set_up.html">Environment Set Up</a> section follow the steps below to manually deploy Cloud9 via. the AWS console.</p>
+<h4 id="create-a-cloud9-environment">Create a Cloud9 environment</h4>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a></li>
 <li>Click on <strong>Create environment</strong></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/cloud9_1.PNG" alt="cloud9_create"></p>
 <ol start="3">
-<li>Under the name environment section enter <code>log_producer</code> for the name</li>
+<li>Under the name environment section enter <code>workshop-cloud9</code> for the name</li>
 <li>Click on <strong>Next step</strong></li>
 <li>Leave all of the settings at the default selections</li>
 <li>Click on <strong>Next step</strong></li>
@@ -641,21 +651,15 @@
 </ol>
 <p>After the Cloud9 environment is created your browser will automatically be redirected to the Cloud9 console</p>
 <p><img src="../images/open-search-log-analytics/cloud9_2.PNG" alt="cloud9_create"></p>
-<p><strong>Run a Python Application from Cloud9</strong></p>
-<p>With in the Cloud9 console running the following commands in the console section of the Cloud9 environment</p>
+<h4 id="run-a-python-application-from-cloud9">Run a Python Application from Cloud9</h4>
+<p>Within the Cloud9 console running the following commands in the console section of the Cloud9 environment</p>
 <ol>
 <li><code>wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/Log_Producer_Desktop.py</code></li>
 </ol>
 <p>The image below highlights were to run the commands. Run all of the commands in order</p>
 <p><img src="../images/open-search-log-analytics/cloud9_4.PNG" alt="cloud9_create"></p>
 <ol start="2">
-<li><code>mkdir sample_logs</code></li>
-<li><code>cd sample_logs</code></li>
-<li><code>wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/hadoop.txt</code></li>
-<li><code>wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/hdfs.txt</code></li>
 <li><code>wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/spark.txt</code></li>
-<li><code>wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/zoo_keeper.txt</code></li>
-<li><code>cd ..</code></li>
 <li><code>pip install boto3</code></li>
 <li><code>python Log_Producer_Desktop.py</code></li>
 </ol>

@@ -1,22 +1,26 @@
 ---
-title: "3. Send Log Data to Kinesis Fire Hose"
+title: "3. Send Log Data to Kinesis Firehose"
 chapter: false
 disableToc: false
-menuTitle: "Send Log Data to Kinesis Fire Hose"
+menuTitle: "Send Log Data to Kinesis Firehose"
 weight: 10
 ---
 
 We need to send sample log data to Kinesis Data Firehose which in turn will send the data to OpenSearch. 
 
-We will run a python application that will send a few different types of log data to OpenSearch. We will run the sample Python application in a Cloud9 
+We will run a python application that will send sample Spark log data to OpenSearch. We will run the sample Python application in a Cloud9 environment.
 
-**Create a Cloud9 environment**
+If in the previous section [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}}) you used the CloudFormation template to deploy OpenSearch and Kinesis Firehose your Cloud9 environment is already created. You can  go to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home) directly and click on **Open IDE** under the workshop-cloud9 environment. Skip the *Create a Cloud9 environment* section below start on the *Run a Python Application from Cloud* section below
+
+If you did not use the CloudFormation template in the [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}}) section follow the steps below to manually deploy Cloud9 via. the AWS console.
+
+#### Create a Cloud9 environment
 1. Go to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home)
 2. Click on **Create environment**
 
 ![cloud9_create](/images/open-search-log-analytics/cloud9_1.PNG)
 
-3. Under the name environment section enter ```log_producer``` for the name
+3. Under the name environment section enter ```workshop-cloud9``` for the name
 4. Click on **Next step**
 5. Leave all of the settings at the default selections
 6. Click on **Next step**
@@ -26,9 +30,9 @@ After the Cloud9 environment is created your browser will automatically be redir
 
 ![cloud9_create](/images/open-search-log-analytics/cloud9_2.PNG)
 
-**Run a Python Application from Cloud9**
+#### Run a Python Application from Cloud9
 
-With in the Cloud9 console running the following commands in the console section of the Cloud9 environment
+Within the Cloud9 console running the following commands in the console section of the Cloud9 environment
 
 1. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/Log_Producer_Desktop.py```
 
@@ -36,15 +40,9 @@ The image below highlights were to run the commands. Run all of the commands in 
 
 ![cloud9_create](/images/open-search-log-analytics/cloud9_4.PNG)
 
-2. ```mkdir sample_logs```
-3. ```cd sample_logs```
-4. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/hadoop.txt```
-5. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/hdfs.txt```
-6. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/spark.txt```
-7. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/zoo_keeper.txt```
-8. ```cd ..```
-9. ```pip install boto3```
-10. ```python Log_Producer_Desktop.py```
+2. ```wget https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/data-producer/sample_logs/spark.txt```
+3. ```pip install boto3```
+4. ```python Log_Producer_Desktop.py```
 
 These commands download the sample log data. They also download and configure the python script that will send the sample log data to Kinesis Data Firehose. 
 

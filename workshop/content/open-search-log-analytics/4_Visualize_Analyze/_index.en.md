@@ -6,7 +6,7 @@ menuTitle: "Visualize and Analyze"
 weight: 10
 ---
 
-OpenSearch provides us the ability to analyze out logs. Lets begin by navigating to the OpenSearch Dashboard
+OpenSearch provides us the ability to analyze out logs. Let's begin by navigating to the OpenSearch Dashboard
 
 ### Open the OpenSearch Dashboard
 
@@ -19,9 +19,9 @@ OpenSearch provides us the ability to analyze out logs. Lets begin by navigating
 
 ![open_search_dashboard](/images/open-search-log-analytics/IAM_4.PNG)
 
-4. You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in 
-5. If an additional pop up window is present after login asking about data upload click on **Explore on my own**
-6. If an additional pop up windows is present asking you to select your tenant select **Global** and click on **Confirm**
+4. You will be prompted to log in. For the user name enter ```OSMasterUser``` for the password enter ```AwS#OpenSearch1``` 
+5. If an additional popup window is present after login asking about data upload click on **Explore on my own**
+6. If an additional popup windows is present asking you to select your tenant select **Global** and click on **Confirm**
 
 You should now see a window that looks like this
 
@@ -47,12 +47,13 @@ In order to work with all of the logs (ie. multiple hours) we will create an ind
 
 ![create_index_pattern_1](/images/open-search-log-analytics/va_3.PNG)
 
-4. Enter ```workshop-log-*``` under the index pattern name section
+4. Enter ```workshop-*``` under the index pattern name section
 5. Click on **Next step**
 
 ![create_index_pattern_2](/images/open-search-log-analytics/va_4.PNG)
 
-6. Click on **Create index pattern**
+6. Select **date** as the time field
+7. Click on **Create index pattern**
 
 ![create_index_pattern_3](/images/open-search-log-analytics/va_5.PNG)
 
@@ -60,29 +61,37 @@ We have now created an index pattern! We can use the index pattern to analyze ou
 
 ### Search the Logs
 
-OpenSearch provides the ability to easily search log data. Lets run a few simple searches on our logs
+OpenSearch provides the ability to easily search log data. Let's run a few simple searches on our logs
 
 1. In the OpenSearch Dashboard expand the side menu and click on **Discover** under the OpenSearch Dashboards section
 
 ![search_1](/images/open-search-log-analytics/search_1.PNG)
 
-This will bring you to the discovery page. On this page we can see the log data we sent via. the Cloud9 Python application
+This will bring you to the discovery page. By default this view of the log data views the last 15 minutes. Let's adjust it to display the last two years of data.
+
+2. Click on date/time filter next to the search bar
+3. Configure the relative date range for 2 years
+4. Click on the **Update** 
+
+![search_4](/images/open-search-log-analytics/search_4.PNG)
+
+We can now see the log data we sent via. the Cloud9 Python application
 
 ![search_2](/images/open-search-log-analytics/search_2.PNG)
 
-We can now run a few different searched against our index pattern. To get started lets look for any log messages that are Hadoop Error. Remember that we have 4 types of logs in our index Hadoop, Spark, HDFS, ZooKeeper
+We can now run a few different searched against our index pattern. To get started lets look for any log messages that related to spark broadcast operations.
 
-2. Run the search ```"Hadoop" AND "Error"```
+5. Run the search ```"spark" AND "broadcast"```
 
 ![search_3](/images/open-search-log-analytics/search_3.PNG)
 
-OpenSearch displays the 156 Hadoop error logs of the total 8000 logs. Now that you have run a search. Try running at least 3 other searches. A few search suggestions are below. However feel free to come up with you own
+OpenSearch displays the 74 logs of the total 2000 logs. Now that you have run a search. Try running at least 3 other searches. A few search suggestions are below. However feel free to come up with you own
 
 Suggested searches 
 
-1. ```"spark" AND "broadcast"```
-2. ```"hdfs"```
-3. ```"zoo_keeper" AND "WARN" AND "waiting for message"```
+1. ```date:2021-01-01```
+2. ```date:2021-01-01 AND message:Memory```
+3. ```date<2021-01-01```
 
 After you have run a few searches. We can look at creating a visualization and dashboard
 
@@ -97,18 +106,24 @@ After you have run a few searches. We can look at creating a visualization and d
 ![visualize_3](/images/open-search-log-analytics/visualize_3.PNG)
 
 3. Click on **Gauge** from the list of visualizations
-4. Click **workshop-log-** from the list of index patterns
-5. On the create page enter ```"Hadoop" AND "ERROR"``` in the search bar
+4. Click **workshop-** from the list of index patterns
+5. Click on date/time filter next to the search bar
+6. Configure the relative date range for 2 years
+7. Click on the Update
 
-![visualize_3](/images/open-search-log-analytics/visualize_4.PNG)
+![visualize_5](/images/open-search-log-analytics/visualize_5.png)
 
-This will produce a gauge chart visualizing the number of hadoop error logs.
+8. On the create page enter ```"spark" AND "broadcast"``` in the search bar
+
+![visualize_4](/images/open-search-log-analytics/visualize_4.PNG)
+
+This will produce a gauge chart visual.
 
 6. Click on the **Save** button. Name the visual anything you would like
 
 ### Create a Dashboard
 
-Dashboards allow you to combine multiple visualizations in a single place. Lets build a simple dashboard
+Dashboards allow you to combine multiple visualizations in a single place. Let's build a simple dashboard
 
 1. In the OpenSearch Dashboard expand the side menu and click on **Dashboards** under the OpenSearch Dashboards section
 

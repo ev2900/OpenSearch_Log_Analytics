@@ -124,9 +124,10 @@ for html_file in l3:
 			print("Finished file " + html_file)	 
 
 print("---------------------------------")
-print("Finished - html clean up --------")
+print("Finished - html clean Up --------")
 print("---------------------------------")
 
+'''
 print ("")
 
 print("---------------------------------")
@@ -148,13 +149,4 @@ os.system('aws s3 cp ./public/ s3://sharkech-public-dev/dev-opensearch-log-analy
 print("---------------------------------")
 print("S3 Upload - finished ------------")
 print("---------------------------------")
-
-print ("")
-
-print("---------------------------------")
-print("S3 Set public ACL - start -------")
-print("---------------------------------")
-
-print("")
-
-print("GO TO THE AWS CONSOLE AND SET THE ACLs to PUBLIC")
+'''

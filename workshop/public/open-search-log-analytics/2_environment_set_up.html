@@ -221,13 +221,13 @@
  
   
     
-    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose" class="dd-item
+    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Firehose" class="dd-item
         
         
         
         ">
       <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">
-          Send Log Data to Kinesis Fire Hose
+          Send Log Data to Kinesis Firehose
           
       </a>
       
@@ -632,15 +632,19 @@
 
 
 
-	<p>We will need to deploy a few services and configure our AWS environment before we can get started with log analytics.</p>
+	<p>We will need to deploy a few services and configure our AWS environment before we can get started.</p>
 <p>We will need to complete the following set up steps</p>
 <ol>
 <li>Create an OpenSearch Domain</li>
 <li>Create a Kinesis Firehose</li>
 <li>Configure Identity Access Management Permissions</li>
 </ol>
-<p>Follow the instructions below for each step</p>
-<h4 id="create-an-opensearch-domain">Create an OpenSearch Domain</h4>
+<p>In order to completed Step 1 (create an OpenSearch domain) and Step 2 (create a Kinesis Firehose). You can either follow the steps below to deploy the resources manually via. the AWS console.</p>
+<p>Or you can click the button below to execute a CloudFormation template that will complete the deployment of the OpenSearch domain and Kinesis Firehose.</p>
+<p><a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=open-search-deployment&amp;templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/OpenSearch_demo.yaml"><img src="https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png" alt="Launch CloudFormation Stack"></a></p>
+<p>If you use the CloudFormation deployment method wait for the CloudFormation stack to finish deploying (5 - 10 minutes) and then move on the Step 3 (configure identity access management). The instructions for step 3 are towards the bottom of this web page.</p>
+<p>If you do not use the CloudFormation deployment method and want to complete the deployment of your OpenSearch domain and Kinesis Firehose manually via. the AWS console. Follow the instructions below.</p>
+<h4 id="step-1---create-an-opensearch-domain">Step 1 - Create an OpenSearch Domain</h4>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
 <li>Click on <strong>Create domain</strong></li>
@@ -651,14 +655,16 @@
 <li>Under the deployment type section, select <code>Development and testing</code></li>
 <li>Under the network section, select <code>Public access</code></li>
 <li>Under the fine-grained access control section select <code>Create master user</code></li>
-<li>Enter and username and password. Copy down the user name and password. We will need these later in the workshop</li>
+<li>For the username enter <code>OSMasterUser</code></li>
+<li>For the password enter  <code>AwS#OpenSearch1</code></li>
+<li>Under the access policy section, select <code>Only use fine-grain access control</code></li>
 <li>Leave all other settings at the default selections</li>
 <li>Click on <strong>Create</strong></li>
 </ol>
 <p>It will take approximately 5 - 10 minutes for your OpenSearch domain to be created. Upon successful creation you will see your OpenSearch domain status is active</p>
 <p><img src="../images/open-search-log-analytics/set_up_2.PNG" alt="cloud_shell_button">
 Do not proceed to the next step until you confirm that your domain status is active</p>
-<h4 id="create-a-kinesis-firehose">Create a Kinesis Firehose</h4>
+<h4 id="step-2---create-a-kinesis-firehose">Step 2 - Create a Kinesis Firehose</h4>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/firehose/home">Kinesis Firehose Console</a></li>
 <li>Click on <strong>Create delivery stream</strong></li>
@@ -694,28 +700,8 @@ Do not proceed to the next step until you confirm that your domain status is act
 <ol start="15">
 <li>At the bottom of the page click on <strong>Create delivery stream</strong> leave all other settings at the default selections</li>
 </ol>
-<h4 id="configure-identity-access-management-iam-permissions">Configure Identity Access Management (IAM) Permissions</h4>
-<p>In the first step we created an OpenSearch domain. We can send logs to the OpenSearch domain via the Kinesis Data Firehose we just created</p>
-<p>However before we can start to send sample log data to OpenSearch (via Kinesis Data Firehose) we need to configure permissions in IAM and in OpenSearch</p>
-<h5 id="adjust-opensearch-access-policy">Adjust OpenSearch Access Policy</h5>
-<ol>
-<li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
-<li>Click on the <strong>workshop-domain</strong> OpenSearch domain you created earlier</li>
-</ol>
-<p><img src="../images/open-search-log-analytics/IAM_1.PNG" alt="select_domain"></p>
-<ol start="3">
-<li>Click on <strong>Security configuration</strong></li>
-<li>Under the security configuration window click on <strong>Edit</strong></li>
-</ol>
-<p><img src="../images/open-search-log-analytics/IAM_2.PNG" alt="security_configuration"></p>
-<ol start="5">
-<li>Navigate to the access policy section of the edit security configuration window</li>
-<li>Adjust the JSON access policy to switch the Deny to an <code>Allow</code></li>
-</ol>
-<p><img src="../images/open-search-log-analytics/IAM_3.PNG" alt="access_policy"></p>
-<ol start="7">
-<li>Click on <strong>Save changes</strong> at the bottom of the page</li>
-</ol>
+<h4 id="step-3---configure-identity-access-management-iam-permissions">Step 3 - Configure Identity Access Management (IAM) Permissions</h4>
+<p>We now have an OpenSearch domain and Kinesis Firehose created. In order to send logs to OpenSearch via Kinesis Data Firehose we need to grant the IAM role that firehose uses permissions in OpenSearch.</p>
 <h5 id="map-iam-role-with-openseach-role">Map IAM Role with OpenSeach Role</h5>
 <ol>
 <li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
@@ -724,7 +710,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 </ol>
 <p><img src="../images/open-search-log-analytics/IAM_4.PNG" alt="open_search_dashboard"></p>
 <ol start="4">
-<li>You will be prompted to log in. Using the user name and password you created during the OpenSearch deployment, log in</li>
+<li>You will be prompted to log in. Using the user name <code>OSMasterUser</code> and password <code>AwS#OpenSearch1</code>  log in</li>
 <li>If an additional pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
 <li>If an additional pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
 </ol>
@@ -748,9 +734,9 @@ Do not proceed to the next step until you confirm that your domain status is act
 <li>Under the mapped users page click on <strong>Manage mapping</strong></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/os_5.PNG" alt="mapped_users"></p>
-<p>On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the permissions it need to create and update indexes.</p>
-<p>For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch. <strong>In a production environment it is recommended to scope down the permissions Kinesis Firehose has within OpenSearch</strong></p>
-<p>We need to find the ARN of the IAM role Kinesis Firehose is using. Keeping the <strong>Manage mapping</strong> page open, navigate to a new tab and:</p>
+<p>On the manage mapping page we need to map the IAM role the is used by Kinesis Data Firehose to the all_access OpenSearch role. This will give Kinesis Firehose the permissions it need to create, update indexes and write data.</p>
+<p>For the purposes of this lab we will give Kinesis Firehose all_access in OpenSearch.</p>
+<p>We need to find the ARN of the IAM role Kinesis Firehose is using. Keeping the <strong>Manage mapping page open in your browser</strong>, navigate to a new tab and</p>
 <ol start="13">
 <li>Go to the <a href="https://console.aws.amazon.com/firehose/home">Kinesis Firehose Console</a></li>
 <li>Click on the <strong>workshop-firehose</strong> listed. This is the Kinesis Data Fire hose we created earlier</li>
@@ -772,7 +758,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 <li>Click on <strong>Map</strong></li>
 </ol>
 <p><img src="../images/open-search-log-analytics/os_9.PNG" alt="IAM_role"></p>
-<p>Our AWS environment set up is now complete! When you are ready lets begin the next step <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">Send Log Data to Kinesis Fire Hose</a></p>
+<p>Our AWS environment set up. When you are ready begin the next step <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">Send Log Data to Kinesis Fire Hose</a></p>
 
 
 
@@ -1088,7 +1074,7 @@ Do not proceed to the next step until you confirm that your domain status is act
 			<a class="nav nav-prev" href="../open-search-log-analytics/1_getting_started/self_paced.html" title="Self Paced"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Fire Hose" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Firehose" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

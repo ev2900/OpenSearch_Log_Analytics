@@ -7,6 +7,14 @@ weight: 10
 
 ### Delete Cloud 9
 
+If you used CloudFormation to deploy your resources you can navigate to the [CloudFormation console](https://us-east-1.console.aws.amazon.com/cloudformation/home?) select the stack named open-search-deployment and select delete. 
+
+If you did not use the CloudFormation to deploy your resources follow the steps below to manually delete each resource.
+
+![delete_1](/images/open-search-log-analytics/cf_delete.png)
+
+If you did not use CloudFormation to deploy your resources you can manually delete the resources following the steps below
+
 1. Go to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home)
 
 ![delete_1](/images/open-search-log-analytics/delete_1.PNG)
