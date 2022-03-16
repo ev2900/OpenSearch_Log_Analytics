@@ -29,4 +29,7 @@ jobs:
           aws-region: us-east-1
           
       - name: Upload S3
-        run: aws s3 cp /home/runner/work/OpenSearch_Log_Analytics/OpenSearch_Log_Analytics/workshop/public/* s3://sharkech-public-dev/dev-opensearch-log-analytics/ --recursive
+        run: cd home/runner/work/OpenSearch_Log_Analytics/OpenSearch_Log_Analytics/workshop/public/
+        
+      - name: Upload S3
+        run: ls
