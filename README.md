@@ -11,6 +11,12 @@ In the workshop OpenSearch Log Analytics you will learn how to perform log analy
 3. In a terminal navigate to the workshop directory ```cd OpenSearch_Log_Analytics/workshop```
 4. Via the same terminal window run ```hugo serve```
 
+## Automated Deployment
+
+The main branch of the repo will auto deploy to the development site https://sharkech-public-dev.s3.amazonaws.com/dev-opensearch-log-analytics/index.html
+
+Pull requests merged to the prod branch will auto deploy to the production site at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html
+
 ## You can help 
 
 Want to contribute to this workshop? Do you see a mistake? Fork this repo and submit a pull request with edits, updates, fixes
