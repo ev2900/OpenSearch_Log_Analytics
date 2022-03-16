@@ -1,4 +1,4 @@
-name: Upload the built static site in the main branch to S3 dev link
+name: development S3 upload
 
 on:
   # Triggers the workflow on push
