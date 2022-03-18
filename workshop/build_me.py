@@ -126,27 +126,3 @@ for html_file in l3:
 print("---------------------------------")
 print("Finished - html clean Up --------")
 print("---------------------------------")
-
-'''
-print ("")
-
-print("---------------------------------")
-print("S3 Upload - start ---------------")
-print("---------------------------------")
-
-os.system('aws s3 cp ./public/ s3://sharkech-public-dev/dev-opensearch-log-analytics/ --profile ev2900 --recursive')
-
-# ---------------------------
-# -------- Production ------- 
-# ---------------------------
-
-# os.system('aws s3 cp ./public/ s3://sharkech-public/opensearch-log-analytics/workshop/ --profile ev2900 --recursive')
-
-# ---------------------------
-# ---------------------------
-# ---------------------------
-
-print("---------------------------------")
-print("S3 Upload - finished ------------")
-print("---------------------------------")
-'''
