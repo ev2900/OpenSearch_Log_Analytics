@@ -1,4 +1,4 @@
-# Log Analytics via AWS OpenSearch
+# Log Analytics via Amazon OpenSearch Service
 
 Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html 
 
