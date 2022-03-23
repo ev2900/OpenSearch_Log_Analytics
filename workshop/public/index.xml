@@ -29,6 +29,26 @@ Once you have your participant hash go to https://dashboard.</description>
     </item>
     
     <item>
+      <title>CloudFormation (Automated)</title>
+      <link>/open-search-log-analytics/2_environment_set_up/cloudformation_automated.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-search-log-analytics/2_environment_set_up/cloudformation_automated.html</guid>
+      <description>Step 1 - Deploy CloudFormation Template  Right click the Launch CloudFormation Stack button below and open the link in a new tab.  
+Navigate to the new tab you just opened. You should see a screen similar to the one below  Click on the Next button Continue to click on the Next buttons until you arrive at the final review screen. Scroll to the bottom of this page At the bottom of the page click on I acknowledge that AWS CloudFormation might create IAM resources with custom names Click on Create stack  This will begin the process of deploy an Amazon OpenSearch service, Kinesis Data Firehose and Cloud9 environment.</description>
+    </item>
+    
+    <item>
+      <title>Console Deploy (Manual)</title>
+      <link>/open-search-log-analytics/2_environment_set_up/console_manual.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-search-log-analytics/2_environment_set_up/console_manual.html</guid>
+      <description>Only complete this section if you intend to set up your AWS environment manually via. the AWS console. If you have completed CloudFormation (Automated) skip this section and proceed to Send Log Data to Kinesis Fire Hose
+Step 1 - Create an OpenSearch Domain  Go to the OpenSearch Console Click on Create domain  Enter the name workshop-domain for the OpenSearch Domain Under the deployment type section, select Development and testing Under the network section, select Public access Under the fine-grained access control section select Create master user For the username enter OSMasterUser For the password enter AwS#OpenSearch1 Under the access policy section, select Only use fine-grain access control Leave all other settings at the default selections Click on Create  It will take approximately 5 - 10 minutes for your OpenSearch domain to be created.</description>
+    </item>
+    
+    <item>
       <title>Self Paced</title>
       <link>/collect-log-cloud-watch/1_getting_started/self_paced.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

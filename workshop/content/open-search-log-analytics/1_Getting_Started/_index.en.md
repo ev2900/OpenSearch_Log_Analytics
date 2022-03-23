@@ -2,7 +2,7 @@
 title: "1. Getting started"
 chapter: false
 disableToc: false
-menuTitle: "Getting started"
+menuTitle: "Getting Started"
 weight: 10
 ---
 

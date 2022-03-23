@@ -10,9 +10,9 @@ We need to send sample log data to Kinesis Data Firehose which in turn will send
 
 We will run a python application that will send sample Spark log data to OpenSearch. We will run the sample Python application in a Cloud9 environment.
 
-If in the previous section [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}}) you used the CloudFormation template to deploy OpenSearch and Kinesis Firehose your Cloud9 environment is already created. You can  go to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home) directly and click on **Open IDE** under the workshop-cloud9 environment. Skip the *Create a Cloud9 environment* section below start on the *Run a Python Application from Cloud* section below
-
-If you did not use the CloudFormation template in the [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}}) section follow the steps below to manually deploy Cloud9 via. the AWS console.
+{{% notice warning %}}
+If in the previous section [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}}) you chose the [CloudFormation (Automated)]({{<relref "../2_Environment_Set_Up/cloudformation_automated">}}) deployment option your Cloud9 environment is already created. Navigate to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home) and click on **Open IDE** under the already created ```workshop-cloud9``` environment. Then skip the *Create a Cloud9 environment* section below and start at the *Run a Python Application from Cloud* section. **If you did not use the CloudFormation template** in the [Environment Set Up]({{<relref "../2_Environment_Set_Up/">}}) and instead used the [Console Deploy (Manual)]({{<relref "../2_Environment_Set_Up/console_manual">}}) complete the *Create a Cloud9 environment* section below before starting on the *Run a Python Application from Cloud* section.
+{{% /notice %}}
 
 #### Create a Cloud9 environment
 1. Go to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home)
