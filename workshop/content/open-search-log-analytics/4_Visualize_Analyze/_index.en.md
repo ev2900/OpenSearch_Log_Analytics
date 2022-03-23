@@ -141,8 +141,9 @@ Dashboards allow you to combine multiple visualizations in a single place. Let's
 
 ![visualize_1](/images/open-search-log-analytics/dashboard_3.PNG)
 
-Use the create new button or repeat the earlier process to create a second visual and add it to your dashboard. Have at least 2 visuals on your dashboard. 
+Use the create new button or repeat the earlier process to create at least 2 additional visuals. Try to create visuals that can show
 
-Also take note of the ability to save and share this dashboard with other. These options are listed on the top bar
+1. Horizontal bar chart showing how many logs we received per day
+2. Bar chart showing the number of logs level (ie. ERROR, WARNING, INFO)
 
 When you are ready proceed to the next step [Clean Up]({{<relref "../5_Clean_Up/">}}) if you want to delete the resources we used for this workshop
