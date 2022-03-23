@@ -40,6 +40,8 @@ l2 = [
 l3 = [
 	'./public/open-search-log-analytics/1_getting_started/aws_event.html',
 	'./public/open-search-log-analytics/1_getting_started/self_paced.html',
+	'./public/open-search-log-analytics/2_Environment_Set_Up/cloudformation_automated.html',
+	'./public/open-search-log-analytics/2_Environment_Set_Up/console_manual.html',
 	'./public/collect-log-cloud-watch/1_getting_started/aws_event.html',
 	'./public/collect-log-cloud-watch/1_getting_started/self_paced.html'
 ]
