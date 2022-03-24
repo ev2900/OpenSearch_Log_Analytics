@@ -20,3 +20,10 @@ Pull requests merged to the prod branch will auto deploy to the **production** s
 ## You can help 
 
 Want to contribute to this workshop? Do you see a mistake? Fork this repo and submit a pull request with edits, updates, fixes
+
+## Future Improvements Planned for this Repository
+
+* Cross Cluster Replication
+* Anomaly detection
+* Notifications via. SNS
+* Index managment including: roll ups, ultrawarm
