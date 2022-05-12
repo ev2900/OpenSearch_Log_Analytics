@@ -4,6 +4,8 @@
   <url>
     <loc>/</loc>
   </url><url>
+    <loc>/open-search-fluentd/1_getting_started.html</loc>
+  </url><url>
     <loc>/collect-log-cloud-watch/1_getting_started.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/1_getting_started.html</loc>
@@ -14,7 +16,13 @@
   </url><url>
     <loc>/collect-log-cloud-watch/2_environment_set_up.html</loc>
   </url><url>
+    <loc>/open-search-fluentd/2_environment_set_up.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/2_environment_set_up.html</loc>
+  </url><url>
+    <loc>/open-search-fluentd/3_configure_fluentd.html</loc>
+  </url><url>
+    <loc>/open-search-fluentd/</loc>
   </url><url>
     <loc>/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html</loc>
   </url><url>
@@ -22,21 +30,31 @@
   </url><url>
     <loc>/collect-log-cloud-watch/4_search_logs.html</loc>
   </url><url>
+    <loc>/open-search-fluentd/4_search_logs.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/4_visualize_analyze.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/5_clean_up.html</loc>
+  </url><url>
+    <loc>/open-search-fluentd/5_clean_up.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/5_clean_up.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/1_getting_started/aws_event.html</loc>
   </url><url>
+    <loc>/open-search-fluentd/1_getting_started/aws_event.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/1_getting_started/aws_event.html</loc>
+  </url><url>
+    <loc>/open-search-fluentd/2_environment_set_up/cloudformation_automated.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/2_environment_set_up/cloudformation_automated.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/2_environment_set_up/console_manual.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/1_getting_started/self_paced.html</loc>
+  </url><url>
+    <loc>/open-search-fluentd/1_getting_started/self_paced.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/1_getting_started/self_paced.html</loc>
   </url><url>
