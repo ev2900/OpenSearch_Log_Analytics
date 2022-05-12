@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="Open Search Log Analytics Workshop">
+<meta name="author" content="Chris Sharkey">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+
+    <title>4. Search Logs :: Open Search Log Analytics Workshop</title>
+
+    
+    <link href="../css/nucleus.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="../css/hybrid.css" rel="stylesheet">
+    <link href="../css/featherlight.min.css" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../css/auto-complete.css" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/hugo-theme.css" rel="stylesheet">
+    
+    <link href="../css/theme-aws.css" rel="stylesheet">
+    
+    
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../open-search-fluentd/4_search_logs.html">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div id="logo">
+  <img stlye="vertical-align:middle" src="https://sharkech-public.s3.amazonaws.com/misc-public/aws_logo.png" height="70px">
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='../index.html'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/index.html">
+          OpenSearch Log Analytics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/1_getting_started.html" title="1. Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/1_getting_started.html">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../open-search-log-analytics/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../open-search-log-analytics/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/2_environment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/2_environment_set_up/cloudformation_automated.html" title="CloudFormation (Automated)" class="dd-item ">
+        <a href="../open-search-log-analytics/2_environment_set_up/cloudformation_automated.html">
+        CloudFormation (Automated)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-log-analytics/2_environment_set_up/console_manual.html" title="Console Deploy (Manual)" class="dd-item ">
+        <a href="../open-search-log-analytics/2_environment_set_up/console_manual.html">
+        Console Deploy (Manual)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html" title="3. Send Log Data to Kinesis Firehose" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html">
+          Send Log Data to Kinesis Firehose
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/4_visualize_analyze.html" title="4. Visualize and Analyze" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/4_visualize_analyze.html">
+          Visualize and Analyze
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-log-analytics/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-log-analytics/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/" title="2. CloudWatch Log Collection" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/index.html">
+          CloudWatch Log Collection
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/1_getting_started.html" title="1. Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/1_getting_started.html">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/collect-log-cloud-watch/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../collect-log-cloud-watch/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/collect-log-cloud-watch/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../collect-log-cloud-watch/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/2_environment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/3_send_log_data_to_opensearch.html" title="3. Send Log Data to OpenSearch" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/3_send_log_data_to_opensearch.html">
+          Send Log Data to OpenSearch
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/4_search_logs.html" title="4. Search Logs" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/4_search_logs.html">
+          Search Logs
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/collect-log-cloud-watch/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../collect-log-cloud-watch/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-fluentd/" title="3. Fluntd Log Ingestion" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="../open-search-fluentd/index.html">
+          Fluentd Log Ingestion
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-fluentd/1_getting_started.html" title="1. Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-fluentd/1_getting_started.html">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-fluentd/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../open-search-fluentd/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-fluentd/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../open-search-fluentd/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-fluentd/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-fluentd/2_environment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-fluentd/2_environment_set_up/cloudformation_automated.html" title="CloudFormation (Automated)" class="dd-item ">
+        <a href="../open-search-fluentd/2_environment_set_up/cloudformation_automated.html">
+        CloudFormation (Automated)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-fluentd/3_configure_fluentd.html" title="3. Configure Fluentd" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-fluentd/3_configure_fluentd.html">
+          Configure Fluentd
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-fluentd/4_search_logs.html" title="4. Search Logs" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="../open-search-fluentd/4_search_logs.html">
+          Search Logs
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-fluentd/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-fluentd/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/ev2900/OpenSearch_Log_Analytics/"><i class='fab fa-github'></i> GitHub Project</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="mailto:sharkech@amazon.com"><i class='fas fa-envelope'></i> Have questions?</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+<div style="height:25px">
+  
+</div>
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link"></div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../'>OpenSearch Log Analytics Workshop</a> > <a href='../open-search-fluentd/'>3. Fluntd Log Ingestion</a> > Search Logs
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1---open-the-opensearch-dashboard">Step 1 - Open the OpenSearch Dashboard</a></li>
+        <li><a href="#step-2---create-an-index-pattern">Step 2 - Create an Index Pattern</a></li>
+        <li><a href="#step-3---search-the-logs">Step 3 - Search the Logs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              4. Search Logs
+            </h1>
+          
+
+        
+
+
+
+	<p>OpenSearch provides us the ability to analyze out logs. Let&rsquo;s begin by navigating to the OpenSearch Dashboard</p>
+<h3 id="step-1---open-the-opensearch-dashboard">Step 1 - Open the OpenSearch Dashboard</h3>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/esv3/home">OpenSearch Console</a></li>
+<li>Click on the <strong>fluentd-domain</strong> OpenSearch domain you created earlier</li>
+</ol>
+<p><img src="../images/open-search-fluentd/search_logs_1.png" alt="search_logs_1"></p>
+<ol start="3">
+<li>Click on the OpenSearch Dashboard URL. This should open the URL in a web browser window</li>
+</ol>
+<p><img src="../images/open-search-fluentd/search_logs_2.png" alt="search_logs_2"></p>
+<ol start="4">
+<li>You will be prompted to log in. For the user name enter <code>OSMasterUser</code> for the password enter <code>AwS#OpenSearch1</code></li>
+<li>If an additional popup window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional popup window is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+</ol>
+<p>You should now see a window that looks like this</p>
+<p><img src="../images/open-search-fluentd/search_logs_3.png" alt="search_logs_3"></p>
+<h3 id="step-2---create-an-index-pattern">Step 2 - Create an Index Pattern</h3>
+<p>In order to search our logs via. the OpenSearch dashboard you need to create an index pattern. Follow the steps below to create an index pattern for the Fluentd logs</p>
+<ol>
+<li>In the OpenSearch Dashboard, expand the side menu and click on <strong>Stack Management</strong> under management section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_1.PNG" alt="stack_management"></p>
+<ol start="2">
+<li>On the stack management page click on <strong>Index Patterns</strong> on the left hand menu</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_2.PNG" alt="index_pattern"></p>
+<ol start="3">
+<li>On the index patterns page click on <strong>Create index pattern</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_3.PNG" alt="create_index_pattern_1"></p>
+<ol start="4">
+<li>Enter <code>fluentd*</code> under the index pattern name section</li>
+<li>Click on <strong>Next step</strong></li>
+</ol>
+<p><img src="../images/open-search-fluentd/search_logs_7.png" alt="search_logs_7.png"></p>
+<ol start="6">
+<li>Click on <strong>Create index pattern</strong></li>
+</ol>
+<p>You have now created an index pattern! You can use the index pattern to analyze our logs</p>
+<h3 id="step-3---search-the-logs">Step 3 - Search the Logs</h3>
+<p>OpenSearch provides the ability to easily search log data. Let&rsquo;s view and search our logs sent by Fluentd</p>
+<ol>
+<li>In the OpenSearch Dashboard expand the side menu and click on <strong>Discover</strong> under the OpenSearch Dashboards section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
+<p>This will bring you to the discovery page. You can now see the sample logs Fluentd sent to OpenSearch</p>
+<p><img src="../images/open-search-fluentd/search_logs_9.png" alt="search_logs_9.png"></p>
+<p>You can expand any of the logs to view all of the available fields</p>
+<p><img src="../images/open-search-fluentd/search_logs_10.png" alt="search_logs_10"></p>
+<p>You can also search logs using the search bar at the top of the page</p>
+<p><img src="../images/open-search-fluentd/search_logs_11.png" alt="search_logs_10"></p>
+<p>When you are ready proceed to the next step <a href="../open-search-fluentd/5_clean_up.html">Clean Up</a> if you want to delete the resources you used for this workshop</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			
+		
+		
+			
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+    
+        
+            <script src="../mermaid/mermaid.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
