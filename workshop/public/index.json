@@ -4,7 +4,7 @@
 	"title": "OpenSearch Log Analytics Workshop",
 	"tags": [],
 	"description": "",
-	"content": "OpenSearch Log Analytics Workshop These are workshops and resources designed to help you use Amazon OpenSearch Service for Log Analytics.\nIn the workshop OpenSearch Log Analytics you will learn how to perform log analytics via. Amazon OpenSearch Service. You will explore the basics of ingesting, analyzing and visualizing data.\nIn the workshop CloudWatch Log Collection you will learn how to send logs - in real time - from AWS CloudWatch to Amazon OpenSearch Service. Once in OpenSearch you can analyze your CloudWatch logs and help identify errors and issues.\nIn the workshop Fluentd Log Ingestion you will learn how to use Fluentd an OpenSource data collector to send logs in real time to Amazon OpenSearch Service.\n"
+	"content": "OpenSearch Log Analytics Workshop These are workshops and resources designed to help you use Amazon OpenSearch Service for Log Analytics.\nIn the workshop OpenSearch Log Analytics you will learn how to perform log analytics via. Amazon OpenSearch Service. You will explore the basics of ingesting, analyzing and visualizing data.\nIn the workshop CloudWatch Log Collection you will learn how to send logs - in real time - from AWS CloudWatch to Amazon OpenSearch Service. Once in OpenSearch you can analyze your CloudWatch logs and help identify errors and issues.\nIn the workshop Fluentd Log Ingestion you will learn how to use Fluentd an Opensource data collector to send logs in real time to Amazon OpenSearch Service.\n"
 },
 {
 	"uri": "/open-search-fluentd/1_getting_started.html",
