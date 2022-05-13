@@ -994,9 +994,10 @@
 <li><code>sudo mkdir /var/log/td-agent/</code></li>
 <li><code>sudo chmod 777 /var/log/td-agent/</code></li>
 </ol>
+<p>Note: you may get a &lsquo;cannot create directory: file exists error&rsquo;. If this occurs, you can ignore and continue</p>
 <p>You can now start Fluntd by running the following command in the Cloud9 console</p>
 <p><code>fluentd -c ./fluent/fluent.conf -vv</code></p>
-<p>You enable the <em>-vv</em> for verbose logging. This allows us to more easily keep track on Fluentd&rsquo;s actions.</p>
+<p>The <em>-vv</em> flag enables verbose logging. This allows us to more easily keep track on Fluentd&rsquo;s actions.</p>
 <p><img src="../images/open-search-fluentd/configure_fluentd_4.png" alt="configure_fluentd_4"></p>
 <h3 id="step-4---create-sample-apache-log">Step 4 - Create Sample Apache Log</h3>
 <p>Fluentd is watching the <em>access.log</em> file. By default this file has no log data for Fluentd to parse and send to OpenSearch.</p>
