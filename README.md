@@ -23,10 +23,6 @@ Want to contribute to this workshop? Do you see a mistake? Fork this repo and su
 
 ## Future Improvements Planned for this Repository
 
-High Priority
-* Fluentd log ingestion
-
-Low Priority
 * Cross Cluster Replication
 * Anomaly detection
 * Notifications via. SNS
