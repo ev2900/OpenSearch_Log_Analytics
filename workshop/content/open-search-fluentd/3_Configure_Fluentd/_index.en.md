@@ -75,7 +75,10 @@ Before you can run Fluentd you need to open permissions on two folders within th
 3. ```sudo mkdir /var/log/td-agent/```
 4. ```sudo chmod 777 /var/log/td-agent/```
 
-Note: you may get a 'cannot create directory: file exists error'. If this occurs, you can ignore and continue
+{{% notice warning %}}
+Note: you may get a **'cannot create directory: file exists error'.** If this occurs, you can ignore and continue
+{{% /notice %}}
+
 
 You can now start Fluntd by running the following command in the Cloud9 console
 
