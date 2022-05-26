@@ -959,13 +959,12 @@
 	@type tail
 	path /var/log/apache2/access.log
 	pos_file /var/log/td-agent/apache2.access_log.pos
-	&lt;parse&gt;
-    		@type apache2
-    	&lt;/parse&gt;
-  	tag os.apache.access
+	tag os.apache.access
+	format apache2
 &lt;/source&gt;
 &lt;match match os.*.*&gt;
 	@type opensearch
+	include_timestamp true
 	index_name fluentd
 	&lt;endpoint&gt;
 	  url &lt;opensearch_domain_endpoint&gt;
