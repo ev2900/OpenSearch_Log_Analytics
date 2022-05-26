@@ -36,13 +36,12 @@ This will create a new folder in Cloud9 with a fluent.conf file. you will edit t
 	@type tail
 	path /var/log/apache2/access.log
 	pos_file /var/log/td-agent/apache2.access_log.pos
-	<parse>
-    		@type apache2
-    	</parse>
-  	tag os.apache.access
+	tag os.apache.access
+	format apache2
 </source>
 <match match os.*.*>
 	@type opensearch
+	include_timestamp true
 	index_name fluentd
 	<endpoint>
 	  url <opensearch_domain_endpoint>
