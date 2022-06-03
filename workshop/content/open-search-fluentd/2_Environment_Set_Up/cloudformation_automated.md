@@ -49,7 +49,9 @@ To map the IAM role to the OpenSearch role follow the steps below
 ![enviorment_set_up_cloudformation_automation_5](/images/open-search-fluentd/enviorment_set_up_cloudformation_automation_5.png)
 
 
-Once you have opened the Cloud9 IDE navigate the folder structure on the left hand menu to and open the map_IAM_user.py file. In the map_IAM_user.py file
+Once you have opened the Cloud9 IDE navigate the folder structure on the left hand menu to and open the Flentd_Examples folder. Then the Cloud9_Apache_Logs_OpenSearch sub-folder. In this folder open the map_IAM_user.py file.
+
+In the map_IAM_user.py file
 
 3. Replace the value of the os_url variable with the value of the OSDomainURL key from the CloudFormation stack outputs
 4. Replace the value of the iam_arn variable with the value of the IAMUserARN key from the CloudFormation stack outputs
@@ -57,11 +59,10 @@ Once you have opened the Cloud9 IDE navigate the folder structure on the left ha
 
 ![enviorment_set_up_cloudformation_automation_6](/images/open-search-fluentd/enviorment_set_up_cloudformation_automation_6.png)
 
-
 You can now run the map_IAM_user.py script by executing the following commands in the Cloud9 terminal
 
 5. ```pip install requests```
-6. ```python OpenSearch_API_Examples/Map_IAM_User/map_IAM_user.py```
+6. ```python Fluentd_Examples/Cloud9_Apache_Logs_OpenSearch/map_IAM_user.py```
 
 ![enviorment_set_up_cloudformation_automation_7](/images/open-search-fluentd/enviorment_set_up_cloudformation_automation_7.png)
 
