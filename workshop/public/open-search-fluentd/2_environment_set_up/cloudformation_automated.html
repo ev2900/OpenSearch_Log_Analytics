@@ -971,7 +971,8 @@
 <li>Click on <strong>Open IDE</strong></li>
 </ol>
 <p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_5.png" alt="enviorment_set_up_cloudformation_automation_5"></p>
-<p>Once you have opened the Cloud9 IDE navigate the folder structure on the left hand menu to and open the map_IAM_user.py file. In the map_IAM_user.py file</p>
+<p>Once you have opened the Cloud9 IDE navigate the folder structure on the left hand menu to and open the Flentd_Examples folder. Then the Cloud9_Apache_Logs_OpenSearch sub-folder. In this folder open the map_IAM_user.py file.</p>
+<p>In the map_IAM_user.py file</p>
 <ol start="3">
 <li>Replace the value of the os_url variable with the value of the OSDomainURL key from the CloudFormation stack outputs</li>
 <li>Replace the value of the iam_arn variable with the value of the IAMUserARN key from the CloudFormation stack outputs</li>
@@ -981,7 +982,7 @@
 <p>You can now run the map_IAM_user.py script by executing the following commands in the Cloud9 terminal</p>
 <ol start="5">
 <li><code>pip install requests</code></li>
-<li><code>python OpenSearch_API_Examples/Map_IAM_User/map_IAM_user.py</code></li>
+<li><code>python Fluentd_Examples/Cloud9_Apache_Logs_OpenSearch/map_IAM_user.py</code></li>
 </ol>
 <p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_7.png" alt="enviorment_set_up_cloudformation_automation_7"></p>
 <p>Our AWS environment set up. When you are ready begin the next step <a href="../../open-search-fluentd/3_configure_fluentd.html">Configure Fluentd</a></p>

@@ -969,9 +969,13 @@
 <p><img src="../images/open-search-log-analytics/va_3.PNG" alt="create_index_pattern_1"></p>
 <ol start="4">
 <li>Enter <code>fluentd*</code> under the index pattern name section</li>
-<li>Click on <strong>Next step</strong></li>
 </ol>
 <p><img src="../images/open-search-fluentd/search_logs_7.png" alt="search_logs_7.png"></p>
+<ol start="5">
+<li>Click on <strong>Next step</strong></li>
+<li>Click on the time field drop down and select <strong>@timestamp</strong></li>
+</ol>
+<p><img src="../images/open-search-fluentd/search_logs_8.png" alt="search_logs_7.png"></p>
 <ol start="6">
 <li>Click on <strong>Create index pattern</strong></li>
 </ol>
@@ -982,12 +986,16 @@
 <li>In the OpenSearch Dashboard expand the side menu and click on <strong>Discover</strong> under the OpenSearch Dashboards section</li>
 </ol>
 <p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
-<p>This will bring you to the discovery page. You can now see the sample logs Fluentd sent to OpenSearch</p>
+<ol start="2">
+<li>Expand the time range that OpenSearch will view to the <strong>Last 7 days</strong></li>
+</ol>
 <p><img src="../images/open-search-fluentd/search_logs_9.png" alt="search_logs_9.png"></p>
-<p>You can expand any of the logs to view all of the available fields</p>
+<p>You can now see the logs sent to OpenSearch from Fluentd</p>
 <p><img src="../images/open-search-fluentd/search_logs_10.png" alt="search_logs_10"></p>
-<p>You can also search logs using the search bar at the top of the page</p>
+<p>You can expand any of the logs to view all of the available fields</p>
 <p><img src="../images/open-search-fluentd/search_logs_11.png" alt="search_logs_10"></p>
+<p>You can also search logs using the search bar at the top of the page</p>
+<p><img src="../images/open-search-fluentd/search_logs_12.png" alt="search_logs_10"></p>
 <p>When you are ready proceed to the next step <a href="../open-search-fluentd/5_clean_up.html">Clean Up</a> if you want to delete the resources you used for this workshop</p>
 
 
