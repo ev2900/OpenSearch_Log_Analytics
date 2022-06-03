@@ -44,9 +44,13 @@ In order to search our logs via. the OpenSearch dashboard you need to create an 
 ![create_index_pattern_1](/images/open-search-log-analytics/va_3.PNG)
 
 4. Enter ```fluentd*``` under the index pattern name section
-5. Click on **Next step**
 
 ![search_logs_7.png](/images/open-search-fluentd/search_logs_7.png)
+
+5. Click on **Next step**
+6. Click on the time field drop down and select **@timestamp**
+
+![search_logs_7.png](/images/open-search-fluentd/search_logs_8.png)
 
 6. Click on **Create index pattern**
 
@@ -60,16 +64,20 @@ OpenSearch provides the ability to easily search log data. Let's view and search
 
 ![search_1](/images/open-search-log-analytics/search_1.PNG)
 
-This will bring you to the discovery page. You can now see the sample logs Fluentd sent to OpenSearch
+2. Expand the time range that OpenSearch will view to the **Last 7 days**
 
 ![search_logs_9.png](/images/open-search-fluentd/search_logs_9.png)
 
-You can expand any of the logs to view all of the available fields
+You can now see the logs sent to OpenSearch from Fluentd
 
 ![search_logs_10](/images/open-search-fluentd/search_logs_10.png)
 
-You can also search logs using the search bar at the top of the page
+You can expand any of the logs to view all of the available fields
 
 ![search_logs_10](/images/open-search-fluentd/search_logs_11.png)
+
+You can also search logs using the search bar at the top of the page
+
+![search_logs_10](/images/open-search-fluentd/search_logs_12.png)
 
 When you are ready proceed to the next step [Clean Up]({{<relref "../5_Clean_Up/">}}) if you want to delete the resources you used for this workshop
