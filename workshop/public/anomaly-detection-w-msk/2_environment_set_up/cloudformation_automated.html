@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/favicon.png" type="image/png">
 
-    <title>AWS Event :: Open Search Log Analytics Workshop</title>
+    <title>CloudFormation (Automated) :: Open Search Log Analytics Workshop</title>
 
     
     <link href="../../css/nucleus.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="../../open-search-log-analytics/1_getting_started/aws_event.html">
+  <body class="" data-url="../../anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html">
     <nav id="sidebar" class="">
 
 
@@ -89,11 +89,11 @@
   
     
     <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
-        parent
+        
         
         
         ">
-      <a href="../../open-search-log-analytics/index.html">
+      <a href="../../open-search-log-analytics/">
           OpenSearch Log Analytics
           
       </a>
@@ -118,7 +118,7 @@
   
     
     <li data-nav-id="/open-search-log-analytics/1_getting_started.html" title="1. Getting started" class="dd-item
-        parent
+        
         
         
         ">
@@ -144,7 +144,7 @@
  
   
     
-      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item active">
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
         <a href="../../open-search-log-analytics/1_getting_started/aws_event.html">
         AWS Event
         
@@ -363,7 +363,7 @@
         
         
         ">
-      <a href="../../collect-log-cloud-watch/index.html">
+      <a href="../../collect-log-cloud-watch/">
           CloudWatch Log Collection
           
       </a>
@@ -581,7 +581,7 @@
         
         
         ">
-      <a href="../../open-search-fluentd/index.html">
+      <a href="../../open-search-fluentd/">
           Fluentd Log Ingestion
           
       </a>
@@ -826,7 +826,7 @@
   
     
     <li data-nav-id="/anomaly-detection-w-msk/" title="4. Anomaly Detection with MSK" class="dd-item
-        
+        parent
         
         
         ">
@@ -933,7 +933,7 @@
   
     
     <li data-nav-id="/anomaly-detection-w-msk/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
-        
+        parent
         
         
         ">
@@ -959,7 +959,7 @@
  
   
     
-      <li data-nav-id="/anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html" title="CloudFormation (Automated)" class="dd-item ">
+      <li data-nav-id="/anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html" title="CloudFormation (Automated)" class="dd-item active">
         <a href="../../anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html">
         CloudFormation (Automated)
         
@@ -1063,7 +1063,7 @@
             
           
           
-            <a href='../../index.html'>OpenSearch Log Analytics Workshop</a> > <a href='../../open-search-log-analytics/index.html'>OpenSearch Log Analytics</a> > <a href='../../open-search-log-analytics/1_getting_started.html'>Getting started</a> > AWS Event
+            <a href='../../'>OpenSearch Log Analytics Workshop</a> > <a href='../../anomaly-detection-w-msk/'>4. Anomaly Detection with MSK</a> > <a href='../../anomaly-detection-w-msk/2_environment_set_up.html'>2. Environment Set Up</a> > CloudFormation (Automated)
           
         
           
@@ -1102,31 +1102,61 @@
           
             <h1>
               
-              AWS Event
+              CloudFormation (Automated)
             </h1>
           
 
         
 
 
+<h4 id="step-1---deploy-cloudformation-template">Step 1 - Deploy CloudFormation Template</h4>
+<ol>
+<li>Right click the <strong>Launch CloudFormation Stack</strong> button below and open the link in a new tab.</li>
+</ol>
+<p><a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=fluentd-demo-opensearch&amp;templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/fluentd_cloud9_opensearch.yml"><img src="https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png" alt="Launch CloudFormation Stack"></a></p>
+<ol start="2">
+<li>Navigate to the new tab you just opened. You should see a screen similar to the one below</li>
+</ol>
+<p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_1.png" alt="enviorment_set_up_cloudformation_automation_1"></p>
+<ol start="3">
+<li>Click on the <strong>Next</strong> button</li>
+<li>Continue to click on the <strong>Next</strong> buttons until you arrive at the final review screen. Scroll to the bottom of this page</li>
+<li>At the bottom of the page click on <strong>I acknowledge that AWS CloudFormation might create IAM resources with custom names</strong></li>
+<li>Click on <strong>Create stack</strong></li>
+</ol>
+<p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_2.png" alt="enviorment_set_up_cloudformation_automation_2"></p>
+<p>This will begin the process of deploy an Amazon OpenSearch service, Kinesis Data Firehose and Cloud9 environment. You will automatically be redirected to the following screen</p>
+<p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_3.png" alt="enviorment_set_up_cloudformation_automation_3"></p>
+<p>The deployment will take 5 - 10 minutes to complete. You can click on the refresh button and view the status of the deployment. The initial status will be <code>CREATE_IN_PROGRESS</code> when the status is <code>CREATE_COMPLETE</code>. Click on the <strong>Outputs</strong> section of the CloudFormation stack and copy the values of the output. The output values will be used in subsequent parts of this workshop.</p>
+<p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_4.png" alt="enviorment_set_up_cloudformation_automation_4"></p>
+<h4 id="step-2---map-iam-role-with-openseach-role">Step 2 - Map IAM Role with OpenSeach Role</h4>
+<p>You now have an OpenSearch domain and Cloud9 environment created. In order to send logs to OpenSearch via Fluentd you need to grant the IAM role that Fluentd will use permissions in OpenSearch.</p>
+<p>The CloudFormation stack already created an IAM role for us. you need to map the IAM role to an OpenSearch role. To map the role you can run a python script in Cloud9 that will use the OpenSearch APIs to map the IAM role the all_access role in OpenSearch.</p>
 
-<div class="notices warning" ><p>Only complete this section if you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee). If you are running the workshop on your own, go to <a href="../../open-search-log-analytics/1_getting_started/self_paced.html">Self Paced</a>.</p>
+<div class="notices warning" ><p>For the purposes of this lab you are mapping our IAM role to the all_access role in OpenSearch. In a production environment more limited permissions should be granted to the IAM role Fluentd will use</p>
 </div>
 
-<h4 id="log-into-aws-console-via-aws-workshop-portal">Log into AWS Console via. AWS Workshop Portal</h4>
-<p>Your instructor has already created an AWS account for you. Your instructor should provide you a participant hash.</p>
-<p>Once you have your participant hash go to <a href="https://dashboard.eventengine.run/">https://dashboard.eventengine.run/</a></p>
-<p>Enter your participant has and select Accept Terms &amp; Login</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_1.png" alt="Event_Engine_Login_Hash"></p>
-<p>Select how you want to log in. Selecting Email One-Time Password (OTP) is recommended. However, you can also use your Amazon.com retail account to login.</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_2.png" alt="Event_Engine_Login_Email"></p>
-<p>Follow the prompts to complete the login process. Once you have successfully logged in. You will see the following screen. Select AWS Console</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_3.png" alt="Event_Engine_Access_Console"></p>
-<p>A window will open. From the window select Open AWS Console</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_4.png" alt="Event_Engine_Access_Console"></p>
-<p>This will open the AWS Console in a new window on your web browser. If you can see the home page for the AWS Console as depicted below you have successfully logged into your AWS account.</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_5.png" alt="Event_Engine_AWS_Console"></p>
-<p>Now that you have successfully logged into your AWS account and are able to access the AWS Console, let&rsquo;s begin the next step <a href="../../open-search-log-analytics/2_environment_set_up.html">Environment Set Up</a></p>
+<p>To map the IAM role to the OpenSearch role follow the steps below</p>
+<ol>
+<li>Go to the <a href="https://us-east-1.console.aws.amazon.com/cloud9/home?region=us-east-1">Cloud9 Console</a></li>
+<li>Click on <strong>Open IDE</strong></li>
+</ol>
+<p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_5.png" alt="enviorment_set_up_cloudformation_automation_5"></p>
+<p>Once you have opened the Cloud9 IDE navigate the folder structure on the left hand menu to and open the Flentd_Examples folder. Then the Cloud9_Apache_Logs_OpenSearch sub-folder. In this folder open the map_IAM_user.py file.</p>
+<p>In the map_IAM_user.py file</p>
+<ol start="3">
+<li>Replace the value of the os_url variable with the value of the OSDomainURL key from the CloudFormation stack outputs</li>
+<li>Replace the value of the iam_arn variable with the value of the IAMUserARN key from the CloudFormation stack outputs</li>
+<li>Save the python file</li>
+</ol>
+<p><img src="../../images/open-search-fluentd/enviorment_set_up_cloudformation_automation_6.png" alt="enviorment_set_up_cloudformation_automation_6"></p>
+<p>You can now run the map_IAM_user.py script by executing the following commands in the Cloud9 terminal</p>
+<ol start="5">
+<li><code>pip install requests</code></li>
+<li><code>python Fluentd_Examples/Cloud9_Apache_Logs_OpenSearch/map_IAM_user.py</code></li>
+</ol>
+<p>enviorment_set_up_cloudformation_automation_7</p>
+<p>Our AWS environment set up. When you are ready begin the next step Configure Fluentd</p>
 
 
 <footer class="footline">
@@ -1164,22 +1194,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1187,6 +1201,8 @@
                 
 
                     
+                    
+                        
                     
                     
 
@@ -1196,6 +1212,18 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1212,9 +1240,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1610,6 +1635,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1625,18 +1651,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1645,9 +1661,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1665,6 +1678,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1685,6 +1714,7 @@
             
             
                 
+                    
                     
                 
                 

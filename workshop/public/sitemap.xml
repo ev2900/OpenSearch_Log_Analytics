@@ -4,6 +4,8 @@
   <url>
     <loc>/</loc>
   </url><url>
+    <loc>/anomaly-detection-w-msk/1_getting_started.html</loc>
+  </url><url>
     <loc>/open-search-fluentd/1_getting_started.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/1_getting_started.html</loc>
@@ -13,6 +15,8 @@
     <loc>/open-search-log-analytics/</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/</loc>
+  </url><url>
+    <loc>/anomaly-detection-w-msk/2_environment_set_up.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/2_environment_set_up.html</loc>
   </url><url>
@@ -28,6 +32,8 @@
   </url><url>
     <loc>/collect-log-cloud-watch/3_send_log_data_to_opensearch.html</loc>
   </url><url>
+    <loc>/anomaly-detection-w-msk/</loc>
+  </url><url>
     <loc>/collect-log-cloud-watch/4_search_logs.html</loc>
   </url><url>
     <loc>/open-search-fluentd/4_search_logs.html</loc>
@@ -40,17 +46,23 @@
   </url><url>
     <loc>/open-search-log-analytics/5_clean_up.html</loc>
   </url><url>
+    <loc>/anomaly-detection-w-msk/1_getting_started/aws_event.html</loc>
+  </url><url>
     <loc>/collect-log-cloud-watch/1_getting_started/aws_event.html</loc>
   </url><url>
     <loc>/open-search-fluentd/1_getting_started/aws_event.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/1_getting_started/aws_event.html</loc>
   </url><url>
+    <loc>/anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html</loc>
+  </url><url>
     <loc>/open-search-fluentd/2_environment_set_up/cloudformation_automated.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/2_environment_set_up/cloudformation_automated.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/2_environment_set_up/console_manual.html</loc>
+  </url><url>
+    <loc>/anomaly-detection-w-msk/1_getting_started/self_paced.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/1_getting_started/self_paced.html</loc>
   </url><url>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/favicon.png" type="image/png">
 
-    <title>AWS Event :: Open Search Log Analytics Workshop</title>
+    <title>Self Paced :: Open Search Log Analytics Workshop</title>
 
     
     <link href="../../css/nucleus.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="../../open-search-log-analytics/1_getting_started/aws_event.html">
+  <body class="" data-url="../../anomaly-detection-w-msk/1_getting_started/self_paced.html">
     <nav id="sidebar" class="">
 
 
@@ -89,11 +89,11 @@
   
     
     <li data-nav-id="/open-search-log-analytics/" title="1. OpenSearch Log Analytics" class="dd-item
-        parent
+        
         
         
         ">
-      <a href="../../open-search-log-analytics/index.html">
+      <a href="../../open-search-log-analytics/">
           OpenSearch Log Analytics
           
       </a>
@@ -118,7 +118,7 @@
   
     
     <li data-nav-id="/open-search-log-analytics/1_getting_started.html" title="1. Getting started" class="dd-item
-        parent
+        
         
         
         ">
@@ -144,7 +144,7 @@
  
   
     
-      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item active">
+      <li data-nav-id="/open-search-log-analytics/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
         <a href="../../open-search-log-analytics/1_getting_started/aws_event.html">
         AWS Event
         
@@ -363,7 +363,7 @@
         
         
         ">
-      <a href="../../collect-log-cloud-watch/index.html">
+      <a href="../../collect-log-cloud-watch/">
           CloudWatch Log Collection
           
       </a>
@@ -581,7 +581,7 @@
         
         
         ">
-      <a href="../../open-search-fluentd/index.html">
+      <a href="../../open-search-fluentd/">
           Fluentd Log Ingestion
           
       </a>
@@ -826,7 +826,7 @@
   
     
     <li data-nav-id="/anomaly-detection-w-msk/" title="4. Anomaly Detection with MSK" class="dd-item
-        
+        parent
         
         
         ">
@@ -855,7 +855,7 @@
   
     
     <li data-nav-id="/anomaly-detection-w-msk/1_getting_started.html" title="1. Getting Started" class="dd-item
-        
+        parent
         
         
         ">
@@ -902,7 +902,7 @@
  
   
     
-      <li data-nav-id="/anomaly-detection-w-msk/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+      <li data-nav-id="/anomaly-detection-w-msk/1_getting_started/self_paced.html" title="Self Paced" class="dd-item active">
         <a href="../../anomaly-detection-w-msk/1_getting_started/self_paced.html">
         Self Paced
         
@@ -1063,7 +1063,7 @@
             
           
           
-            <a href='../../index.html'>OpenSearch Log Analytics Workshop</a> > <a href='../../open-search-log-analytics/index.html'>OpenSearch Log Analytics</a> > <a href='../../open-search-log-analytics/1_getting_started.html'>Getting started</a> > AWS Event
+            <a href='../../'>OpenSearch Log Analytics Workshop</a> > <a href='../../anomaly-detection-w-msk/'>4. Anomaly Detection with MSK</a> > <a href='../../anomaly-detection-w-msk/1_getting_started.html'>1. Getting Started</a> > Self Paced
           
         
           
@@ -1102,7 +1102,7 @@
           
             <h1>
               
-              AWS Event
+              Self Paced
             </h1>
           
 
@@ -1110,23 +1110,16 @@
 
 
 
-<div class="notices warning" ><p>Only complete this section if you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee). If you are running the workshop on your own, go to <a href="../../open-search-log-analytics/1_getting_started/self_paced.html">Self Paced</a>.</p>
+<div class="notices warning" ><p>Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent,
+Loft, Immersion Day, or any other event hosted by an AWS employee), continue with <a href="../../anomaly-detection-w-msk/1_getting_started/aws_event.html">AWS Event</a>.</p>
 </div>
 
-<h4 id="log-into-aws-console-via-aws-workshop-portal">Log into AWS Console via. AWS Workshop Portal</h4>
-<p>Your instructor has already created an AWS account for you. Your instructor should provide you a participant hash.</p>
-<p>Once you have your participant hash go to <a href="https://dashboard.eventengine.run/">https://dashboard.eventengine.run/</a></p>
-<p>Enter your participant has and select Accept Terms &amp; Login</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_1.png" alt="Event_Engine_Login_Hash"></p>
-<p>Select how you want to log in. Selecting Email One-Time Password (OTP) is recommended. However, you can also use your Amazon.com retail account to login.</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_2.png" alt="Event_Engine_Login_Email"></p>
-<p>Follow the prompts to complete the login process. Once you have successfully logged in. You will see the following screen. Select AWS Console</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_3.png" alt="Event_Engine_Access_Console"></p>
-<p>A window will open. From the window select Open AWS Console</p>
-<p><img src="../../images/open-search-log-analytics/event_engine_4.png" alt="Event_Engine_Access_Console"></p>
-<p>This will open the AWS Console in a new window on your web browser. If you can see the home page for the AWS Console as depicted below you have successfully logged into your AWS account.</p>
+<h4 id="running-the-workshop-on-your-own">Running the Workshop on Your Own</h4>
+<p>You will need an AWS Account with web console access to complete the workshop.</p>
+<p>If you do not have an AWS account <a href="https://aws.amazon.com/getting-started/">Create an AWS Account</a></p>
+<p>As pictured below you should be able to access the <a href="https://console.aws.amazon.com/">AWS Console</a></p>
 <p><img src="../../images/open-search-log-analytics/event_engine_5.png" alt="Event_Engine_AWS_Console"></p>
-<p>Now that you have successfully logged into your AWS account and are able to access the AWS Console, let&rsquo;s begin the next step <a href="../../open-search-log-analytics/2_environment_set_up.html">Environment Set Up</a></p>
+<p>Once you have can access the <a href="https://console.aws.amazon.com/">AWS Console</a>, lets begin the next step <a href="../../anomaly-detection-w-msk/2_environment_set_up.html">Environment Set Up</a></p>
 
 
 <footer class="footline">
@@ -1164,22 +1157,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1187,6 +1164,8 @@
                 
 
                     
+                    
+                        
                     
                     
 
@@ -1196,6 +1175,18 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1212,9 +1203,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1610,6 +1598,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1625,18 +1614,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1645,9 +1624,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1665,6 +1641,23 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1672,6 +1665,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
