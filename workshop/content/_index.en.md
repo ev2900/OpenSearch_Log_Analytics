@@ -14,4 +14,5 @@ In the workshop [CloudWatch Log Collection]({{<relref "collect-log-cloud-watch/"
 
 In the workshop [Fluentd Log Ingestion]({{<relref "open-search-fluentd/">}}) you will learn how to use [Fluentd](https://www.fluentd.org/) an Opensource data collector to send logs in real time to Amazon OpenSearch Service.
 
-In the workshop [Anomaly Detection with MSK]({{<relref "anomaly-detection-w-msk/">}}) you will learn how the anomaly detection feature in OpenSearch to identify potential anomalous data. Data for analysis by OpenSearch will be send in real time via. Amazon Managed Streaming for Apache Kafka (MSK)  
+In the workshop [OpenSearch Alerting]({{<relref "open-search-alerting/">}}) you will learn how to set up alerts in Amazon OpenSearch. This allows you to get a notification when a condition is met in your log data.
+
