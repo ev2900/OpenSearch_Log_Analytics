@@ -14,6 +14,6 @@ You will need to complete the following set up steps
 2. Configure a network security group to allow network traffic between Cloud9 and MSK
 3. Create a Kafka topic
 4. Create an OpenSearch index
-5. Configure a Lambda function
+5. Map IAM user to OpenSearch role
 
 To begin the environment step up and configuration follow the steps in the [CloudFormation (Automated)]({{<relref "../2_Environment_Set_Up/cloudformation_automated">}})

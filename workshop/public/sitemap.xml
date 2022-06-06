@@ -26,6 +26,8 @@
   </url><url>
     <loc>/open-search-fluentd/3_configure_fluentd.html</loc>
   </url><url>
+    <loc>/anomaly-detection-w-msk/3_configure_lambda.html</loc>
+  </url><url>
     <loc>/open-search-fluentd/</loc>
   </url><url>
     <loc>/open-search-log-analytics/3_send_log_data_to_kinesis_fire_hose.html</loc>
@@ -38,13 +40,19 @@
   </url><url>
     <loc>/open-search-fluentd/4_search_logs.html</loc>
   </url><url>
+    <loc>/anomaly-detection-w-msk/4_send_logs.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/4_visualize_analyze.html</loc>
+  </url><url>
+    <loc>/anomaly-detection-w-msk/5_anomaly_detection.html</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/5_clean_up.html</loc>
   </url><url>
     <loc>/open-search-fluentd/5_clean_up.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/5_clean_up.html</loc>
+  </url><url>
+    <loc>/anomaly-detection-w-msk/6_clean_up.html</loc>
   </url><url>
     <loc>/anomaly-detection-w-msk/1_getting_started/aws_event.html</loc>
   </url><url>
