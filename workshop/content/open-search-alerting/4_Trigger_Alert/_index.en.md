@@ -13,9 +13,7 @@ In this exercise, we will simulate an alert condition and verify our email alert
 Navigate to the [Cloud9 Console](https://console.aws.amazon.com/cloud9/home) and click on **Open IDE** under the already created ```workshop-cloud9``` environment. The [OpenSearch_API_Examples](https://github.com/ev2900/OpenSearch_API_Examples) repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.
 
 1. Open the file **OpenSearch_API_Examples/Alerting/2_trigger_alert.py**
-
 2. Update the **os_url** variable to your OpenSearch instance. This is the **OSDomainURL** Output from the CloudFormation stack.
-
 3. Go to File->Save to save the changes to **2_trigger_alert.py**
 
 In the terminal window, run the following commands:
@@ -36,7 +34,6 @@ The script will to send high CPU values to OpenSearch until you stop the script.
 ![cloud9_email](/images/open-search-alerting/os_email_1.png)
 
 2. In the OpenSearch Dashboard, click the menu icon and go to **OpenSearch Plugins->Alerting**. 
-
 3. Click on the **Monitors** tab and open the **High CPU Alert** monitor we created earlier.
 
 Observe the **History** section. You should see the *Triggered* status occurring.

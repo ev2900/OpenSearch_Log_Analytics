@@ -93,7 +93,7 @@
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -363,7 +363,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -581,7 +581,7 @@
         
         
         ">
-      <a href="../open-search-fluentd/">
+      <a href="../open-search-fluentd/index.html">
           Fluentd Log Ingestion
           
       </a>
@@ -830,7 +830,7 @@
         
         
         ">
-      <a href="../anomaly-detection-w-msk/">
+      <a href="../anomaly-detection-w-msk/index.html">
           Anomaly Detection with MSK
           
       </a>
@@ -1105,7 +1105,7 @@
         
         
         ">
-      <a href="../open-search-alerting/">
+      <a href="../open-search-alerting/index.html">
           OpenSearch Alerting
           
       </a>
@@ -1483,15 +1483,9 @@
 <h4 id="run-a-python-application-from-cloud9">Run a Python Application from Cloud9</h4>
 <p>Navigate to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a> and click on <strong>Open IDE</strong> under the already created <code>workshop-cloud9</code> environment. The <a href="https://github.com/ev2900/OpenSearch_API_Examples">OpenSearch_API_Examples</a> repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</p>
 <ol>
-<li>
-<p>Open the file <strong>OpenSearch_API_Examples/Alerting/2_trigger_alert.py</strong></p>
-</li>
-<li>
-<p>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the <strong>OSDomainURL</strong> Output from the CloudFormation stack.</p>
-</li>
-<li>
-<p>Go to File-&gt;Save to save the changes to <strong>2_trigger_alert.py</strong></p>
-</li>
+<li>Open the file <strong>OpenSearch_API_Examples/Alerting/2_trigger_alert.py</strong></li>
+<li>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the <strong>OSDomainURL</strong> Output from the CloudFormation stack.</li>
+<li>Go to File-&gt;Save to save the changes to <strong>2_trigger_alert.py</strong></li>
 </ol>
 <p>In the terminal window, run the following commands:</p>
 <ol start="4">
@@ -1506,12 +1500,8 @@
 </ol>
 <p><img src="../images/open-search-alerting/os_email_1.png" alt="cloud9_email"></p>
 <ol start="2">
-<li>
-<p>In the OpenSearch Dashboard, click the menu icon and go to <strong>OpenSearch Plugins-&gt;Alerting</strong>.</p>
-</li>
-<li>
-<p>Click on the <strong>Monitors</strong> tab and open the <strong>High CPU Alert</strong> monitor we created earlier.</p>
-</li>
+<li>In the OpenSearch Dashboard, click the menu icon and go to <strong>OpenSearch Plugins-&gt;Alerting</strong>.</li>
+<li>Click on the <strong>Monitors</strong> tab and open the <strong>High CPU Alert</strong> monitor we created earlier.</li>
 </ol>
 <p>Observe the <strong>History</strong> section. You should see the <em>Triggered</em> status occurring.</p>
 <p><img src="../images/open-search-alerting/os_email_2.png" alt="cloud9_email_2"></p>

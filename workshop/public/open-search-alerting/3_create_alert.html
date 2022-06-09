@@ -93,7 +93,7 @@
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -363,7 +363,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -581,7 +581,7 @@
         
         
         ">
-      <a href="../open-search-fluentd/">
+      <a href="../open-search-fluentd/index.html">
           Fluentd Log Ingestion
           
       </a>
@@ -830,7 +830,7 @@
         
         
         ">
-      <a href="../anomaly-detection-w-msk/">
+      <a href="../anomaly-detection-w-msk/index.html">
           Anomaly Detection with MSK
           
       </a>
@@ -1105,7 +1105,7 @@
         
         
         ">
-      <a href="../open-search-alerting/">
+      <a href="../open-search-alerting/index.html">
           OpenSearch Alerting
           
       </a>
@@ -1482,19 +1482,12 @@
 <h4 id="create-a-destination">Create a Destination</h4>
 <p>In this section, we will configure the SNS Topic created from the CloudFormation script as an OpenSearch Alert Destination.</p>
 <ol>
-<li>
-<p>Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: <strong>DashboardURL, UserName, Password</strong></p>
-</li>
-<li>
-<p>Click on the menu icon and go to <strong>OpenSearch Plugins-&gt;Alerting</strong>
-<img src="../images/open-search-alerting/os_alert_1.png" alt="os_alert_1"></p>
-</li>
-<li>
-<p>Click on the Destinations tab and push <strong>Add destination</strong>
-<img src="../images/open-search-alerting/os_alert_2.png" alt="os_alert_2"></p>
-</li>
-<li>
-<p>Add destination details and click <strong>Create</strong></p>
+<li>Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: <strong>DashboardURL, UserName, Password</strong></li>
+<li>Click on the menu icon and go to <strong>OpenSearch Plugins-&gt;Alerting</strong>
+<img src="../images/open-search-alerting/os_alert_1.png" alt="os_alert_1"></li>
+<li>Click on the Destinations tab and push <strong>Add destination</strong>
+<img src="../images/open-search-alerting/os_alert_2.png" alt="os_alert_2"></li>
+<li>Add destination details and click <strong>Create</strong>
 <table>
 <thead>
 <tr>
@@ -1527,12 +1520,9 @@
 <h4 id="set-up-a-monitor">Set up a Monitor</h4>
 <p>Next, we will configure a monitor that will trigger an alert if <em>cpu_util</em> exceeds 50.</p>
 <ol>
-<li>
-<p>Click on the <strong>Monitors</strong> tab and push <strong>Create monitor</strong>
-<img src="../images/open-search-alerting/os_monitor_1.png" alt="os_monitor_1"></p>
-</li>
-<li>
-<p>Fill in the <strong>Monitor details</strong> and <strong>Data source</strong> sections with the following values:</p>
+<li>Click on the <strong>Monitors</strong> tab and push <strong>Create monitor</strong>
+<img src="../images/open-search-alerting/os_monitor_1.png" alt="os_monitor_1"></li>
+<li>Fill in the <strong>Monitor details</strong> and <strong>Data source</strong> sections with the following values:
 <table>
 <thead>
 <tr>
@@ -1575,16 +1565,11 @@
 </ol>
 <p><img src="../images/open-search-alerting/os_monitor_2.png" alt="os_monitor_2"></p>
 <ol start="3">
-<li>
-<p>Under Query, click <strong>+ Add metric</strong>
-<img src="../images/open-search-alerting/os_monitor_3.png" alt="os_monitor_3"></p>
-</li>
-<li>
-<p>Specify MAX OF cpu_util by setting Aggregation to <strong>max()</strong> and Field to <strong>cpu_util</strong>. Click <strong>Save</strong>.
-<img src="../images/open-search-alerting/os_monitor_4.png" alt="os_monitor_4"></p>
-</li>
-<li>
-<p>Under Triggers, click <strong>Add trigger</strong>. Create a trigger with the following:</p>
+<li>Under Query, click <strong>+ Add metric</strong>
+<img src="../images/open-search-alerting/os_monitor_3.png" alt="os_monitor_3"></li>
+<li>Specify MAX OF cpu_util by setting Aggregation to <strong>max()</strong> and Field to <strong>cpu_util</strong>. Click <strong>Save</strong>.
+<img src="../images/open-search-alerting/os_monitor_4.png" alt="os_monitor_4"></li>
+<li>Under Triggers, click <strong>Add trigger</strong>. Create a trigger with the following:
 <table>
 <thead>
 <tr>
