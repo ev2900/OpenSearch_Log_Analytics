@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2. Environment Set Up on Open Search Log Analytics Workshop</title>
+    <link>/open-search-alerting/2_environment_set_up.html</link>
+    <description>Recent content in 2. Environment Set Up on Open Search Log Analytics Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/open-search-alerting/2_environment_set_up/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CloudFormation</title>
+      <link>/open-search-alerting/2_environment_set_up/cloudformation_automated.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-search-alerting/2_environment_set_up/cloudformation_automated.html</guid>
+      <description>Step 1 - Deploy CloudFormation Template  Right click the Launch Stack button below and open the link in a new tab.  
+ Navigate to the new tab you just opened. You should see a screen similar to the one below   Click on the Next button
+  Populate EmailParameter with a valid email address to send alerts.   Continue to click on the Next buttons until you arrive at the final review screen.</description>
+    </item>
+    
+    <item>
+      <title>Create OpenSearch Index</title>
+      <link>/open-search-alerting/2_environment_set_up/create_index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-search-alerting/2_environment_set_up/create_index.html</guid>
+      <description>We will need to create a sample index in OpenSearch so we can store and query data for an alert. To do this, we will run a Python application in our Cloud9 environment to create the index.
+Run a Python Application from Cloud9 Navigate to the Cloud9 Console and click on Open IDE under the already created workshop-cloud9 environment. The OpenSearch_API_Examples repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</description>
+    </item>
+    
+  </channel>
+</rss>

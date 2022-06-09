@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1. Getting Started on Open Search Log Analytics Workshop</title>
+    <link>/anomaly-detection-w-msk/1_getting_started.html</link>
+    <description>Recent content in 1. Getting Started on Open Search Log Analytics Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/anomaly-detection-w-msk/1_getting_started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Event</title>
+      <link>/anomaly-detection-w-msk/1_getting_started/aws_event.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/anomaly-detection-w-msk/1_getting_started/aws_event.html</guid>
+      <description>Only complete this section if you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee). If you are running the workshop on your own, go to Self Paced.
+Log into AWS Console via. AWS Workshop Portal Your instructor has already created an AWS account for you. Your instructor should provide you a participant hash.
+Once you have your participant hash go to https://dashboard.</description>
+    </item>
+    
+    <item>
+      <title>Self Paced</title>
+      <link>/anomaly-detection-w-msk/1_getting_started/self_paced.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/anomaly-detection-w-msk/1_getting_started/self_paced.html</guid>
+      <description>Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Loft, Immersion Day, or any other event hosted by an AWS employee), continue with AWS Event.
+Running the Workshop on Your Own You will need an AWS Account with web console access to complete the workshop.
+If you do not have an AWS account Create an AWS Account</description>
+    </item>
+    
+  </channel>
+</rss>
