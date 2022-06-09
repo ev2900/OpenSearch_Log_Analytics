@@ -75,9 +75,11 @@ for html_file in l1:
 		c1 = re.sub(r'<a href="./open-search-log-analytics/">', '<a href="./open-search-log-analytics/index.html">', html)
 		c2 = re.sub(r'<a href="./collect-log-cloud-watch/"', '<a href="./collect-log-cloud-watch/index.html"', c1)
 		c3 = re.sub(r'<a href="./open-search-fluentd/"', '<a href="./open-search-fluentd/index.html"', c2)
-		c4 = re.sub(r'<a class="nav nav-next" href="./open-search-log-analytics/"', '<a class="nav nav-next" href="./open-search-log-analytics/index.html"', c3)
+		c4 = re.sub(r'<a href="./anomaly-detection-w-msk/"', '<a href="./anomaly-detection-w-msk/index.html"', c3)
 		
-		html_object.write(c4)
+		c5 = re.sub(r'<a class="nav nav-next" href="./open-search-log-analytics/"', '<a class="nav nav-next" href="./open-search-log-analytics/index.html"', c4)
+		
+		html_object.write(c5)
 		html_object.truncate()
 
 		print("Finished file " + html_file)
