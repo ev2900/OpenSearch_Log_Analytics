@@ -13,13 +13,10 @@ Now we will configure an OpenSearch Alert using the index we created in the last
 In this section, we will configure the SNS Topic created from the CloudFormation script as an OpenSearch Alert Destination.
 
 1. Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: **DashboardURL, UserName, Password**
-
 2. Click on the menu icon and go to **OpenSearch Plugins->Alerting**
 ![os_alert_1](/images/open-search-alerting/os_alert_1.png)
-
 3. Click on the Destinations tab and push **Add destination**
 ![os_alert_2](/images/open-search-alerting/os_alert_2.png)
-
 4. Add destination details and click **Create**
 | Field         | Value                            |
 | ------------- | -------------------------------- |
@@ -36,7 +33,6 @@ Next, we will configure a monitor that will trigger an alert if *cpu_util* excee
 
 1. Click on the **Monitors** tab and push **Create monitor**
 ![os_monitor_1](/images/open-search-alerting/os_monitor_1.png)
-
 2. Fill in the **Monitor details** and **Data source** sections with the following values:
 | Field                   | Value                            |
 | ----------------------- | -------------------------------- |
@@ -52,10 +48,8 @@ Next, we will configure a monitor that will trigger an alert if *cpu_util* excee
 
 3. Under Query, click **+ Add metric**
 ![os_monitor_3](/images/open-search-alerting/os_monitor_3.png)
-
 4. Specify MAX OF cpu_util by setting Aggregation to **max()** and Field to **cpu_util**. Click **Save**.
 ![os_monitor_4](/images/open-search-alerting/os_monitor_4.png)
-
 5. Under Triggers, click **Add trigger**. Create a trigger with the following:
 | Field                   | Value                            |
 | ----------------------- | -------------------------------- |

@@ -1487,40 +1487,24 @@
 <h4 id="run-a-python-application-from-cloud9">Run a Python Application from Cloud9</h4>
 <p>Navigate to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a> and click on <strong>Open IDE</strong> under the already created <code>workshop-cloud9</code> environment. The <a href="https://github.com/ev2900/OpenSearch_API_Examples">OpenSearch_API_Examples</a> repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</p>
 <ol>
-<li>
-<p>Open the file <strong>OpenSearch_API_Examples/Alerting/1_create_index.py</strong></p>
-</li>
-<li>
-<p>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the <strong>OSDomainURL</strong> Output from the CloudFormation stack.</p>
-</li>
-<li>
-<p>Goto File-&gt;Save to save the changes to <strong>1_create_index.py</strong></p>
-</li>
+<li>Open the file <strong>OpenSearch_API_Examples/Alerting/1_create_index.py</strong></li>
+<li>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the <strong>OSDomainURL</strong> Output from the CloudFormation stack.</li>
+<li>Goto File-&gt;Save to save the changes to <strong>1_create_index.py</strong></li>
 </ol>
 <p>In the terminal window, run the following commands:</p>
 <ol start="4">
-<li>
-<p><code>pip install requests</code></p>
-</li>
-<li>
-<p><code>python OpenSearch_API_Examples/Alerting/1_create_index.py</code></p>
-</li>
+<li><code>pip install requests</code></li>
+<li><code>python OpenSearch_API_Examples/Alerting/1_create_index.py</code></li>
 </ol>
 <p>The image below highlights the commands.</p>
 <p><img src="../../images/open-search-alerting/cloud9_1.png" alt="cloud9_create"></p>
 <p>This command creates and index for use in this workshop. If you would like to verify it was created, you can browse to your OpenSearch dashboard.</p>
 <ol>
-<li>
-<p>Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: <strong>DashboardURL, UserName, Password</strong></p>
-</li>
-<li>
-<p>Click on the menu icon and goto <strong>OpenSearch Plugins-&gt;Index Management</strong>
-<img src="../../images/open-search-alerting/os_1.png" alt="os_1"></p>
-</li>
-<li>
-<p>Open <strong>Indicies-&gt;Indicies</strong> and verify <strong>alert-1</strong> index exists. You will find the health in yellow status, but this is expected.
-<img src="../../images/open-search-alerting/os_2.png" alt="os_2"></p>
-</li>
+<li>Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: <strong>DashboardURL, UserName, Password</strong></li>
+<li>Click on the menu icon and goto <strong>OpenSearch Plugins-&gt;Index Management</strong>
+<img src="../../images/open-search-alerting/os_1.png" alt="os_1"></li>
+<li>Open <strong>Indicies-&gt;Indicies</strong> and verify <strong>alert-1</strong> index exists. You will find the health in yellow status, but this is expected.
+<img src="../../images/open-search-alerting/os_2.png" alt="os_2"></li>
 </ol>
 <p>When you are ready move on to the next step <a href="../../open-search-alerting/3_create_alert.html">Create Alert</a></p>
 
