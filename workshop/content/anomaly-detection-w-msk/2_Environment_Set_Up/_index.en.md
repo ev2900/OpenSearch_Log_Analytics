@@ -6,7 +6,7 @@ menuTitle: "Environment Set Up"
 weight: 10
 ---
 
-You will need to deploy a few services and configure our AWS environment before you can get started.
+You will need to deploy a few services and configure your AWS environment before you can get started.
 
 You will need to complete the following set up steps
 
@@ -14,6 +14,6 @@ You will need to complete the following set up steps
 2. Configure a network security group to allow network traffic between Cloud9 and MSK
 3. Create a Kafka topic
 4. Create an OpenSearch index
-5. Map IAM user to OpenSearch role
+5. Map a IAM user to OpenSearch role
 
 To begin the environment step up and configuration follow the steps in the [CloudFormation (Automated)]({{<relref "../2_Environment_Set_Up/cloudformation_automated">}})

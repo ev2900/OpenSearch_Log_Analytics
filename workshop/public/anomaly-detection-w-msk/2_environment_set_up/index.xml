@@ -13,7 +13,7 @@
       
       <guid>/anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html</guid>
       <description>Step 1 - Deploy CloudFormation Template  Right click the Launch CloudFormation Stack button below and open the link in a new tab.  
-Navigate to the new tab you just opened. You should see a screen similar to the one below  Click on the Next button Continue to click on the Next buttons until you arrive at the final review screen. Scroll to the bottom of this page At the bottom of the page click on I acknowledge that AWS CloudFormation might create IAM resources with custom names Click on Create stack  This will begin the process of deploy the required resources.</description>
+Navigate to the new tab you just opened. You should see a screen similar to the one below  Click on the Next button Continue to click on the Next buttons until you arrive at the final review screen. Scroll to the bottom of this page At the bottom of the page click on I acknowledge that AWS CloudFormation might create IAM resources with custom names Click on Create stack  This will begin the process of deploying the required resources.</description>
     </item>
     
   </channel>

@@ -93,7 +93,7 @@
         
         
         ">
-      <a href="../open-search-log-analytics/">
+      <a href="../open-search-log-analytics/index.html">
           OpenSearch Log Analytics
           
       </a>
@@ -363,7 +363,7 @@
         
         
         ">
-      <a href="../collect-log-cloud-watch/">
+      <a href="../collect-log-cloud-watch/index.html">
           CloudWatch Log Collection
           
       </a>
@@ -581,7 +581,7 @@
         
         
         ">
-      <a href="../open-search-fluentd/">
+      <a href="../open-search-fluentd/index.html">
           Fluentd Log Ingestion
           
       </a>
@@ -830,7 +830,7 @@
         
         
         ">
-      <a href="../anomaly-detection-w-msk/">
+      <a href="../anomaly-detection-w-msk/index.html">
           Anomaly Detection with MSK
           
       </a>
@@ -1092,6 +1092,276 @@
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-alerting/" title="OpenSearch Alerting" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-alerting/">
+          OpenSearch Alerting
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-alerting/1_getting_started.html" title="1. Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-alerting/1_getting_started.html">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-alerting/1_getting_started/aws_event.html" title="AWS Event" class="dd-item ">
+        <a href="../open-search-alerting/1_getting_started/aws_event.html">
+        AWS Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-alerting/1_getting_started/self_paced.html" title="Self Paced" class="dd-item ">
+        <a href="../open-search-alerting/1_getting_started/self_paced.html">
+        Self Paced
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-alerting/2_environment_set_up.html" title="2. Environment Set Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-alerting/2_environment_set_up.html">
+          Environment Set Up
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-alerting/2_environment_set_up/cloudformation_automated.html" title="CloudFormation" class="dd-item ">
+        <a href="../open-search-alerting/2_environment_set_up/cloudformation_automated.html">
+        CloudFormation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open-search-alerting/2_environment_set_up/create_index.html" title="Create OpenSearch Index" class="dd-item ">
+        <a href="../open-search-alerting/2_environment_set_up/create_index.html">
+        Create OpenSearch Index
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-alerting/3_create_alert.html" title="3. Create Alert" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-alerting/3_create_alert.html">
+          Create Alert
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-alerting/4_trigger_alert.html" title="4. Trigger Alert" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-alerting/4_trigger_alert.html">
+          Trigger Alert
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open-search-alerting/5_clean_up.html" title="5. Clean Up" class="dd-item
+        
+        
+        
+        ">
+      <a href="../open-search-alerting/5_clean_up.html">
+          Clean Up
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
         
     </ul>
 
@@ -1176,7 +1446,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1---create-index-pattern">Step 1 - Create Index Pattern</a></li>
+        <li><a href="#step-2---search-logs">Step 2 - Search Logs</a></li>
+        <li><a href="#step-3---create-anomoly-detector">Step 3 - Create Anomoly Detector</a></li>
+        <li><a href="#step-4---view-anomaly-detector-results">Step 4 - View Anomaly Detector Results</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1200,7 +1481,108 @@
 
 
 
-	
+	<p>Now that you have sent data to MSK via. the two python scripts in Cloud9. Lets first validate that we can see the log data in OpenSearch. Then second, lets create our anomaly detector.</p>
+<h3 id="step-1---create-index-pattern">Step 1 - Create Index Pattern</h3>
+<ol>
+<li>Navigate to the <a href="https://us-east-1.console.aws.amazon.com/esv3/home">OpenSearch page in the AWS console</a></li>
+<li>Click on <strong>workshop-domain</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_1.png" alt="anomoly_1"></p>
+<ol start="3">
+<li>Click on the <strong>OpenSearch Dashboards URL</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_2.png" alt="anomoly_2"></p>
+<ol start="4">
+<li>You will be prompted to log in. For the user name enter <code>OSMasterUser</code> for the password enter <code>AwS#OpenSearch1</code></li>
+<li>If an additional popup window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional popup window is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+<li>In the OpenSearch Dashboard, expand the side menu and click on Stack Management under management section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_1.PNG" alt="stack_management"></p>
+<ol start="8">
+<li>On the stack management page click on <strong>Index Patterns</strong> on the left hand menu</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_2.PNG" alt="index_pattern"></p>
+<ol start="9">
+<li>On the index patterns page click on <strong>Create index pattern</strong></li>
+</ol>
+<p><img src="../images/open-search-log-analytics/va_3.PNG" alt="create_index_pattern_1"></p>
+<ol start="10">
+<li>Enter <code>infa-logs-*</code> under the index pattern name section</li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_3.png" alt="anomoly_3"></p>
+<ol start="11">
+<li>Click on <strong>Next step</strong></li>
+<li>Click on the time field drop down and select <strong>eventtime</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_4.png" alt="anomoly_4"></p>
+<ol start="13">
+<li>Click on <strong>Create index pattern</strong></li>
+</ol>
+<p>You have now created an index pattern! You can use the index pattern to search our log and validate that the logs have been send from MSK to OpenSearch</p>
+<h3 id="step-2---search-logs">Step 2 - Search Logs</h3>
+<ol>
+<li>In the OpenSearch Dashboard expand the side menu and click on <strong>Discover</strong> under the OpenSearch Dashboards section</li>
+</ol>
+<p><img src="../images/open-search-log-analytics/search_1.PNG" alt="search_1"></p>
+<ol start="2">
+<li>Expand the time range that OpenSearch will view to the <strong>Last 3 year</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_5.png" alt="anomoly_5"></p>
+<p>You will now be able to see logs from the past 3 yrs</p>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_6.png" alt="anomoly_6"></p>
+<h3 id="step-3---create-anomoly-detector">Step 3 - Create Anomoly Detector</h3>
+<ol>
+<li>In the OpenSearch Dashboard expand the side menu and click on Anomaly detection under the OpenSearch Plugins section</li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_7.png" alt="anomoly_7"></p>
+<ol start="2">
+<li>Click on <strong>Create detector</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_8.png" alt="anomoly_8"></p>
+<ol start="3">
+<li>Enter <code>cpu_detector</code> for the name of the detector</li>
+<li>Pick <code>infa-logs-1</code> for the data source of the detector</li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_9.png" alt="anomoly_9"></p>
+<ol start="5">
+<li>Pick <code>eventtime</code> for the timestamp of the detector</li>
+<li>Change the detector interval to <code>1440</code></li>
+<li>Click on <strong>Next</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_10.png" alt="anomoly_10"></p>
+<ol start="8">
+<li>Enter <code>CPU-Utilization</code> for the feature name</li>
+<li>Select <code>average()</code> for the aggregation method</li>
+<li>Select <code>cpu_util</code> for the field</li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_11.png" alt="anomoly_11"></p>
+<ol start="11">
+<li>Click the check box to enable categorical fields</li>
+<li>Select <code>application_id</code> for the categorical field</li>
+<li>Click on <strong>Next</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_12.png" alt="anomoly_12"></p>
+<ol start="14">
+<li>Click to uncheck the box to start real-time detector automatically</li>
+<li>Click the check box to run historical analysis detection</li>
+<li>Adjust the historical analysis date range to the last 3 yrs</li>
+<li>Click on <strong>Apply</strong></li>
+<li>Click on <strong>Next</strong></li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_13.png" alt="anomoly_13"></p>
+<ol start="19">
+<li>Click on <strong>Create detector</strong></li>
+</ol>
+<h3 id="step-4---view-anomaly-detector-results">Step 4 - View Anomaly Detector Results</h3>
+<ol>
+<li>Click on the <strong>Historical analysis</strong> tab</li>
+</ol>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_14.png" alt="anomoly_14"></p>
+<p>You will now be able to see a heat map of the anomaly&rsquo;s detected by application. Click on an of the rectangles in the heat map to see a more detailed view of the anomaly</p>
+<p><img src="../images/anomaly-detection-w-msk/anomoly_15.png" alt="anomoly_15"></p>
+<p>When you are ready proceed to the next step <a href="../anomaly-detection-w-msk/6_clean_up.html">Clean Up</a> if you want to delete the resources we used for this workshop</p>
+
 
 
 
@@ -1831,6 +2213,168 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
