@@ -150,15 +150,17 @@ for html_file in l3:
 			html_object_2 = re.sub(r'<a href="*..*/collect-log-cloud-watch/">', '<a href="../../collect-log-cloud-watch/index.html">', html_object_1)
 			html_object_3 = re.sub(r'<a href="*..*/open-search-fluentd/">', '<a href="../../open-search-fluentd/index.html">', html_object_2)
 			html_object_4 = re.sub(r'<a href="*..*/anomaly-detection-w-msk/">', '<a href="../../anomaly-detection-w-msk/index.html">', html_object_3)
+			html_object_5 = re.sub(r'<a href="*..*/open-search-alerting/">', '<a href="../../open-search-alerting/index.html">', html_object_4)
 
-			html_object_5 = re.sub(r'> <a href=\'../../open-search-log-analytics/\'>1. OpenSearch Log Analytics</a>', '> <a href=\'../../open-search-log-analytics/index.html\'>OpenSearch Log Analytics</a>', html_object_4)
-			html_object_6 = re.sub(r'<a href=\'../../\'>OpenSearch Log Analytics Workshop</a> >', '<a href=\'../../index.html\'>OpenSearch Log Analytics Workshop</a> >', html_object_5)
-			html_object_7 = re.sub(r'<a href=\'../../open-search-log-analytics/1_getting_started.html\'>1. Getting started</a> >', '<a href=\'../../open-search-log-analytics/1_getting_started.html\'>Getting started</a> >', html_object_6)
 
-			html_object_8 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/\'>2. CloudWatch Log Collection</a>', '> <a href=\'../../collect-log-cloud-watch/index.html\'>CloudWatch Log Collection</a>', html_object_7)
-			html_object_9 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'>1. Getting started</a>', '> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'> Getting started</a>', html_object_8)
+			html_object_6 = re.sub(r'> <a href=\'../../open-search-log-analytics/\'>1. OpenSearch Log Analytics</a>', '> <a href=\'../../open-search-log-analytics/index.html\'>OpenSearch Log Analytics</a>', html_object_5)
+			html_object_7 = re.sub(r'<a href=\'../../\'>OpenSearch Log Analytics Workshop</a> >', '<a href=\'../../index.html\'>OpenSearch Log Analytics Workshop</a> >', html_object_6)
+			html_object_8 = re.sub(r'<a href=\'../../open-search-log-analytics/1_getting_started.html\'>1. Getting started</a> >', '<a href=\'../../open-search-log-analytics/1_getting_started.html\'>Getting started</a> >', html_object_7)
 
-			html_object.write(html_object_9)
+			html_object_9 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/\'>2. CloudWatch Log Collection</a>', '> <a href=\'../../collect-log-cloud-watch/index.html\'>CloudWatch Log Collection</a>', html_object_8)
+			html_object_10 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'>1. Getting started</a>', '> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'> Getting started</a>', html_object_9)
+
+			html_object.write(html_object_10)
 			html_object.truncate()
 
 			print("Finished file " + html_file)	 
