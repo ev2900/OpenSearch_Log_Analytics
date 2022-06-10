@@ -5,9 +5,12 @@ chapter: false
 weight: 10
 ---
 
-Navigate to the [CloudFormation console](https://us-east-1.console.aws.amazon.com/cloudformation/home?) select the stacks named **os-alerting** and **aws-cloud9-workshop-cloud9-...** and select **Delete**. 
-![os_cleanup_1](/images/open-search-alerting/os_cleanup_1.png)
+### Delete CloudFormation Stack
 
-This process may take several minutes to complete. When it's done, the status will change to ```DELETE_COMPLETE```.
+1. Navigate to the [CloudFormation console](https://us-east-1.console.aws.amazon.com/cloudformation/home)
+2. Select the stack that was deployed earlier in the lab
+3. Click on **Delete**
 
-You have completed deleting the resources used in this workshop.
+![delete_1](/images/open-search-alerting/delete_1.png)
+
+The CloudFormation stack will take 5 - 10 minutes to delete

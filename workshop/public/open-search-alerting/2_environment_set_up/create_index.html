@@ -1483,29 +1483,51 @@
         
 
 
-<p>We will need to create a sample index in OpenSearch so we can store and query data for an alert. To do this, we will run a Python application in our Cloud9 environment to create the index.</p>
-<h4 id="run-a-python-application-from-cloud9">Run a Python Application from Cloud9</h4>
-<p>Navigate to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a> and click on <strong>Open IDE</strong> under the already created <code>workshop-cloud9</code> environment. The <a href="https://github.com/ev2900/OpenSearch_API_Examples">OpenSearch_API_Examples</a> repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</p>
+<p>You will need to create a sample index in OpenSearch so you can store and query data for an alert. To do this, you will run a Python application in our Cloud9 environment to create the index.</p>
+<h4 id="step-1---create-index">Step 1 - Create Index</h4>
+<ol>
+<li>Navigate to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a></li>
+<li>Click on <strong>Open IDE</strong> under the already created workshop-cloud9 environment.</li>
+</ol>
+<p><img src="../../images/open-search-alerting/cloud9_2.png" alt="cloud9_2"></p>
+<p>The <a href="https://github.com/ev2900/OpenSearch_API_Examples">OpenSearch_API_Examples</a> repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</p>
 <ol>
 <li>Open the file <strong>OpenSearch_API_Examples/Alerting/1_create_index.py</strong></li>
-<li>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the <strong>OSDomainURL</strong> Output from the CloudFormation stack.</li>
-<li>Goto File-&gt;Save to save the changes to <strong>1_create_index.py</strong></li>
+<li>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the value of the <strong>OSDomainURL</strong> key from the CloudFormation stack output.</li>
+<li>Go to <strong>File</strong> -&gt; <strong>Save</strong> to save the changes to 1_create_index.py</li>
 </ol>
 <p>In the terminal window, run the following commands:</p>
 <ol start="4">
 <li><code>pip install requests</code></li>
 <li><code>python OpenSearch_API_Examples/Alerting/1_create_index.py</code></li>
 </ol>
+<h4 id="step-2---check-that-the-index-was-created-via-opensearch-dashboard">Step 2 - Check that the Index was Created via. OpenSearch Dashboard</h4>
 <p>The image below highlights the commands.</p>
 <p><img src="../../images/open-search-alerting/cloud9_1.png" alt="cloud9_create"></p>
-<p>This command creates and index for use in this workshop. If you would like to verify it was created, you can browse to your OpenSearch dashboard.</p>
+<p>This command creates and index for use in this workshop</p>
 <ol>
-<li>Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: <strong>DashboardURL, UserName, Password</strong></li>
-<li>Click on the menu icon and goto <strong>OpenSearch Plugins-&gt;Index Management</strong>
-<img src="../../images/open-search-alerting/os_1.png" alt="os_1"></li>
-<li>Open <strong>Indicies-&gt;Indicies</strong> and verify <strong>alert-1</strong> index exists. You will find the health in yellow status, but this is expected.
-<img src="../../images/open-search-alerting/os_2.png" alt="os_2"></li>
+<li>Open the OpenSearch Dashboard using the URL provided in the value for the key DashboardURL in the CloudFormation outputs</li>
 </ol>
+<p><img src="../../images/open-search-alerting/cloud9_3.png" alt="cloud9_3"></p>
+<p>Once you open the dashboard URL you will be prompted to login</p>
+<ol start="2">
+<li>Enter <code>OSMasterUser</code> as the username</li>
+<li>Enter <code>AwS#OpenSearch1</code> as the password</li>
+<li>Click on <strong>Log In</strong></li>
+<li>If an additional pop up window is present after login asking about data upload click on <strong>Explore on my own</strong></li>
+<li>If an additional pop up windows is present asking you to select your tenant select <strong>Global</strong> and click on <strong>Confirm</strong></li>
+</ol>
+<p>Once you have logged in to the OpenSearch dashboard</p>
+<ol start="7">
+<li>Click on the top left hand menu on the OpenSearch dashboard</li>
+<li>Click on <strong>Index Management</strong> under the OpenSearch Plugins section</li>
+</ol>
+<p><img src="../../images/open-search-alerting/cloud9_4.png" alt="cloud9_4"></p>
+<ol start="9">
+<li>Click on <strong>Indices</strong></li>
+</ol>
+<p>You should be able to see an index alert-1 is present</p>
+<p><img src="../../images/open-search-alerting/os_2.png" alt="os_2"></p>
 <p>When you are ready move on to the next step <a href="../../open-search-alerting/3_create_alert.html">Create Alert</a></p>
 
 
