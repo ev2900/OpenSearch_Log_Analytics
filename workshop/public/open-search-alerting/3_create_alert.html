@@ -1478,16 +1478,19 @@
 
 
 
-	<p>Now we will configure an OpenSearch Alert using the index we created in the last step.</p>
-<h4 id="create-a-destination">Create a Destination</h4>
-<p>In this section, we will configure the SNS Topic created from the CloudFormation script as an OpenSearch Alert Destination.</p>
+	<p>Now you will configure an OpenSearch Alert using the index you created in the last step. First you need to configure the SNS Topic created from the CloudFormation script as an OpenSearch Alert Destination. This will allow OpenSearch to use the SNS destination to send alerts.</p>
+<h4 id="step-1---create-a-destination">Step 1 - Create a Destination</h4>
 <ol>
-<li>Open the OpenSearch Dashboard using the URL and credentials provided in the CloudFormation outputs: <strong>DashboardURL, UserName, Password</strong></li>
-<li>Click on the menu icon and go to <strong>OpenSearch Plugins-&gt;Alerting</strong>
-<img src="../images/open-search-alerting/os_alert_1.png" alt="os_alert_1"></li>
-<li>Click on the Destinations tab and push <strong>Add destination</strong>
-<img src="../images/open-search-alerting/os_alert_2.png" alt="os_alert_2"></li>
-<li>Add destination details and click <strong>Create</strong>
+<li>Click on the top left hand menu on the OpenSearch dashboard</li>
+<li>Click on <strong>Alerting</strong> under the OpenSearch Plugins section</li>
+</ol>
+<p><img src="../images/open-search-alerting/os_alert_1.png" alt="os_alert_1"></p>
+<ol start="3">
+<li>On the alerting page click on the <strong>Destinations</strong></li>
+<li>Click on <strong>Add destination</strong></li>
+</ol>
+<p><img src="../images/open-search-alerting/os_alert_2.png" alt="os_alert_2"></p>
+<p>On the add destination page configure the destination entering the values for each field in the table below</p>
 <table>
 <thead>
 <tr>
@@ -1506,23 +1509,29 @@
 </tr>
 <tr>
 <td>SNS topic ARN</td>
-<td><em>TopicARN from CloudFormation</em></td>
+<td><em>TopicARN value from CloudFormation output</em></td>
 </tr>
 <tr>
 <td>IAM role ARN</td>
-<td><em>IAMRoleARN from CloudFormation</em></td>
+<td><em>IAMRoleARN value from CloudFormation output</em></td>
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
+<p>An example destination may look like</p>
 <p><img src="../images/open-search-alerting/os_alert_3.png" alt="os_alert_3"></p>
-<h4 id="set-up-a-monitor">Set up a Monitor</h4>
-<p>Next, we will configure a monitor that will trigger an alert if <em>cpu_util</em> exceeds 50.</p>
+<ol start="5">
+<li>Once you finish configuring the destination click on <strong>Create</strong></li>
+</ol>
+<h4 id="step-2---set-up-a-monitor">Step 2 - Set up a Monitor</h4>
+<p>Using the destination you configured, you will configure a monitor that will trigger an alert if <em>cpu_util</em> exceeds 50.</p>
 <ol>
-<li>Click on the <strong>Monitors</strong> tab and push <strong>Create monitor</strong>
-<img src="../images/open-search-alerting/os_monitor_1.png" alt="os_monitor_1"></li>
-<li>Fill in the <strong>Monitor details</strong> and <strong>Data source</strong> sections with the following values:
+<li>On the OpenSearch alerting page, click on the <strong>Monitors</strong> tab</li>
+<li>Click on <strong>Create monitor</strong></li>
+</ol>
+<p><img src="../images/open-search-alerting/os_monitor_1.png" alt="os_monitor_1"></p>
+<ol start="2">
+<li>Fill in the <strong>Monitor details</strong> and <strong>Data source</strong> sections with the following values</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1561,15 +1570,22 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
+<p>An example monitor details and data source may look like</p>
 <p><img src="../images/open-search-alerting/os_monitor_2.png" alt="os_monitor_2"></p>
 <ol start="3">
-<li>Under Query, click <strong>+ Add metric</strong>
-<img src="../images/open-search-alerting/os_monitor_3.png" alt="os_monitor_3"></li>
-<li>Specify MAX OF cpu_util by setting Aggregation to <strong>max()</strong> and Field to <strong>cpu_util</strong>. Click <strong>Save</strong>.
-<img src="../images/open-search-alerting/os_monitor_4.png" alt="os_monitor_4"></li>
-<li>Under Triggers, click <strong>Add trigger</strong>. Create a trigger with the following:
+<li>Under the query section, click <strong>+ Add metric</strong></li>
+</ol>
+<p><img src="../images/open-search-alerting/os_monitor_3.png" alt="os_monitor_3"></p>
+<ol start="4">
+<li>Select <strong>max()</strong> as the aggregation function</li>
+<li>Select <strong>cpu_util</strong> as the field</li>
+<li>Click on <strong>Save</strong></li>
+</ol>
+<p><img src="../images/open-search-alerting/os_monitor_4.png" alt="os_monitor_4"></p>
+<ol start="5">
+<li>Under the triggers section, click <strong>Add trigger</strong></li>
+<li>Fill in the trigger sections with the following values</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1592,11 +1608,11 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
+<p>An example trigger configuration may look like</p>
 <p><img src="../images/open-search-alerting/os_monitor_5.png" alt="os_monitor_5"></p>
-<ol start="6">
-<li>For that trigger, configure an <strong>Action</strong> to send an email to our SNS Topic.
+<ol start="7">
+<li>For the trigger, configure an <strong>Action</strong> to send an email to our SNS Topic, fill in the action sections with the following values</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1623,11 +1639,13 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
+<p>An example action may look like</p>
 <p><img src="../images/open-search-alerting/os_monitor_6.png" alt="os_monitor_6"></p>
-<p>After the Monitor saves, your new High CPU Alert monitor dashboard will be available.
-<img src="../images/open-search-alerting/os_monitor_7.png" alt="os_monitor_7"></p>
+<ol start="8">
+<li>Click on <strong>Create</strong></li>
+</ol>
+<p>After the Monitor saves, your new High CPU Alert monitor dashboard will be available</p>
+<p><img src="../images/open-search-alerting/os_monitor_7.png" alt="os_monitor_7"></p>
 <p>When you are ready move on, go to the next step <a href="../open-search-alerting/4_trigger_alert.html">Trigger Alert</a></p>
 
 

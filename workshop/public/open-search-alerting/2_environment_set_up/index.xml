@@ -23,8 +23,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-search-alerting/2_environment_set_up/create_index.html</guid>
-      <description>We will need to create a sample index in OpenSearch so we can store and query data for an alert. To do this, we will run a Python application in our Cloud9 environment to create the index.
-Run a Python Application from Cloud9 Navigate to the Cloud9 Console and click on Open IDE under the already created workshop-cloud9 environment. The OpenSearch_API_Examples repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</description>
+      <description>You will need to create a sample index in OpenSearch so you can store and query data for an alert. To do this, you will run a Python application in our Cloud9 environment to create the index.
+Step 1 - Create Index  Navigate to the Cloud9 Console Click on Open IDE under the already created workshop-cloud9 environment.  The OpenSearch_API_Examples repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</description>
     </item>
     
   </channel>

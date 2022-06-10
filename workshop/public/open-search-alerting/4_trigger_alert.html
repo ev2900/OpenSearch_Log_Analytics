@@ -1451,7 +1451,7 @@
     <li>
       <ul>
         <li></li>
-        <li><a href="#verify-alerting">Verify Alerting</a></li>
+        <li><a href="#step-2---verify-alerting">Step 2 - Verify Alerting</a></li>
       </ul>
     </li>
   </ul>
@@ -1479,13 +1479,18 @@
 
 
 
-	<p>In this exercise, we will simulate an alert condition and verify our email alert is working properly.</p>
-<h4 id="run-a-python-application-from-cloud9">Run a Python Application from Cloud9</h4>
-<p>Navigate to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a> and click on <strong>Open IDE</strong> under the already created <code>workshop-cloud9</code> environment. The <a href="https://github.com/ev2900/OpenSearch_API_Examples">OpenSearch_API_Examples</a> repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</p>
+	<p>You will now simulate an alert condition and verify that our alert triggers and you receive an email</p>
+<h4 id="step-1---run-a-python-application-from-cloud9">Step 1 - Run a Python Application from Cloud9</h4>
+<ol>
+<li>Navigate to the <a href="https://console.aws.amazon.com/cloud9/home">Cloud9 Console</a></li>
+<li>Click on <strong>Open IDE</strong> under the already created workshop-cloud9 environment.</li>
+</ol>
+<p><img src="../images/open-search-alerting/cloud9_2.png" alt="cloud9_2"></p>
+<p>The <a href="https://github.com/ev2900/OpenSearch_API_Examples">OpenSearch_API_Examples</a> repository will be automatically pulled down to your environment. Do the following within the Cloud9 console.</p>
 <ol>
 <li>Open the file <strong>OpenSearch_API_Examples/Alerting/2_trigger_alert.py</strong></li>
-<li>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the <strong>OSDomainURL</strong> Output from the CloudFormation stack.</li>
-<li>Go to File-&gt;Save to save the changes to <strong>2_trigger_alert.py</strong></li>
+<li>Update the <strong>os_url</strong> variable to your OpenSearch instance. This is the value of the <strong>OSDomainURL</strong> key from the CloudFormation stack output.</li>
+<li>Goto <strong>File</strong> -&gt; <strong>Save</strong> to save the changes to 2_trigger_alert.py</li>
 </ol>
 <p>In the terminal window, run the following commands:</p>
 <ol start="4">
@@ -1494,23 +1499,27 @@
 <p>The image below highlights the commands.</p>
 <p><img src="../images/open-search-alerting/cloud9_trigger_1.png" alt="cloud9_trigger"></p>
 <p>The script will to send high CPU values to OpenSearch until you stop the script. You can stop it with <strong>Ctrl-C</strong> in the terminal window.</p>
-<h3 id="verify-alerting">Verify Alerting</h3>
+<h3 id="step-2---verify-alerting">Step 2 - Verify Alerting</h3>
 <ol>
 <li>Emails should have been received in the specified email address.</li>
 </ol>
 <p><img src="../images/open-search-alerting/os_email_1.png" alt="cloud9_email"></p>
 <ol start="2">
-<li>In the OpenSearch Dashboard, click the menu icon and go to <strong>OpenSearch Plugins-&gt;Alerting</strong>.</li>
-<li>Click on the <strong>Monitors</strong> tab and open the <strong>High CPU Alert</strong> monitor we created earlier.</li>
+<li>Click on the top left hand menu on the OpenSearch dashboard</li>
+<li>Click on <strong>Alerting</strong> under the OpenSearch Plugins section</li>
 </ol>
+<p><img src="../images/open-search-alerting/os_alert_1.png" alt="os_alert_1"></p>
+<ol start="4">
+<li>Click on <strong>Monitors</strong></li>
+<li>Click on the <strong>High CPU Alert</strong></li>
+</ol>
+<p><img src="../images/open-search-alerting/os_alert_4.png" alt="os_alert_4"></p>
 <p>Observe the <strong>History</strong> section. You should see the <em>Triggered</em> status occurring.</p>
 <p><img src="../images/open-search-alerting/os_email_2.png" alt="cloud9_email_2"></p>
-<p>Under the <strong>Alerts</strong> section, this will show active and historical alerts triggered by this monitor.</p>
-<p>In order to stop receiving emails, we need to acknowledge the alert.</p>
-<ol start="4">
-<li>Select the alert caused by running the script. Click <strong>Acknowledge</strong></li>
+<ol start="6">
+<li>Under the <strong>Alerts</strong> section, click on the alert and acknowledge the alert to stop receiving email.</li>
 </ol>
-<p>When you are ready proceed to the next step <a href="../open-search-alerting/5_clean_up.html">Clean Up</a> if you want to delete the resources we used for this workshop</p>
+<p>When you are ready proceed to the next step <a href="../open-search-alerting/5_clean_up.html">Clean Up</a> if you want to delete the resources you used for this workshop</p>
 
 
 

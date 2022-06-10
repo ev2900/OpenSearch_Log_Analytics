@@ -1446,7 +1446,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#delete-cloudformation-stack">Delete CloudFormation Stack</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1470,10 +1478,14 @@
 
 
 
-	<p>Navigate to the <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?">CloudFormation console</a> select the stacks named <strong>os-alerting</strong> and <strong>aws-cloud9-workshop-cloud9-&hellip;</strong> and select <strong>Delete</strong>. 
-<img src="../images/open-search-alerting/os_cleanup_1.png" alt="os_cleanup_1"></p>
-<p>This process may take several minutes to complete. When it&rsquo;s done, the status will change to <code>DELETE_COMPLETE</code>.</p>
-<p>You have completed deleting the resources used in this workshop.</p>
+	<h3 id="delete-cloudformation-stack">Delete CloudFormation Stack</h3>
+<ol>
+<li>Navigate to the <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home">CloudFormation console</a></li>
+<li>Select the stack that was deployed earlier in the lab</li>
+<li>Click on <strong>Delete</strong></li>
+</ol>
+<p><img src="../images/open-search-alerting/delete_1.png" alt="delete_1"></p>
+<p>The CloudFormation stack will take 5 - 10 minutes to delete</p>
 
 
 
