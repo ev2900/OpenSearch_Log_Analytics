@@ -97,8 +97,8 @@ Before we can send data to OpenSearch we need to create an index. You will run a
 
 If you are not already in the Cloud9 console 
 
-1. Navigate to the [MSK page in the AWS console](https://us-east-1.console.aws.amazon.com/msk/home)
-2. Select the **msk-workshop-cluster**
+1. Navigate to the [Cloud9 in the AWS console](https://us-east-1.console.aws.amazon.com/cloud9/home)
+2. Under the *msk-workshop-cloud9* environment click on **Open IDE**
 
 If you are already in the Cloud9 console 
 
@@ -116,8 +116,8 @@ Later in the lab when we upload data to OpenSearch the IAM role we will use need
 
 If you are not already in the Cloud9 console 
 
-1. Navigate to the [MSK page in the AWS console](https://us-east-1.console.aws.amazon.com/msk/home)
-2. Select the **msk-workshop-cluster**
+1. Navigate to the [Cloud9 in the AWS console](https://us-east-1.console.aws.amazon.com/cloud9/home)
+2. Under the *msk-workshop-cloud9* environment click on **Open IDE**
 
 If you are already in the Cloud9 console 
 
