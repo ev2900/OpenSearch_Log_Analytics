@@ -19,14 +19,14 @@ You will send the log data to Kafka via. a Python Script run from Cloud9
 
 ![enviorment_set_up_msk_2](/images/anomaly-detection-w-msk/enviorment_set_up_msk_2.png)
 
-4. Copy the bootstrap servers connection information
+4. Copy the plaintext bootstrap servers connection information
 5. Navigate to the [Cloud9 console](https://us-east-1.console.aws.amazon.com/cloud9/home)
 6. Click on **Open IDE**
 
 ![enviorment_set_up_msk_4](/images/anomaly-detection-w-msk/enviorment_set_up_msk_4.png) 
 
 7. In the Cloud9 environment navigate and open ```Kafka_OpenSearch_Anomaly_Detection/Kafka/2_base_data.py``` 
-8. Update the **<plain_text_bootstrap_server>** with the bootstrap servers connection information you copied down
+8. Update the **<plain_text_bootstrap_server>** with the plaintext bootstrap servers connection information you copied down and **save the file**
 9. Run ```pip install pykafka``` 
 10. Run ```cd ~``` in the Cloud9 terminal
 11. Run ```python environment/Kafka_OpenSearch_Anomaly_Detection/Kafka/2_base_data.py```
@@ -37,8 +37,8 @@ Allow the python script to run until the terminal looks similar to the image bel
 
 ![send_log_data_2](/images/anomaly-detection-w-msk/send_log_data_2.png)
 
-12. open ```Kafka_OpenSearch_Anomaly_Detection/Kafka/3_anomoly_data.py```
-13. Update the **<plain_text_bootstrap_server>** with the bootstrap servers connection information you copied down
+12. Open ```Kafka_OpenSearch_Anomaly_Detection/Kafka/3_anomoly_data.py```
+13. Update the **<plain_text_bootstrap_server>** with the plaintext bootstrap servers connection information you copied down and **save the file**
 14. Run ```python environment/Kafka_OpenSearch_Anomaly_Detection/Kafka/3_anomoly_data.py```
 
 ![send_log_data_3](/images/anomaly-detection-w-msk/send_log_data_3.png)

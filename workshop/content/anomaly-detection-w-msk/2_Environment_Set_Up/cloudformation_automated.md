@@ -103,7 +103,7 @@ If you are not already in the Cloud9 console
 If you are already in the Cloud9 console 
 
 3. In the Cloud9 environment navigate and open ```Kafka_OpenSearch_Anomaly_Detection/OpenSearch/1_create_index.py``` 
-4. Replace the ```<opensearch_domain_endpoint_url>``` with the value of the **OSDomainURL** key from the CloudFormation stack output
+4. Replace the ```<opensearch_domain_endpoint_url>``` with the value of the **OSDomainURL** key from the CloudFormation stack output and **save the file**
 6. Run the following command on the Cloud9 terminal ```cd ~```
 7. Run the following command on the Cloud9 terminal ```pip install requests```
 8. Run the python script by issuing the following command in the Cloud9 terminal ```python environment/Kafka_OpenSearch_Anomaly_Detection/OpenSearch/1_create_index.py``` 
@@ -123,7 +123,7 @@ If you are already in the Cloud9 console
 
 3. In the Cloud9 environment navigate and open ```Kafka_OpenSearch_Anomaly_Detection/OpenSearch/2_map_IAM_user.py```
 4. Replace the ```<os_domain_url>``` with the value of the **OSDomainURL** key from the CloudFormation stack output
-5. Replace the ```<IAM_user/role_arn>``` with the value of the **IAMUserARN** key from the CloudFormation stack output
+5. Replace the ```<IAM_user/role_arn>``` with the value of the **IAMUserARN** key from the CloudFormation stack output and **save the file**
 6. Run the python script by issuing the following command in the Cloud9 terminal ```python environment/Kafka_OpenSearch_Anomaly_Detection/OpenSearch/2_map_IAM_user.py```
 
 ![enviorment_set_up_map_iam_os_1](/images/anomaly-detection-w-msk/enviorment_set_up_map_iam_os_1.png)
