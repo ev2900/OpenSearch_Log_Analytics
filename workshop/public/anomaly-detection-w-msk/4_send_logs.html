@@ -1482,14 +1482,14 @@
 </ol>
 <p><img src="../images/anomaly-detection-w-msk/enviorment_set_up_msk_2.png" alt="enviorment_set_up_msk_2"></p>
 <ol start="4">
-<li>Copy the bootstrap servers connection information</li>
+<li>Copy the plaintext bootstrap servers connection information</li>
 <li>Navigate to the <a href="https://us-east-1.console.aws.amazon.com/cloud9/home">Cloud9 console</a></li>
 <li>Click on <strong>Open IDE</strong></li>
 </ol>
 <p><img src="../images/anomaly-detection-w-msk/enviorment_set_up_msk_4.png" alt="enviorment_set_up_msk_4"></p>
 <ol start="7">
 <li>In the Cloud9 environment navigate and open <code>Kafka_OpenSearch_Anomaly_Detection/Kafka/2_base_data.py</code></li>
-<li>Update the <strong>&lt;plain_text_bootstrap_server&gt;</strong> with the bootstrap servers connection information you copied down</li>
+<li>Update the <strong>&lt;plain_text_bootstrap_server&gt;</strong> with the plaintext bootstrap servers connection information you copied down and <strong>save the file</strong></li>
 <li>Run <code>pip install pykafka</code></li>
 <li>Run <code>cd ~</code> in the Cloud9 terminal</li>
 <li>Run <code>python environment/Kafka_OpenSearch_Anomaly_Detection/Kafka/2_base_data.py</code></li>
@@ -1498,8 +1498,8 @@
 <p>Allow the python script to run until the terminal looks similar to the image below</p>
 <p><img src="../images/anomaly-detection-w-msk/send_log_data_2.png" alt="send_log_data_2"></p>
 <ol start="12">
-<li>open <code>Kafka_OpenSearch_Anomaly_Detection/Kafka/3_anomoly_data.py</code></li>
-<li>Update the <strong>&lt;plain_text_bootstrap_server&gt;</strong> with the bootstrap servers connection information you copied down</li>
+<li>Open <code>Kafka_OpenSearch_Anomaly_Detection/Kafka/3_anomoly_data.py</code></li>
+<li>Update the <strong>&lt;plain_text_bootstrap_server&gt;</strong> with the plaintext bootstrap servers connection information you copied down and <strong>save the file</strong></li>
 <li>Run <code>python environment/Kafka_OpenSearch_Anomaly_Detection/Kafka/3_anomoly_data.py</code></li>
 </ol>
 <p><img src="../images/anomaly-detection-w-msk/send_log_data_3.png" alt="send_log_data_3"></p>
