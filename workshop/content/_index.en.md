@@ -16,5 +16,8 @@ In the workshop [Fluentd Log Ingestion]({{<relref "open-search-fluentd/">}}) you
 
 In the workshop [Anomaly Detection with MSK]({{<relref "anomaly-detection-w-msk/">}}) you will learn how to use the anomaly detection feature in OpenSearch to identify potential anomalous data. Additionally, you will learn a method of ingesting data into OpenSearch in real time via. Amazon Managed Streaming for Apache Kafka (MSK) and a Lambda function.
 
+In the workshop [Cross Cluster Replication]({{<relref "open-search-cross-cluster-replication/">}}) you will learn how to set up replication between OpenSearch Service domains to ensure business continuity and allows you to replicate data across geographically separated locations to reduce latency.
+
 In the workshop [OpenSearch Alerting]({{<relref "open-search-alerting/">}}) you will learn how to set up alerts in Amazon OpenSearch. This allows you to get a notification when a condition is met in your log data.
+
 
