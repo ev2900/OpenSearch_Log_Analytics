@@ -85,7 +85,7 @@ We need to create a topic in Kafka that we can later send log data to.
 
 12. Update the ```bin/kafka-topics.sh --create --zookeeper <ZookeeperConnectString> --replication-factor 1 --partitions 1 --topic ApplicationMetricTopic``` replace the ```<ZookeeperConnectString>``` with the plaintext Apache ZooKeeper connection information you copied down on Step 4
 
-Run the updated command on the AWS console
+Run the updated command in the Cloud9 terminal
 
 ![enviorment_set_up_msk_7](/images/anomaly-detection-w-msk/enviorment_set_up_msk_7.png)
 
