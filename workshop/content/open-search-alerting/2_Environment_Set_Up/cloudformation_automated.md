@@ -33,7 +33,7 @@ Be sure to check the Outputs tab of the os-alerting stack for environment info.
 
 #### Step 2 - Confirm SNS Subscription
 
-You will receive an email confirming a subscription to you SNS topic. Click Confirm subscription.
+You will receive an email confirming a subscription to your SNS topic. Click Confirm subscription.
 ![cf_6](/images/open-search-alerting/cf_6.png)
 
 Proceed to [Create OpenSearch Index]({{<relref "./create_index/">}})
