@@ -1,12 +1,12 @@
 ---
-title: "Cross-Cluster Replication"
-menuTitle: "Cross-Cluster Replication"
+title: "Cross Cluster Replication"
+menuTitle: "Cross Cluster Replication"
 chapter: true
 weight: 10
 url: "/open-search-cross-cluster-replication/"
 ---
 
-# Cross-Cluster Replication Workshop
+# Cross Cluster Replication Workshop
 
 This workshop demonstrates how to replicate indexes, mapping, and metadata from one OpenSearch Service domain to another. This follows an active-passive replication model where a following index pulls data from a leader index to keep the indexes in sync.
 

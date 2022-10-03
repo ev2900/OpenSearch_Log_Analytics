@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2. Environment Set Up on Open Search Log Analytics Workshop</title>
+    <link>/open-search-cross-cluster-replication/2_environment_set_up.html</link>
+    <description>Recent content in 2. Environment Set Up on Open Search Log Analytics Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/open-search-cross-cluster-replication/2_environment_set_up/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CloudFormation</title>
+      <link>/open-search-cross-cluster-replication/2_environment_set_up/cloudformation_automated.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-search-cross-cluster-replication/2_environment_set_up/cloudformation_automated.html</guid>
+      <description>Step 1 - Deploy CloudFormation Template  Right click the Launch Stack button below and open the link in a new tab.  
+ Navigate to the new tab you just opened. You should see a screen similar to the one below   Continue to click on the Next buttons until you arrive at the final review screen. Scroll to the bottom of this page
+  Click on Create stack</description>
+    </item>
+    
+  </channel>
+</rss>
