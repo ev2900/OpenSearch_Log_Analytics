@@ -97,8 +97,10 @@ for html_file in l1:
 		c6 = re.sub(r'<a href="./open-search-cross-cluster-replication/"', '<a href="./open-search-cross-cluster-replication/index.html"', c5)
 		
 		c7 = re.sub(r'<a class="nav nav-next" href="./open-search-log-analytics/"', '<a class="nav nav-next" href="./open-search-log-analytics/index.html"', c6)
+
+		c8 = re.sub(r'<head>', '<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-ES4984EVCG"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'G-ES4984EVCG\'); </script>', c7)
 		
-		html_object.write(c7)
+		html_object.write(c8)
 		html_object.truncate()
 
 		print("Finished file " + html_file)
@@ -160,9 +162,7 @@ for html_file in l3:
 			html_object_3 = re.sub(r'<a href="*..*/open-search-fluentd/">', '<a href="../../open-search-fluentd/index.html">', html_object_2)
 			html_object_4 = re.sub(r'<a href="*..*/anomaly-detection-w-msk/">', '<a href="../../anomaly-detection-w-msk/index.html">', html_object_3)
 			html_object_5 = re.sub(r'<a href="*..*/open-search-alerting/">', '<a href="../../open-search-alerting/index.html">', html_object_4)
-
-			html_object_6 = re.sub(r'<a href="*..*/open-search-alerting/">', '<a href="../../open-search-alerting/index.html">', html_object_5)
-
+			html_object_6 = re.sub(r'<a href="*..*/open-search-cross-cluster-replication/">', '<a href="../../open-search-cross-cluster-replication/index.html">', html_object_5)
 
 			html_object_7 = re.sub(r'> <a href=\'../../open-search-log-analytics/\'>1. OpenSearch Log Analytics</a>', '> <a href=\'../../open-search-log-analytics/index.html\'>OpenSearch Log Analytics</a>', html_object_6)
 			html_object_8 = re.sub(r'<a href=\'../../\'>OpenSearch Log Analytics Workshop</a> >', '<a href=\'../../index.html\'>OpenSearch Log Analytics Workshop</a> >', html_object_7)
