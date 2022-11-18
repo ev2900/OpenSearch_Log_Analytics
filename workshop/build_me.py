@@ -143,9 +143,11 @@ for html_file in l2:
 		html_object_20 = re.sub(r'> 3. Send Log Data to OpenSearch', '> Send Log Data to OpenSearch', html_object_19)
 		html_object_21 = re.sub(r'> 4. Search Logs', '> Search Logs', html_object_20)
 
-		html_object_22 = re.sub(r'> 5. Clean Up', '> Clean Up', html_object_21)		
+		html_object_22 = re.sub(r'> 5. Clean Up', '> Clean Up', html_object_21)
 
-		html_object.write(html_object_22)
+		html_object_23 = re.sub(r'<head>', '<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-ES4984EVCG"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'G-ES4984EVCG\'); </script>', html_object_22)
+
+		html_object.write(html_object_23)
 		html_object.truncate()
 
 		print("Finished file " + html_file)
@@ -171,7 +173,9 @@ for html_file in l3:
 			html_object_10 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/\'>2. CloudWatch Log Collection</a>', '> <a href=\'../../collect-log-cloud-watch/index.html\'>CloudWatch Log Collection</a>', html_object_9)
 			html_object_11 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'>1. Getting started</a>', '> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'> Getting started</a>', html_object_10)
 
-			html_object.write(html_object_11)
+			html_object_12 = re.sub(r'<head>', '<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-ES4984EVCG"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'G-ES4984EVCG\'); </script>', html_object_11)
+
+			html_object.write(html_object_12)
 			html_object.truncate()
 
 			print("Finished file " + html_file)	 
