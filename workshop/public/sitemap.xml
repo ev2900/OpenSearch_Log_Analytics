@@ -12,6 +12,8 @@
   </url><url>
     <loc>/open-search-alerting/1_getting_started.html</loc>
   </url><url>
+    <loc>/open-search-cross-cluster-replication/1_getting_started.html</loc>
+  </url><url>
     <loc>/open-search-log-analytics/1_getting_started.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/</loc>
@@ -23,6 +25,8 @@
     <loc>/collect-log-cloud-watch/2_environment_set_up.html</loc>
   </url><url>
     <loc>/open-search-alerting/2_environment_set_up.html</loc>
+  </url><url>
+    <loc>/open-search-cross-cluster-replication/2_environment_set_up.html</loc>
   </url><url>
     <loc>/open-search-fluentd/2_environment_set_up.html</loc>
   </url><url>
@@ -40,6 +44,8 @@
   </url><url>
     <loc>/collect-log-cloud-watch/3_send_log_data_to_opensearch.html</loc>
   </url><url>
+    <loc>/open-search-cross-cluster-replication/3_setup_connection.html</loc>
+  </url><url>
     <loc>/anomaly-detection-w-msk/</loc>
   </url><url>
     <loc>/collect-log-cloud-watch/4_search_logs.html</loc>
@@ -47,6 +53,8 @@
     <loc>/open-search-fluentd/4_search_logs.html</loc>
   </url><url>
     <loc>/anomaly-detection-w-msk/4_send_logs.html</loc>
+  </url><url>
+    <loc>/open-search-cross-cluster-replication/4_test_replication.html</loc>
   </url><url>
     <loc>/open-search-alerting/4_trigger_alert.html</loc>
   </url><url>
@@ -57,6 +65,8 @@
     <loc>/collect-log-cloud-watch/5_clean_up.html</loc>
   </url><url>
     <loc>/open-search-alerting/5_clean_up.html</loc>
+  </url><url>
+    <loc>/open-search-cross-cluster-replication/5_clean_up.html</loc>
   </url><url>
     <loc>/open-search-fluentd/5_clean_up.html</loc>
   </url><url>
@@ -70,11 +80,15 @@
   </url><url>
     <loc>/open-search-alerting/1_getting_started/aws_event.html</loc>
   </url><url>
+    <loc>/open-search-cross-cluster-replication/1_getting_started/aws_event.html</loc>
+  </url><url>
     <loc>/open-search-fluentd/1_getting_started/aws_event.html</loc>
   </url><url>
     <loc>/open-search-log-analytics/1_getting_started/aws_event.html</loc>
   </url><url>
     <loc>/open-search-alerting/2_environment_set_up/cloudformation_automated.html</loc>
+  </url><url>
+    <loc>/open-search-cross-cluster-replication/2_environment_set_up/cloudformation_automated.html</loc>
   </url><url>
     <loc>/anomaly-detection-w-msk/2_environment_set_up/cloudformation_automated.html</loc>
   </url><url>
@@ -86,6 +100,8 @@
   </url><url>
     <loc>/open-search-alerting/2_environment_set_up/create_index.html</loc>
   </url><url>
+    <loc>/open-search-cross-cluster-replication/</loc>
+  </url><url>
     <loc>/open-search-alerting/</loc>
   </url><url>
     <loc>/anomaly-detection-w-msk/1_getting_started/self_paced.html</loc>
@@ -93,6 +109,8 @@
     <loc>/collect-log-cloud-watch/1_getting_started/self_paced.html</loc>
   </url><url>
     <loc>/open-search-alerting/1_getting_started/self_paced.html</loc>
+  </url><url>
+    <loc>/open-search-cross-cluster-replication/1_getting_started/self_paced.html</loc>
   </url><url>
     <loc>/open-search-fluentd/1_getting_started/self_paced.html</loc>
   </url><url>
