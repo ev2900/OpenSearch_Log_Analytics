@@ -344,10 +344,10 @@
 },
 {
 	"uri": "/open-search-cross-cluster-replication/",
-	"title": "Cross-Cluster Replication",
+	"title": "Cross Cluster Replication",
 	"tags": [],
 	"description": "",
-	"content": "Cross-Cluster Replication Workshop This workshop demonstrates how to replicate indexes, mapping, and metadata from one OpenSearch Service domain to another. This follows an active-passive replication model where a following index pulls data from a leader index to keep the indexes in sync.\nIn this workshop you will implement the following architecture:\nThe architecture uses Python applications run from a Cloud9 development environment to create a sample index and to send sample data to OpenSearch. You will set up replication between the leader and follower domains and observe how the index data replicates.\nWhen you are ready to being the lab navigate to Getting started\n"
+	"content": "Cross Cluster Replication Workshop This workshop demonstrates how to replicate indexes, mapping, and metadata from one OpenSearch Service domain to another. This follows an active-passive replication model where a following index pulls data from a leader index to keep the indexes in sync.\nIn this workshop you will implement the following architecture:\nThe architecture uses Python applications run from a Cloud9 development environment to create a sample index and to send sample data to OpenSearch. You will set up replication between the leader and follower domains and observe how the index data replicates.\nWhen you are ready to being the lab navigate to Getting started\n"
 },
 {
 	"uri": "/open-search-alerting/",

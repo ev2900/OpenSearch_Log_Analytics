@@ -53,7 +53,13 @@ l2 = [
 	'./public/open-search-alerting/2_environment_set_up.html',
 	'./public/open-search-alerting/3_create_alert.html',
 	'./public/open-search-alerting/4_trigger_alert.html',
-	'./public/open-search-alerting/5_clean_up.html'
+	'./public/open-search-alerting/5_clean_up.html',
+	'./public/open-search-cross-cluster-replication/index.html',
+	'./public/open-search-cross-cluster-replication/1_getting_started.html',
+	'./public/open-search-cross-cluster-replication/2_environment_set_up.html',
+	'./public/open-search-cross-cluster-replication/3_setup_connection.html',
+	'./public/open-search-cross-cluster-replication/4_test_replication.html',
+	'./public/open-search-cross-cluster-replication/5_clean_up.html'
 ]
 
 l3 = [
