@@ -99,7 +99,7 @@ for html_file in l1:
 		c7 = re.sub(r'<a class="nav nav-next" href="./open-search-log-analytics/"', '<a class="nav nav-next" href="./open-search-log-analytics/index.html"', c6)
 
 		c8 = re.sub(r'<head>', '<head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);})(window,document,\'script\',\'dataLayer\',\'GTM-MQVV499\');</script><!-- End Google Tag Manager -->', c7)
-		c9 = re.sub(r'<body>', '<body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQVV499"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', c8)
+		c9 = re.sub(r'<body*..*>', '<body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQVV499"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', c8)
 
 		html_object.write(c9)
 		html_object.truncate()
@@ -147,7 +147,7 @@ for html_file in l2:
 		html_object_22 = re.sub(r'> 5. Clean Up', '> Clean Up', html_object_21)
 
 		html_object_23 = re.sub(r'<head>', '<head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);})(window,document,\'script\',\'dataLayer\',\'GTM-MQVV499\');</script><!-- End Google Tag Manager -->', html_object_22)
-		html_object_24 = re.sub(r'<body>', '<body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQVV499"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', html_object_23)
+		html_object_24 = re.sub(r'<body*..*>', '<body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQVV499"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', html_object_23)
 
 		html_object.write(html_object_24)
 		html_object.truncate()
@@ -176,7 +176,7 @@ for html_file in l3:
 			html_object_11 = re.sub(r'> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'>1. Getting started</a>', '> <a href=\'../../collect-log-cloud-watch/1_getting_started.html\'> Getting started</a>', html_object_10)
 
 			html_object_12 = re.sub(r'<head>', '<head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);})(window,document,\'script\',\'dataLayer\',\'GTM-MQVV499\');</script><!-- End Google Tag Manager -->', html_object_11)
-			html_object_13 = re.sub(r'<body>', '<body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQVV499"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', html_object_12)
+			html_object_13 = re.sub(r'<body*..*>', '<body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQVV499"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->', html_object_12)
 
 			html_object.write(html_object_13)
 			html_object.truncate()
