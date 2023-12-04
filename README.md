@@ -1,8 +1,8 @@
 # Log Analytics via Amazon OpenSearch Service
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-0000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-0000-green">
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-641-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-0000-green">
 
-Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html 
+Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html
 
 In the workshop OpenSearch Log Analytics you will learn how to perform log analytics via AWS OpenSearch. You will explore the basics of ingesting, analyzing and visualizing data in OpenSearch.
 
@@ -19,7 +19,7 @@ The main branch of the repo will auto deploy to the **development** site https:/
 
 Pull requests merged to the prod branch will auto deploy to the **production** site at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html
 
-## You can help 
+## You can help
 
 Want to contribute to this workshop? Do you see a mistake? Fork this repo and submit a pull request with edits, updates, fixes
 
