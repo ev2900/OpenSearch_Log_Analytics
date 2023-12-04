@@ -1,5 +1,7 @@
 # Log Analytics via Amazon OpenSearch Service
 
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-0000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-0000-green">
+
 Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html 
 
 In the workshop OpenSearch Log Analytics you will learn how to perform log analytics via AWS OpenSearch. You will explore the basics of ingesting, analyzing and visualizing data in OpenSearch.
