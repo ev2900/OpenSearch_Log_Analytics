@@ -1,6 +1,6 @@
 # Log Analytics via Amazon OpenSearch Service
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-1119-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-307-green">
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-1126-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-307-green">
 
 Live at https://sharkech-public.s3.amazonaws.com/opensearch-log-analytics/workshop/index.html
 
